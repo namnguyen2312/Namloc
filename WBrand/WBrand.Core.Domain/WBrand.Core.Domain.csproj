@@ -62,14 +62,16 @@
     <Compile Include="Entities\Identity\AppUserGroup.cs" />
     <Compile Include="Entities\Identity\Permission.cs" />
     <Compile Include="Entities\Identity\Status.cs" />
+    <Compile Include="Models\User\AppGroupModel.cs" />
+    <Compile Include="Models\User\AppRoleModel.cs" />
+    <Compile Include="Models\User\AppUserModel.cs" />
+    <Compile Include="Models\User\PasswordModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

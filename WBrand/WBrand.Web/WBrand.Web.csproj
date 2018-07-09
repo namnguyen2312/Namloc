@@ -75,9 +75,6 @@
     <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.3\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -105,9 +102,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
-    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -2083,8 +2077,10 @@
     <Content Include="Assets\libs\toastr\toastr.js.map" />
     <Content Include="Assets\libs\toastr\toastr.less" />
     <Content Include="Assets\libs\toastr\toastr.scss" />
+    <Content Include="ConnectionString.config" />
     <None Include="packages.config" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\WebNamLoc.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WBrand.Common\WBrand.Common.csproj">
@@ -2110,6 +2106,10 @@
     <ProjectReference Include="..\WBrand.Services\WBrand.Services.csproj">
       <Project>{8B44CA02-A77D-4F4F-8F76-1A2CE7AD5913}</Project>
       <Name>WBrand.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WBrand.Web.Api\WBrand.Web.Api.csproj">
+      <Project>{f56df5dd-48fd-4b45-9041-b9d0f61e6713}</Project>
+      <Name>WBrand.Web.Api</Name>
     </ProjectReference>
     <ProjectReference Include="..\WBrand.Web.Kernel\WBrand.Web.Kernel.csproj">
       <Project>{88A410B9-52D5-4432-A053-0CF34EFAEFE6}</Project>

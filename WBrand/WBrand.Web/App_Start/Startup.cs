@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -33,6 +34,7 @@ namespace WBrand.Web.App_Start
         {
             ConfigAutofac(app);
             ConfigureAuth(app);
+            UpdateMigration();
         }
 
         private void ConfigAutofac(IAppBuilder app)
@@ -88,6 +90,11 @@ namespace WBrand.Web.App_Start
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
             System.Web.Http.GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver((IContainer)container); //Set the WebApi DependencyResolver
+        }
+
+        private void UpdateMigration()
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<WBrandDbContext, WBrand.Data.EF.Migrations.Configuration>());
         }
     }
 }

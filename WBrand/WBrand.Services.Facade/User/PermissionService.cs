@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WBrand.Core.Domain.Entities.Identity;
+using WBrand.Services.User;
 
-namespace WBrand.Services.User
+namespace WBrand.Services.Facade.User
 {
     public class PermissionService : IPermissionService
     {

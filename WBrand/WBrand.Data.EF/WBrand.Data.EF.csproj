@@ -53,6 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201807091403378_initDb.cs" />
+    <Compile Include="Migrations\201807091403378_initDb.Designer.cs">
+      <DependentUpon>201807091403378_initDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="DbSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +85,11 @@
       <Project>{5c3414f2-b992-494e-a52d-8c4f6950f846}</Project>
       <Name>WBrand.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201807091403378_initDb.resx">
+      <DependentUpon>201807091403378_initDb.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -62,7 +62,6 @@
     <Compile Include="User\IAppRoleService.cs" />
     <Compile Include="User\IAppUserService.cs" />
     <Compile Include="User\IPermissionService.cs" />
-    <Compile Include="User\PermissionService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WBrand.Core.Domain\WBrand.Core.Domain.csproj">
