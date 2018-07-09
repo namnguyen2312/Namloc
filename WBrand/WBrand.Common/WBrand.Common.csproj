@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoMapper\QueryableExtensions.cs" />
+    <Compile Include="Constants\SystemConstants.cs" />
     <Compile Include="DisposableObject.cs" />
     <Compile Include="Exceptions\NameDuplicatedException.cs" />
     <Compile Include="AutoMapper\ObjectExtensions.cs" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,10 @@ namespace WBrand.Data
 
         Task<int> InsertAsync(IEnumerable<T> entities);
 
+        T UpdateProperties(T entity, params Expression<Func<T, object>>[] changedProperties);
+
+        Task<T> UpdatePropertiesAsync(T entity, params Expression<Func<T, object>>[] changedProperties);
+
         Task<T> UpdateAsync(T entity);
 
         T Update(T entity);
@@ -38,7 +43,7 @@ namespace WBrand.Data
 
         IQueryable<T> TableNoTracking { get; }
 
-        void BeginTran(System.Data.IsolationLevel isolationLevel =  System.Data.IsolationLevel.Serializable);
+        void BeginTran(System.Data.IsolationLevel isolationLevel = System.Data.IsolationLevel.Serializable);
         void CommitTran();
         void RollbackTran();
     }

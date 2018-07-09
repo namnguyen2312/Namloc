@@ -1,0 +1,77 @@
+﻿@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="NamLoc">
+    <link rel="shortcut icon" href="/assets/img/favicon.png">
+
+    <title>Admin-CMS</title>
+
+    <!-- Main styles for this application -->
+    <link href="~/Assets/css/app/style.css" rel="stylesheet" />
+</head>
+
+<!-- BODY options, add following classes to body to change options
+
+  // Header options
+  1. '.header-fixed'					- Fixed Header
+
+  // Sidebar options
+  1. '.sidebar-fixed'					- Fixed Sidebar
+  2. '.sidebar-hidden'				- Hidden Sidebar
+  3. '.sidebar-off-canvas'		- Off Canvas Sidebar
+  4. '.sidebar-minimized'			- Minimized Sidebar (Only icons)
+  5. '.sidebar-compact'			  - Compact Sidebar
+
+  // Aside options
+  1. '.aside-menu-fixed'			- Fixed Aside Menu
+  2. '.aside-menu-hidden'			- Hidden Aside Menu
+  3. '.aside-menu-off-canvas'	- Off Canvas Aside Menu
+
+  // Breadcrumb options
+  1. '.breadcrumb-fixed'			- Fixed Breadcrumb
+
+  // Footer options
+  1. 'footer-fixed'						- Fixed footer
+
+-->
+
+<body class="header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+
+    <!-- User Interface -->
+    <ui-view class="app"></ui-view>
+
+    <!-- Bootstrap and necessary plugins -->
+    <script src="~/Assets/libs/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/Assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/Assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- AngularJS -->
+    <script src="~/Assets/libs/angular/angular.min.js"></script>
+    <!-- AngularJS plugins -->
+    <script src="~/Assets/libs/angular-animate/angular-animate.min.js"></script>
+    <script src="~/Assets/libs/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="~/Assets/libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="~/Assets/libs/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <script src="~/Assets/libs/angular-breadcrumb/dist/angular-breadcrumb.min.js"></script>
+    <script src="~/Assets/libs/angular-loading-bar/build/loading-bar.min.js"></script>
+
+    <!-- AngularJS CoreUI App scripts -->
+
+    <script src="~/App/js/app.js"></script>
+    <script src="~/App/js/shared/app.common.js"></script>
+    <script src="~/App/js/routes.js"></script>
+    <script src="~/App/js/demo/routes.js"></script>
+    <script src="~/App/js/controllers.js"></script>
+    <script src="~/App/js/directives.js"></script>
+
+</body>
+</html>

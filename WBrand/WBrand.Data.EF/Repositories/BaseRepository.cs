@@ -172,7 +172,7 @@ namespace WBrand.Data.EF
             DbContext.SaveChanges();
             return entity;
         }
-
+        
         public async Task<T> UpdatePropertiesAsync(T entity, params Expression<Func<T, object>>[] changedProperties)
         {
             if (changedProperties?.Any() == true)
@@ -242,5 +242,7 @@ namespace WBrand.Data.EF
         {
             this.DbContext.Dispose();
         }
+
+        
     }
 }

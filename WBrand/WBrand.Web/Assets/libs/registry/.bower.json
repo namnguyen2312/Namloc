@@ -1,0 +1,11 @@
+{
+  "name": "registry",
+  "_cacheHeaders": {
+    "Last-Modified": "Sat, 23 Jun 2018 16:25:56 GMT",
+    "Content-Type": "text/html; charset=utf-8"
+  },
+  "main": "index.io",
+  "_source": "https://registry.bower.io",
+  "_target": "*",
+  "_originalSource": "https://registry.bower.io"
+}
