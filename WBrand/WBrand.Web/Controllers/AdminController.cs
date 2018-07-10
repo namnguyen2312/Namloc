@@ -67,11 +67,11 @@ namespace WBrand.Web.Controllers
                     {
                         await this.GetToken(model);
                         Session["IsAuthorized"] = true;
-                        return RedirectToAction("Index", "Admin");
+                        return RedirectToAction("system", "Admin");
                     }
                     else
                     {
-                        return RedirectToAction("Login", "Admin");
+                        return RedirectToAction("login-cms", "Admin");
                     }
                 }
                 else

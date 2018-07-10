@@ -2,6 +2,20 @@ angular
     .module('app')
     .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$breadcrumbProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $breadcrumbProvider) {
         $stateProvider
+            .state('app.users', {
+                url: '/userList',
+                templateUrl: '/app/views/users/userList.html',
+                ncyBreadcrumb: {
+                    label: 'User list'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/users/userList.js']
+                        });
+                    }]
+                }
+            })
             .state('app.icons', {
                 url: "/icons",
                 abstract: true,

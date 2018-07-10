@@ -30,7 +30,7 @@ angular
                 },
                 response: function (response) {
                     if (response.status === 401) {
-                        $location.path('/system-cms');
+                        $location.path('/system');
                     }
                     //the same response/modified/or a new one need to be returned.
                     return response;
@@ -40,7 +40,7 @@ angular
                         $window.location.href = '/login-cms';
                     }
                     else if (rejection.status === 401) {
-                        $location.path('/system-cms');
+                        $location.path('/system');
                     }
                     return $q.reject(rejection);
                 }
