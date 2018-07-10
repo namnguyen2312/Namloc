@@ -14,11 +14,30 @@ namespace WBrand.Services.Facade.Identity
 {
     public class ApplicationUserManager : UserManager<AppUser>
     {
+        IUserStore<AppUser> _store;
         public ApplicationUserManager(IUserStore<AppUser> store)
               : base(store)
         {
+            _store = store;
         }
+        public async Task SeedUser()
+        {
+            var manager = new UserManager<AppUser>(new UserStore<AppUser>(new WBrandDbContext()));
 
+            if (manager.Users.Count() > 0)
+                return;
+            var user = new AppUser()
+            {
+                UserName = "admin",
+                Email = "namloc@namlocalu.com",
+                EmailConfirmed = true,
+                State = Status.Active,
+                CreatedDate = DateTimeOffset.UtcNow
+                
+            };
+
+            await manager.CreateAsync(user,"123456");
+        }
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
             var manager = new ApplicationUserManager(new UserStore<AppUser>(context.Get<WBrandDbContext>()));
@@ -51,6 +70,7 @@ namespace WBrand.Services.Facade.Identity
                 manager.UserTokenProvider =
                     new DataProtectorTokenProvider<AppUser>(dataProtectionProvider.Create("Ok"));
             }
+            
             return manager;
         }
     }

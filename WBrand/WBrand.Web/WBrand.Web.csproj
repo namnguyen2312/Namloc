@@ -193,10 +193,15 @@
     <Content Include="App\js\controllers\charts.js" />
     <Content Include="App\js\controllers\main.js" />
     <Content Include="App\js\controllers\widgets.js" />
-    <Content Include="App\js\demo\routes.js" />
+    <Content Include="App\js\routesConfig\routes.js" />
     <Content Include="App\js\directives.js" />
     <Content Include="App\js\routes.js" />
     <Content Include="App\js\shared\app.common.js" />
+    <Content Include="App\js\shared\services\apiService.js" />
+    <Content Include="App\js\shared\services\authData.js" />
+    <Content Include="App\js\shared\services\authenticationService.js" />
+    <Content Include="App\js\shared\services\loginService.js" />
+    <Content Include="App\js\shared\services\notificationService.js" />
     <Content Include="App\views\charts.html" />
     <Content Include="App\views\common\aside.html" />
     <Content Include="App\views\common\footer.html" />
@@ -221,6 +226,7 @@
     <Content Include="App\views\pages\500.html" />
     <Content Include="App\views\pages\login.html" />
     <Content Include="App\views\pages\register.html" />
+    <Content Include="App\views\shared\pagerDirective.html" />
     <Content Include="App\views\vendors\css\chart.css" />
     <Content Include="App\views\vendors\css\chart.min.css" />
     <Content Include="App\views\widgets.html" />
@@ -1303,6 +1309,7 @@
     <Content Include="Assets\libs\jquery\src\var\support.js" />
     <Content Include="Assets\libs\jquery\src\var\toString.js" />
     <Content Include="Assets\libs\jquery\src\wrap.js" />
+    <Content Include="Assets\libs\js-cookie\src\js.cookie.js" />
     <Content Include="Assets\libs\ngBootbox\dist\ngBootbox.js" />
     <Content Include="Assets\libs\ngBootbox\dist\ngBootbox.min.js" />
     <Content Include="Assets\libs\ngBootbox\examples\example-1\app.js" />
@@ -2078,9 +2085,16 @@
     <Content Include="Assets\libs\toastr\toastr.less" />
     <Content Include="Assets\libs\toastr\toastr.scss" />
     <Content Include="ConnectionString.config" />
+    <Content Include="Assets\libs\js-cookie\.bower.json" />
+    <Content Include="Assets\libs\js-cookie\bower.json" />
+    <Content Include="Assets\libs\js-cookie\CONTRIBUTING.md" />
+    <Content Include="Assets\libs\js-cookie\LICENSE" />
+    <Content Include="Assets\libs\js-cookie\README.md" />
+    <Content Include="Assets\libs\js-cookie\SERVER_SIDE.md" />
     <None Include="packages.config" />
     <Content Include="Views\Admin\Index.cshtml" />
     <None Include="Properties\PublishProfiles\WebNamLoc.pubxml" />
+    <Content Include="Views\Admin\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WBrand.Common\WBrand.Common.csproj">

@@ -19,6 +19,34 @@ angular
         cfpLoadingBarProvider.includeSpinner = false;
         cfpLoadingBarProvider.latencyThreshold = 1;
     }])
+    .config(['$httpProvider', function ($httpProvider) {
+        $httpProvider.interceptors.push(function ($q, $location, $window) {
+            return {
+                request: function (config) {
+                    return config;
+                },
+                requestError: function (rejection) {
+                    return $q.reject(rejection);
+                },
+                response: function (response) {
+                    if (response.status === 401) {
+                        $location.path('/system-cms');
+                    }
+                    //the same response/modified/or a new one need to be returned.
+                    return response;
+                },
+                responseError: function (rejection) {
+                    if (rejection.status === 401 && rejection.headers('x-accesstokenexpired') === "1") {
+                        $window.location.href = '/login-cms';
+                    }
+                    else if (rejection.status === 401) {
+                        $location.path('/system-cms');
+                    }
+                    return $q.reject(rejection);
+                }
+            };
+        });
+    }])
     .run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {
         $rootScope.$on('$stateChangeSuccess', function () {
             document.body.scrollTop = document.documentElement.scrollTop = 0;

@@ -9,5 +9,7 @@ namespace WBrand.Common.Constants
     public static class SystemConstants
     {
         public const int ExpireTime = 120;
+
+        public const string TokenApp = "TokenApp";
     }
 }
