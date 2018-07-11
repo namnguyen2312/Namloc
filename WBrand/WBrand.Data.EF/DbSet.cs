@@ -5,11 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WBrand.Core.Domain.Entities.Identity;
+using WBrand.Core.Domain.Entities.System;
 
 namespace WBrand.Data.EF
 {
     public sealed partial class WBrandDbContext
     {
+        public DbSet<LogDbContext> LogDbContexts { set; get; }
 
         /// <summary>
         /// Identity table

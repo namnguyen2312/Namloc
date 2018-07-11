@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -8,6 +9,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using WBrand.Common;
+using WBrand.Core.Domain.Entities.System;
 
 namespace WBrand.Data.EF
 {
@@ -156,7 +158,7 @@ namespace WBrand.Data.EF
             _tranContext.Rollback();
             _tranContext.Dispose();
         }
-        public T UpdateProperties(T entity, params Expression<Func<T,object>>[] changedProperties)
+        public T UpdateProperties(T entity, params Expression<Func<T, object>>[] changedProperties)
         {
             if (changedProperties?.Any() == true)
             {
@@ -172,7 +174,7 @@ namespace WBrand.Data.EF
             DbContext.SaveChanges();
             return entity;
         }
-        
+
         public async Task<T> UpdatePropertiesAsync(T entity, params Expression<Func<T, object>>[] changedProperties)
         {
             if (changedProperties?.Any() == true)
@@ -197,6 +199,7 @@ namespace WBrand.Data.EF
                 DbSet.Attach(entity);
                 DbContext.Entry(entity).State = EntityState.Modified;
                 DbContext.SaveChanges();
+                Task.Run(() => this.LoggingDb(entity, EntityState.Modified));
                 return entity;
             }
             catch
@@ -212,6 +215,7 @@ namespace WBrand.Data.EF
                 DbSet.Attach(entity);
                 DbContext.Entry(entity).State = EntityState.Modified;
                 await DbContext.SaveChangesAsync();
+                await this.LoggingDb(entity, EntityState.Modified);
                 return entity;
             }
             catch
@@ -243,6 +247,44 @@ namespace WBrand.Data.EF
             this.DbContext.Dispose();
         }
 
-        
+        private async Task LoggingDb(T entity, EntityState entityState)
+        {
+            try
+            {
+                var dataJsonString = JsonConvert.SerializeObject(entity).ToString();
+                //var dataJsonTracker = JsonConvert.SerializeObject(DbContext.ChangeTracker.Entries().ToList());
+                var changeTracker = DbContext.ChangeTracker.Entries();
+                var dataJsonTracker = new List<ValueTuple<string, EntityState>>();
+                foreach (var item in changeTracker)
+                {
+                    var entityName = item.GetType().FullName;
+                    var state = item.State;
+                    dataJsonTracker.Add(new ValueTuple<string, EntityState>(entityName, state));
+                }
+
+                var newLogDb = new LogDbContext
+                {
+                    Id = SystemUtils.GenaratorSringId,
+                    CreatedDate = SystemUtils.SystemTimeNow,
+                    DataJson = dataJsonString,
+                    Status = entityState,
+                    DataJsonEntityChange = JsonConvert.SerializeObject(dataJsonTracker)
+                };
+                using (var db = new WBrandDbContext())
+                {
+                    db.LogDbContexts.Add(newLogDb);
+                    await db.SaveChangesAsync();
+                }
+                   
+            }
+            catch (Exception ex)
+            {
+
+                
+                throw;
+
+            }
+            
+        }
     }
 }

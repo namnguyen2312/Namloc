@@ -62,6 +62,7 @@
     <Compile Include="Entities\Identity\AppUserGroup.cs" />
     <Compile Include="Entities\Identity\Permission.cs" />
     <Compile Include="Entities\Identity\Status.cs" />
+    <Compile Include="Entities\System\LogDbContext.cs" />
     <Compile Include="Models\User\AppGroupModel.cs" />
     <Compile Include="Models\User\AppRoleModel.cs" />
     <Compile Include="Models\User\AppUserModel.cs" />
