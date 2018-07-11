@@ -1,0 +1,74 @@
+﻿<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <form novalidate role="form" name="frm" class="form-horizontal">
+                    <div class="card-header">
+                        <strong>Thông tin user</strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.fullname.$invalid && !frm.fullname.$pristine }">
+                            <label class="col-md-3 col-form-label" for="text-fullname">Họ tên tài khoản</label>
+                            <div class="col-md-9">
+                                <input required type="text" id="text-fullname" name="fullname" ng-model="account.FullName" ng-minlength="5" maxlength="64" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.username.$invalid && !frm.username.$pristine }">
+                            <label class="col-md-3 col-form-label" for="text-username">Tên tài khoản</label>
+                            <div class="col-md-9">
+                                <input required type="text" id="text-username" name="username" ng-model="account.UserName" ng-minlength="5" maxlength="64" class="form-control" placeholder="Tên tài khoản" ng-readonly="isUpdate">
+                            </div>
+                        </div>
+                        <div ng-if="!isUpdate" class="form-group row" ng-class="{ 'is-invalid' : frm.password.$invalid && !frm.password.$pristine }">
+                            <label class="col-md-3 col-form-label" for="text-password">Mật khẩu</label>
+                            <div class="col-md-9">
+                                <input required type="password" id="text-password" name="password" ng-model="account.Password" ng-minlength="5" maxlength="64" class="form-control">
+                            </div>
+                        </div>
+                        <div ng-if="!isUpdate" class="form-group row" ng-class="{ 'is-invalid' : frm.rePassword.$invalid && !frm.rePassword.$pristine }">
+                            <label class="col-md-3 col-form-label" for="text-rePassword">Nhập lại mật khẩu</label>
+                            <div class="col-md-9">
+                                <input required type="password" id="text-rePassword" name="rePassword" match-password="password" ng-minlength="5" ng-model="account.ConfirmPassword" maxlength="64" class="form-control">
+                                <span ng-message="passwordMatch" ng-show="frm.rePassword.$invalid" class="help-block">Mật khẩu nhập lại không đúng</span>
+                            </div>
+                        </div>
+                        <div class="form-group row" >
+                            <label class="col-md-3 col-form-label" for="text-email">Email</label>
+                            <div class="col-md-9">
+                                <input required type="email" id="text-email" name="email" ng-model="account.Email" maxlength="64" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" ng-click="save()" class="btn btn-sm btn-primary" ng-disabled="frm.$invalid"><i class="fa fa-dot-circle-o"></i> Lưu</button>
+                        <button type="reset" class="btn btn-sm btn-danger" ui-sref="app.users"><i class="fa fa-ban"></i> Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Danh sách nhóm</strong>
+                </div>
+                <form novalidate>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-md-9 col-form-label">
+                                <div class="form-check checkbox" ng-repeat="group in groups">
+                                    <input class="form-check-input" type="checkbox" id="chk-{{group.Id}}" checklist-model="account.Groups" checklist-value="group">
+                                    <label class="form-check-label" for="chk-{{group.Id}}">{{group.Name}}</label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--/.row-->
+    <div class="row">
+
+    </div>
+</div>

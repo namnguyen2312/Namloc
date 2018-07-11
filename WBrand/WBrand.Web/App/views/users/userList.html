@@ -1,5 +1,15 @@
 ﻿<div class="animated fadeIn" ng-controller="userCtrl">
     <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                    <button type="button" ui-sref="app.addUser" class="btn btn-primary">Tạo tài khoản</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
@@ -19,15 +29,15 @@
                         </thead>
                         <tbody>
                             <tr ng-repeat="item in data">
-                                <td><a ui-sref="editAppUser({id:item.Id})">{{item.FullName}}</a></td>
-                                <td><a ui-sref="editAppUser({id:item.Id})">{{item.UserName}}</a></td>
+                                <td><a ui-sref="app.editUser({id:item.Id})">{{item.FullName}}</a></td>
+                                <td><a ui-sref="app.editUser({id:item.Id})">{{item.UserName}}</a></td>
                                 <td>{{item.CreatedDate | date:'dd/MM/yyyy hh:mm:ss'}}</td>
                                 <td>{{item.Email}}</td>
                                 <td style="text-align:center">
                                     <button class="btn btn-sm btn-primary" ng-click="resetPassword(item.Id)"><i class="fa fa-retweet"></i></button>
                                 </td>
                                 <td style="text-align:center">
-                                    <a ui-sref="editAppUser({id:item.Id})" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>
+                                    <a ui-sref="app.editUser({id:item.Id})" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>
                                     <button class="btn btn-sm btn-danger" ng-click="deleteItem(item.Id)"><i class="fa fa-trash-o"></i></button>
                                 </td>
                             </tr>

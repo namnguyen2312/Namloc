@@ -40,7 +40,7 @@ namespace WBrand.Web.Api.Controllers.User
         [Route("allPage")]
         [HttpGet]
         //[Authorize(Roles = nameof(PermissionProvider.ManageGroup))]
-        public HttpResponseMessage allPage(HttpRequestMessage request, int page, int pageSize, string filter = null)
+        public HttpResponseMessage AllPage(HttpRequestMessage request, int page, int pageSize, string filter = null)
         {
             return CreateHttpResponse(request, () =>
             {
@@ -63,7 +63,7 @@ namespace WBrand.Web.Api.Controllers.User
             });
         }
 
-        [Route("All")]
+        [Route("all")]
         [HttpGet]
         //[Authorize(Roles = nameof(PermissionProvider.ManageGroup))]
         public HttpResponseMessage All(HttpRequestMessage request)

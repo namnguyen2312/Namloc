@@ -16,6 +16,96 @@ angular
                     }]
                 }
             })
+            .state('app.addUser', {
+                url: '/addUser',
+                templateUrl: '/app/views/users/user.html',
+                controller: 'addUserCtrl',
+                ncyBreadcrumb: {
+                    label: 'Add user'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/users/addUser.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.editUser', {
+                url: '/editUser/:id',
+                templateUrl: '/app/views/users/user.html',
+                controller: 'editUserCtrl',
+                ncyBreadcrumb: {
+                    label: 'Edit user'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/users/editUser.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.roleGroups', {
+                url: '/roleGroupList',
+                templateUrl: '/app/views/roleGroups/roleGroupList.html',
+                controller: 'roleGroupCtrl',
+                ncyBreadcrumb: {
+                    label: 'Role group'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/roleGroups/roleGroupList.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.addRoleGroup', {
+                url: '/addRoleGroup',
+                templateUrl: '/app/views/roleGroups/roleGroup.html',
+                controller: 'addRoleGroupCtrl',
+                ncyBreadcrumb: {
+                    label: 'Add role group'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/roleGroups/addRoleGroup.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.editRoleGroup', {
+                url: '/editRoleGroup/:id',
+                templateUrl: '/app/views/roleGroups/roleGroup.html',
+                controller: 'editRoleGroupCtrl',
+                ncyBreadcrumb: {
+                    label: 'edit role group'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/roleGroups/editRoleGroup.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.roles', {
+                url: '/roleList',
+                templateUrl: '/app/views/roles/roleList.html',
+                controller: 'roleCtrl',
+                ncyBreadcrumb: {
+                    label: 'Role list'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/roles/roleList.js']
+                        });
+                    }]
+                }
+            })
             .state('app.icons', {
                 url: "/icons",
                 abstract: true,

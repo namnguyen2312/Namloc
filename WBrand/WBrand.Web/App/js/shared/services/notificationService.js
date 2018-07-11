@@ -6,9 +6,9 @@
             "debug": false,
             "positionClass": "toast-top-right",
             "onclick": null,
-            "fadeIn": 800,
+            "fadeIn": 1000,
             "fadeOut": 1000,
-            "timeOut": 800,
+            "timeOut": 100,
             "extendedTimeOut": 2000
         };
 

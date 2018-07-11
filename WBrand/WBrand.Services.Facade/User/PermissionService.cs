@@ -10,13 +10,17 @@ namespace WBrand.Services.Facade.User
 {
     public class PermissionService : IPermissionService
     {
-        public static readonly AppRole ViewPermissionRecord = new AppRole { Name = nameof(Permission.ManagePermission), Description = "Xem quyền" };
+        public static readonly AppRole ViewPermissionRecord = new AppRole { Name = nameof(Permission.ManagePermission), Description = "Quản trị quyền" };
+        public static readonly AppRole ViewUserRecord = new AppRole { Name = nameof(Permission.ManageUser), Description = "Quản trị User" };
+        public static readonly AppRole ViewGroupRecord = new AppRole { Name = nameof(Permission.ManageGroup), Description = "Quản trị nhóm user" };
 
         public IEnumerable<AppRole> GetPermissions()
         {
             return new[]
             {
-                ViewPermissionRecord
+                ViewPermissionRecord,
+                ViewUserRecord,
+                ViewGroupRecord
             };
         }
     }

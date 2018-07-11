@@ -192,7 +192,12 @@
     <Content Include="App\js\controllers.js" />
     <Content Include="App\js\controllers\charts.js" />
     <Content Include="App\js\controllers\main.js" />
+    <Content Include="App\js\controllers\roleGroups\addRoleGroup.js" />
+    <Content Include="App\js\controllers\roleGroups\editRoleGroup.js" />
+    <Content Include="App\js\controllers\roleGroups\roleGroupList.js" />
     <Content Include="App\js\controllers\roles\roleList.js" />
+    <Content Include="App\js\controllers\users\addUser.js" />
+    <Content Include="App\js\controllers\users\editUser.js" />
     <Content Include="App\js\controllers\users\userList.js" />
     <Content Include="App\js\controllers\widgets.js" />
     <Content Include="App\js\routesConfig\routes.js" />
@@ -228,8 +233,11 @@
     <Content Include="App\views\pages\500.html" />
     <Content Include="App\views\pages\login.html" />
     <Content Include="App\views\pages\register.html" />
+    <Content Include="App\views\roleGroups\roleGroup.html" />
+    <Content Include="App\views\roleGroups\roleGroupList.html" />
     <Content Include="App\views\roles\roleList.html" />
     <Content Include="App\views\shared\pagerDirective.html" />
+    <Content Include="App\views\users\user.html" />
     <Content Include="App\views\users\userList.html" />
     <Content Include="App\views\vendors\css\chart.css" />
     <Content Include="App\views\vendors\css\chart.min.css" />
@@ -279,6 +287,10 @@
     <Content Include="Assets\libs\angular-loading-bar\index.js" />
     <Content Include="Assets\libs\angular-loading-bar\src\loading-bar.css" />
     <Content Include="Assets\libs\angular-loading-bar\src\loading-bar.js" />
+    <Content Include="Assets\libs\angular-password\angular-password.js" />
+    <Content Include="Assets\libs\angular-password\angular-password.min.js" />
+    <Content Include="Assets\libs\angular-password\gulpfile.js" />
+    <Content Include="Assets\libs\angular-password\karma.conf.js" />
     <Content Include="Assets\libs\angular-sanitize\angular-sanitize.js" />
     <Content Include="Assets\libs\angular-sanitize\angular-sanitize.min.js" />
     <Content Include="Assets\libs\angular-sanitize\index.js" />
@@ -679,6 +691,8 @@
     <Content Include="Assets\libs\chart.js\test\specs\scale.logarithmic.tests.js" />
     <Content Include="Assets\libs\chart.js\test\specs\scale.radialLinear.tests.js" />
     <Content Include="Assets\libs\chart.js\test\specs\scale.time.tests.js" />
+    <Content Include="Assets\libs\checklist-model\checklist-model.js" />
+    <Content Include="Assets\libs\checklist-model\LICENSE.txt" />
     <Content Include="Assets\libs\flag-icon-css\css\flag-icon.css" />
     <Content Include="Assets\libs\flag-icon-css\css\flag-icon.min.css" />
     <Content Include="Assets\libs\flag-icon-css\flags\1x1\ad.svg" />
@@ -1454,6 +1468,7 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets\libs\checklist-model\test\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -2029,6 +2044,16 @@
     <Content Include="Assets\libs\angular-ui-router\tslint.json" />
     <Content Include="Assets\libs\angular-ui-router\typedoc.json" />
     <Content Include="Assets\libs\angular-ui-router\yarn.lock" />
+    <Content Include="Assets\libs\checklist-model\.bower.json" />
+    <Content Include="Assets\libs\checklist-model\bower.json" />
+    <Content Include="Assets\libs\checklist-model\checklist-model.nuspec" />
+    <Content Include="Assets\libs\checklist-model\package-lock.json" />
+    <Content Include="Assets\libs\checklist-model\readme.md" />
+    <Content Include="Assets\libs\angular-password\.bower.json" />
+    <Content Include="Assets\libs\angular-password\bower.json" />
+    <Content Include="Assets\libs\angular-password\LICENSE" />
+    <Content Include="Assets\libs\angular-password\package.json" />
+    <Content Include="Assets\libs\angular-password\README.md" />
     <None Include="packages.config" />
     <Content Include="Views\Admin\Index.cshtml" />
     <None Include="Properties\PublishProfiles\WebNamLoc.pubxml" />

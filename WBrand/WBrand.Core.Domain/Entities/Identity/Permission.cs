@@ -8,6 +8,10 @@ namespace WBrand.Core.Domain.Entities.Identity
 {
     public enum Permission
     {
-        ManagePermission = 10
+        ManagePermission = 10,
+
+        ManageUser = 20,
+
+        ManageGroup = 30
     }
 }

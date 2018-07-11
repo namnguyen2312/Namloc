@@ -1,34 +1,23 @@
-﻿<div class="animated fadeIn" ng-controller="roleCtrl">
+﻿<div class="animated fadeIn">
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <i class="fa fa-align-justify"></i> Tài khoản
+                    <i class="fa fa-align-justify"></i> Danh sách quyền
                 </div>
                 <div class="card-body">
                     <table class="table table-bordered table-striped table-sm">
                         <thead>
                             <tr>
-                                <th style="width: 20%">Tên người dùng</th>
-                                <th>Tài khoản</th>
-                                <th>Ngày tạo</th>
-                                <th>Email</th>
-                                <th>Đặt lại mật khẩu</th>
-                                <th style="width: 10%">#</th>
+                                <th style="width: 15%">Tên quyền</th>
+                                <th>Mô tả</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="item in data">
-                                <td><a ui-sref="editAppUser({id:item.Id})">{{item.FullName}}</a></td>
-                                <td><a ui-sref="editAppUser({id:item.Id})">{{item.UserName}}</a></td>
-                                <td>{{item.CreatedDate | date:'dd/MM/yyyy hh:mm:ss'}}</td>
-                                <td>{{item.Email}}</td>
-                                <td style="text-align:center">
-                                    <button class="btn btn-sm btn-primary" ng-click="resetPassword(item.Id)"><i class="fa fa-retweet"></i></button>
-                                </td>
-                                <td style="text-align:center">
-                                    <a ui-sref="editAppUser({id:item.Id})" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>
-                                    <button class="btn btn-sm btn-danger" ng-click="deleteItem(item.Id)"><i class="fa fa-trash-o"></i></button>
+                                <td>{{ item.Name }}</td>
+                                <td>
+                                    {{ item.Description }}
                                 </td>
                             </tr>
                         </tbody>
@@ -40,7 +29,4 @@
         <!--/.col-->
     </div>
     <!--/.row-->
-
-
-
 </div>

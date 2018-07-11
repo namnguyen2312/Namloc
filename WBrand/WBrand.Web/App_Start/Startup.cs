@@ -53,6 +53,7 @@ namespace WBrand.Web.App_Start
             builder.Register(c => new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile(new DomainToViewModelMappingProfile());
+                cfg.AddProfile(new ViewModelToDomainMappingProfile());
             })).AsSelf().SingleInstance();
 
             builder.Register(c => c.Resolve<MapperConfiguration>()

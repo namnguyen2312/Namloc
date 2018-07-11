@@ -9,8 +9,19 @@
             <li class="nav-title">
                 Hệ thống
             </li>
-            <li class="nav-item">
-                <a class="nav-link" ui-sref-active="active" ui-sref="app.users"><i class="icon-puzzle"></i> Danh sách user</a>
+            <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.system')}">
+                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.system')}" href="#"><i class="icon-star"></i> Hệ thống</a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.users"><i class="icon-puzzle"></i> Danh sách user</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.roleGroups"><i class="icon-puzzle"></i> Danh sách nhóm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.roles"><i class="icon-puzzle"></i> Danh sách quyền</a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.components')}">
                 <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.components')}" href="#"><i class="icon-puzzle"></i> Components</a>
