@@ -192,6 +192,7 @@
     <Content Include="App\js\controllers.js" />
     <Content Include="App\js\controllers\charts.js" />
     <Content Include="App\js\controllers\main.js" />
+    <Content Include="App\js\controllers\roles\roleList.js" />
     <Content Include="App\js\controllers\users\userList.js" />
     <Content Include="App\js\controllers\widgets.js" />
     <Content Include="App\js\routesConfig\routes.js" />
@@ -227,6 +228,7 @@
     <Content Include="App\views\pages\500.html" />
     <Content Include="App\views\pages\login.html" />
     <Content Include="App\views\pages\register.html" />
+    <Content Include="App\views\roles\roleList.html" />
     <Content Include="App\views\shared\pagerDirective.html" />
     <Content Include="App\views\users\userList.html" />
     <Content Include="App\views\vendors\css\chart.css" />
