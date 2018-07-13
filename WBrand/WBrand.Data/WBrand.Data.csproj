@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IEfRepository.cs" />
+    <Compile Include="Logging\ILogDbContextRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\IAppGroupRepository.cs" />
     <Compile Include="User\IAppRoleGroupRepository.cs" />

@@ -28,6 +28,7 @@ namespace WBrand.Data
         Task<T> UpdateAsync(T entity);
 
         T Update(T entity);
+        int Update(IEnumerable<T> entities);
 
         Task<int> UpdateAsync(IEnumerable<T> entities);
 

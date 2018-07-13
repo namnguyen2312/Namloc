@@ -42,7 +42,7 @@ namespace WBrand.Web.Api.Controllers.User
 
         [Route("allPage")]
         [HttpGet]
-        //[Authorize(Roles = nameof(PermissionProvider.ManageUser))]
+        [Authorize(Roles = nameof(Permission.ManageUser))]
         public HttpResponseMessage GetListPaging(HttpRequestMessage request, int page, int pageSize, string filter = null, bool? isSystemAccount = null)
         {
             return CreateHttpResponse(request, () =>
@@ -73,7 +73,7 @@ namespace WBrand.Web.Api.Controllers.User
 
         [Route("detail/{id}")]
         [HttpGet]
-        //[Authorize(Roles = nameof(PermissionProvider.ManageUser))]
+        [Authorize(Roles = nameof(Permission.ManageUser))]
         public HttpResponseMessage Details(HttpRequestMessage request, string id)
         {
             if (string.IsNullOrEmpty(id))
@@ -97,7 +97,7 @@ namespace WBrand.Web.Api.Controllers.User
 
         [HttpPost]
         [Route("create")]
-        //[Authorize(Roles = nameof(PermissionProvider.ManageUser))]
+        [Authorize(Roles = nameof(Permission.ManageUser))]
         public async Task<HttpResponseMessage> Create(HttpRequestMessage request, AppUserVm appUserVm)
         {
             if (ModelState.IsValid)
@@ -152,7 +152,7 @@ namespace WBrand.Web.Api.Controllers.User
 
         [HttpPut]
         [Route("update")]
-        //[Authorize(Roles = nameof(PermissionProvider.ManageUser))]
+        [Authorize(Roles = nameof(Permission.ManageUser))]
         public async Task<HttpResponseMessage> Update(HttpRequestMessage request, AppUserVm applicationUserViewModel)
         {
             if (ModelState.IsValid)
@@ -219,7 +219,7 @@ namespace WBrand.Web.Api.Controllers.User
 
         [HttpDelete]
         [Route("delete")]
-        //[Authorize(Roles = nameof(PermissionProvider.ManageUser))]
+        [Authorize(Roles = nameof(Permission.ManageUser))]
         public async Task<HttpResponseMessage> Delete(HttpRequestMessage request, string id)
         {
             var appUser = await _userManager.FindByIdAsync(id);

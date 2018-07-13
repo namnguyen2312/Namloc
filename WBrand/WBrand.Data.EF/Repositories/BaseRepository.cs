@@ -43,6 +43,7 @@ namespace WBrand.Data.EF
         {
             entity = DbSet.Remove(entity);
             DbContext.SaveChanges();
+            Task.Run(() => this.LoggingDb(EntityState.Deleted, entity));
             return entity;
         }
 
@@ -52,8 +53,9 @@ namespace WBrand.Data.EF
             {
                 foreach (var entity in entities)
                     DbSet.Remove(entity);
-
-                return DbContext.SaveChanges();
+                var count = DbContext.SaveChanges();
+                Task.Run(() => this.LoggingDb(EntityState.Deleted, entities: entities));
+                return count;
             }
             catch
             {
@@ -67,6 +69,7 @@ namespace WBrand.Data.EF
             {
                 DbSet.Remove(entity);
                 await DbContext.SaveChangesAsync();
+                await this.LoggingDb(EntityState.Deleted, entity));
             }
             catch
             {
@@ -80,8 +83,9 @@ namespace WBrand.Data.EF
             {
                 foreach (var entity in entities)
                     DbSet.Remove(entity);
-
-                return await DbContext.SaveChangesAsync();
+                var count = await DbContext.SaveChangesAsync();
+                await this.LoggingDb(EntityState.Deleted, entities: entities));
+                return count;
             }
             catch
             {
@@ -105,6 +109,7 @@ namespace WBrand.Data.EF
             {
                 DbSet.Add(entity);
                 DbContext.SaveChanges();
+                Task.Run(() => this.LoggingDb(EntityState.Added, entity));
                 return entity;
             }
             catch
@@ -118,7 +123,10 @@ namespace WBrand.Data.EF
             try
             {
                 DbSet.AddRange(entities);
-                return DbContext.SaveChanges();
+                var count = DbContext.SaveChanges();
+                Task.Run(() => this.LoggingDb(EntityState.Added, entities: entities));
+                return count;
+                    
             }
             catch
             {
@@ -132,6 +140,7 @@ namespace WBrand.Data.EF
             {
                 var newEntity = DbSet.Add(entity);
                 await DbContext.SaveChangesAsync();
+                await this.LoggingDb(EntityState.Added, entity);
                 return newEntity;
             }
             catch
@@ -145,7 +154,9 @@ namespace WBrand.Data.EF
             try
             {
                 DbSet.AddRange(entities);
-                return await DbContext.SaveChangesAsync();
+                var count = await DbContext.SaveChangesAsync();
+                await this.LoggingDb(EntityState.Added, entities: entities);
+                return count;
             }
             catch
             {
@@ -172,6 +183,7 @@ namespace WBrand.Data.EF
                 DbContext.Entry(entity).State = EntityState.Modified;
             }
             DbContext.SaveChanges();
+            Task.Run(() => this.LoggingDb(EntityState.Modified, entity));
             return entity;
         }
 
@@ -189,6 +201,7 @@ namespace WBrand.Data.EF
                 DbContext.Entry(entity).State = EntityState.Modified;
             }
             await DbContext.SaveChangesAsync();
+            await this.LoggingDb(EntityState.Modified, entity);
             return entity;
         }
 
@@ -199,7 +212,7 @@ namespace WBrand.Data.EF
                 DbSet.Attach(entity);
                 DbContext.Entry(entity).State = EntityState.Modified;
                 DbContext.SaveChanges();
-                Task.Run(() => this.LoggingDb(entity, EntityState.Modified));
+                Task.Run(() => this.LoggingDb(EntityState.Modified, entity));
                 return entity;
             }
             catch
@@ -215,7 +228,7 @@ namespace WBrand.Data.EF
                 DbSet.Attach(entity);
                 DbContext.Entry(entity).State = EntityState.Modified;
                 await DbContext.SaveChangesAsync();
-                await this.LoggingDb(entity, EntityState.Modified);
+                await this.LoggingDb(EntityState.Modified, entity);
                 return entity;
             }
             catch
@@ -223,7 +236,24 @@ namespace WBrand.Data.EF
                 throw;
             }
         }
-
+        public int Update(IEnumerable<T> entities)
+        {
+            try
+            {
+                foreach (var entity in entities)
+                {
+                    DbSet.Attach(entity);
+                    DbContext.Entry(entity).State = EntityState.Modified;
+                }
+                var result = DbContext.SaveChanges();
+                Task.Run(() => this.LoggingDb(EntityState.Modified, entities: entities));
+                return result;
+            }
+            catch
+            {
+                throw;
+            }
+        }
         public async Task<int> UpdateAsync(IEnumerable<T> entities)
         {
             try
@@ -234,6 +264,7 @@ namespace WBrand.Data.EF
                     DbContext.Entry(entity).State = EntityState.Modified;
                 }
                 var result = await DbContext.SaveChangesAsync();
+                await this.LoggingDb(EntityState.Modified, entities: entities);
                 return result;
             }
             catch
@@ -247,12 +278,16 @@ namespace WBrand.Data.EF
             this.DbContext.Dispose();
         }
 
-        private async Task LoggingDb(T entity, EntityState entityState)
+        private async Task LoggingDb(EntityState entityState, T entity = null, IEnumerable<T> entities = null)
         {
             try
             {
-                var dataJsonString = JsonConvert.SerializeObject(entity).ToString();
-                //var dataJsonTracker = JsonConvert.SerializeObject(DbContext.ChangeTracker.Entries().ToList());
+                var dataJsonString = "";
+                if (entity != null)
+                    dataJsonString = JsonConvert.SerializeObject(entity).ToString();
+                if (entities != null)
+                    dataJsonString = JsonConvert.SerializeObject(entities).ToString();
+
                 var changeTracker = DbContext.ChangeTracker.Entries();
                 var dataJsonTracker = new List<ValueTuple<string, EntityState>>();
                 foreach (var item in changeTracker)
@@ -275,16 +310,18 @@ namespace WBrand.Data.EF
                     db.LogDbContexts.Add(newLogDb);
                     await db.SaveChangesAsync();
                 }
-                   
+
             }
             catch (Exception ex)
             {
 
-                
+
                 throw;
 
             }
-            
+
         }
+
+
     }
 }

@@ -39,7 +39,7 @@ namespace WBrand.Web.Api.Controllers.User
 
         [Route("allPage")]
         [HttpGet]
-        //[Authorize(Roles = nameof(PermissionProvider.ManageGroup))]
+        [Authorize(Roles = nameof(Permission.ManageGroup))]
         public HttpResponseMessage AllPage(HttpRequestMessage request, int page, int pageSize, string filter = null)
         {
             return CreateHttpResponse(request, () =>
@@ -65,7 +65,7 @@ namespace WBrand.Web.Api.Controllers.User
 
         [Route("all")]
         [HttpGet]
-        //[Authorize(Roles = nameof(PermissionProvider.ManageGroup))]
+        [Authorize(Roles = nameof(Permission.ManageGroup))]
         public HttpResponseMessage All(HttpRequestMessage request)
         {
             return CreateHttpResponse(request, () =>
@@ -82,7 +82,7 @@ namespace WBrand.Web.Api.Controllers.User
 
         [Route("detail/{id:int}")]
         [HttpGet]
-        //[Authorize(Roles = nameof(PermissionProvider.ManageGroup))]
+        [Authorize(Roles = nameof(Permission.ManageGroup))]
         public HttpResponseMessage Detail(HttpRequestMessage request, int id)
         {
             if (id == 0)
@@ -102,7 +102,7 @@ namespace WBrand.Web.Api.Controllers.User
 
         [Route("create")]
         [HttpPost]
-        //[Authorize(Roles = nameof(PermissionProvider.ManageGroup))]
+        [Authorize(Roles = nameof(Permission.ManageGroup))]
         public HttpResponseMessage Create(HttpRequestMessage request, AppGroupVm appGroupViewModel)
         {
             if (ModelState.IsValid)
@@ -139,7 +139,7 @@ namespace WBrand.Web.Api.Controllers.User
 
         [HttpPut]
         [Route("update")]
-        //[Authorize(Roles = nameof(PermissionProvider.ManageGroup))]
+        [Authorize(Roles = nameof(Permission.ManageGroup))]
         public async Task<HttpResponseMessage> Update(HttpRequestMessage request, AppGroupVm appGroupViewModel)
         {
             if (ModelState.IsValid)
@@ -189,7 +189,7 @@ namespace WBrand.Web.Api.Controllers.User
 
         [HttpDelete]
         [Route("delete")]
-        //[Authorize(Roles = nameof(PermissionProvider.ManageGroup))]
+        [Authorize(Roles = nameof(Permission.ManageGroup))]
         public HttpResponseMessage Delete(HttpRequestMessage request, int id)
         {
             var appGroup = _appGroupService.Delete(id);
@@ -198,7 +198,7 @@ namespace WBrand.Web.Api.Controllers.User
 
         [Route("deletemulti")]
         [HttpDelete]
-        //[Authorize(Roles = nameof(PermissionProvider.ManageGroup))]
+        [Authorize(Roles = nameof(Permission.ManageGroup))]
         public HttpResponseMessage DeleteMulti(HttpRequestMessage request, string checkedList)
         {
             return CreateHttpResponse(request, () =>

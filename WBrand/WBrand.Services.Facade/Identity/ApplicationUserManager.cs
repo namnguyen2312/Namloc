@@ -35,7 +35,7 @@ namespace WBrand.Services.Facade.Identity
                 CreatedDate = DateTimeOffset.UtcNow
                 
             };
-
+            
             await manager.CreateAsync(user,"123456");
         }
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)

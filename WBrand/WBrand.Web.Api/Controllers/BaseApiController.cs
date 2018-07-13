@@ -10,6 +10,7 @@ using System.Web.Http;
 
 namespace WBrand.Web.Api.Controllers
 {
+    [Authorize]
     public class BaseApiController : ApiController
     {
         protected HttpResponseMessage CreateHttpResponse(HttpRequestMessage requestMessage, Func<HttpResponseMessage> function)

@@ -26,7 +26,7 @@ namespace WBrand.Web.Api.Controllers.User
         }
         [Route("allPage")]
         [HttpGet]
-        //[Authorize(Roles = nameof(Permission.ManagePermission))]
+        [Authorize(Roles = nameof(Permission.ManagePermission))]
         public HttpResponseMessage AllPage(HttpRequestMessage request, int page, int pageSize, string filter = null)
         {
             return CreateHttpResponse(request, () =>
@@ -53,7 +53,7 @@ namespace WBrand.Web.Api.Controllers.User
 
         [Route("all")]
         [HttpGet]
-        //[Authorize(Roles = nameof(Permission.ManagePermission))]
+        [Authorize(Roles = nameof(Permission.ManagePermission))]
         public HttpResponseMessage GetAll(HttpRequestMessage request)
         {
             return CreateHttpResponse(request, () =>

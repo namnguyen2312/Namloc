@@ -26,7 +26,7 @@ function editRoleGroupCtrl($scope, apiService, notificationService, $location, $
     function addSuccessed() {
         notificationService.displaySuccess($scope.group.Name + ' đã được cập nhật thành công.');
 
-        $location.url('appGroups');
+        $location.url('roleGroupList');
     }
     function addFailed(response) {
         notificationService.displayError(response.data.Message);
