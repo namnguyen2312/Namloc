@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WBrand.Core.Domain.Entities.Catalog;
 using WBrand.Core.Domain.Entities.Identity;
 using WBrand.Core.Domain.Entities.System;
 
@@ -11,7 +12,17 @@ namespace WBrand.Data.EF
 {
     public sealed partial class WBrandDbContext
     {
+        /// <summary>
+        /// Catalog
+        /// </summary>
+        public DbSet<Product> Products { set; get; } 
+        public DbSet<ProductAttribute> ProductAttributes { set; get; }
+        public DbSet<ProductCategory> ProductCategories { set; get; }
+        public DbSet<CatalogCategory> CatalogCategories { set; get; }
+        public DbSet<CatalogAttribute> CatalogAttributes { set; get; }
+
         public DbSet<LogDbContext> LogDbContexts { set; get; }
+        
 
         /// <summary>
         /// Identity table

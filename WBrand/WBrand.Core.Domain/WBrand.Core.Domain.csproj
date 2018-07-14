@@ -55,6 +55,11 @@
   <ItemGroup>
     <Compile Include="Entities\AudiEntity.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Catalog\CatalogAttribute.cs" />
+    <Compile Include="Entities\Catalog\CatalogCategory.cs" />
+    <Compile Include="Entities\Catalog\Product.cs" />
+    <Compile Include="Entities\Catalog\ProductAttribute.cs" />
+    <Compile Include="Entities\Catalog\ProductCategory.cs" />
     <Compile Include="Entities\Identity\AppGroup.cs" />
     <Compile Include="Entities\Identity\AppRole.cs" />
     <Compile Include="Entities\Identity\AppRoleGroup.cs" />
@@ -62,6 +67,7 @@
     <Compile Include="Entities\Identity\AppUserGroup.cs" />
     <Compile Include="Entities\Identity\Permission.cs" />
     <Compile Include="Entities\Identity\Status.cs" />
+    <Compile Include="Entities\SeoEntity.cs" />
     <Compile Include="Entities\System\LogDbContext.cs" />
     <Compile Include="Models\User\AppGroupModel.cs" />
     <Compile Include="Models\User\AppRoleModel.cs" />
