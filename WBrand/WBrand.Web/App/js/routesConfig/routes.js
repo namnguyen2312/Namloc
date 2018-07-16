@@ -106,12 +106,20 @@
                     }]
                 }
             })
-            .state('app.category', {
+            .state('app.catalog', {
+                url: "/catalog",
+                abstract: true,
+                template: '<ui-view></ui-view>',
+                ncyBreadcrumb: {
+                    label: 'Sản phẩm'
+                }
+            })
+            .state('app.catalog.category', {
                 url: '/category',
                 templateUrl: '/app/views/catalog/category/categoryList.html',
                 controller: 'categoryCtrl',
                 ncyBreadcrumb: {
-                    label: 'Danh mục sản phẩm'
+                    label: 'Danh mục'
                 },
                 resolve: {
                     loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {

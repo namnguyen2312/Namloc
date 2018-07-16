@@ -13,6 +13,7 @@ using WBrand.Common;
 namespace WBrand.Web.Api.Controllers
 {
     [Authorize]
+    [AllowAnonymous]
     public class BaseApiController : ApiController
     {
         protected HttpResponseMessage CreateHttpResponse(HttpRequestMessage requestMessage, Func<HttpResponseMessage> function)

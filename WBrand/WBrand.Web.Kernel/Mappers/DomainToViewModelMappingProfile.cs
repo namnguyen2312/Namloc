@@ -13,7 +13,7 @@ namespace WBrand.Web.Kernel.Mappers
     {
         public DomainToViewModelMappingProfile()
         {
-            CreateMap<AppUser, AppUserVm>();
+            CreateMap<AppUser, AppUserVm>().MaxDepth(2);
             CreateMap<AppGroup, AppGroupVm>();
             //CreateMap<OrderItemVm, OrderItem>();
             //CreateMap<OrderVm, Order>();
