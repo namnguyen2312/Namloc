@@ -55,6 +55,7 @@
     <Compile Include="DisposableObject.cs" />
     <Compile Include="Exceptions\NameDuplicatedException.cs" />
     <Compile Include="AutoMapper\ObjectExtensions.cs" />
+    <Compile Include="Helper\StringHelper.cs" />
     <Compile Include="Page\PaginationSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SystemUtils.cs" />

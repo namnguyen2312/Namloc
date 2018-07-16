@@ -22,7 +22,7 @@ namespace WBrand.Data.EF.Repositories.User
                         on g.Id equals ug.GroupId
                         where ug.UserId == userId
                         select g;
-            return query;
+            return query.ToList();
         }
 
         public IEnumerable<AppUser> GetListUserByGroupId(int groupId)
@@ -34,7 +34,7 @@ namespace WBrand.Data.EF.Repositories.User
                         on ug.UserId equals u.Id
                         where ug.GroupId == groupId
                         select u;
-            return query;
+            return query.ToList();
         }
     }
 }

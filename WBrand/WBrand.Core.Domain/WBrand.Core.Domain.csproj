@@ -69,6 +69,10 @@
     <Compile Include="Entities\Identity\Status.cs" />
     <Compile Include="Entities\SeoEntity.cs" />
     <Compile Include="Entities\System\LogDbContext.cs" />
+    <Compile Include="Models\Catalog\CatalogAttributeModel.cs" />
+    <Compile Include="Models\Catalog\CatalogCategoryModel.cs" />
+    <Compile Include="Models\Catalog\CreateCatalogAttributeModel.cs" />
+    <Compile Include="Models\Catalog\CreateCatalogCategoryModel.cs" />
     <Compile Include="Models\User\AppGroupModel.cs" />
     <Compile Include="Models\User\AppRoleModel.cs" />
     <Compile Include="Models\User\AppUserModel.cs" />

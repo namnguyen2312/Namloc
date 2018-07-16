@@ -1,4 +1,4 @@
-angular
+﻿angular
     .module('app')
     .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$breadcrumbProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $breadcrumbProvider) {
         $stateProvider
@@ -102,6 +102,21 @@ angular
                     loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                         return $ocLazyLoad.load({
                             files: ['/app/js/controllers/roles/roleList.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.category', {
+                url: '/category',
+                templateUrl: '/app/views/catalog/category/categoryList.html',
+                controller: 'categoryCtrl',
+                ncyBreadcrumb: {
+                    label: 'Danh mục sản phẩm'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/catalog/category/categoryList.js']
                         });
                     }]
                 }

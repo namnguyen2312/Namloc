@@ -56,6 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Catalog\ICatalogAttributeService.cs" />
+    <Compile Include="Catalog\ICatalogCategoryService.cs" />
+    <Compile Include="Catalog\IProductAttributeService.cs" />
+    <Compile Include="Catalog\IProductCategoryService.cs" />
+    <Compile Include="Catalog\IProductService.cs" />
     <Compile Include="IBaseServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\IAppGroupService.cs" />
@@ -64,6 +69,10 @@
     <Compile Include="User\IPermissionService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WBrand.Common\WBrand.Common.csproj">
+      <Project>{0CD436CA-0978-40EB-A9F6-195B39FE4599}</Project>
+      <Name>WBrand.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WBrand.Core.Domain\WBrand.Core.Domain.csproj">
       <Project>{76112844-FAFA-43D8-93EA-E7BCA69C3628}</Project>
       <Name>WBrand.Core.Domain</Name>
@@ -73,5 +82,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

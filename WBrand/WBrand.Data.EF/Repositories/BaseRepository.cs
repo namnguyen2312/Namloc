@@ -69,7 +69,7 @@ namespace WBrand.Data.EF
             {
                 DbSet.Remove(entity);
                 await DbContext.SaveChangesAsync();
-                await this.LoggingDb(EntityState.Deleted, entity));
+                await this.LoggingDb(EntityState.Deleted, entity);
             }
             catch
             {
@@ -84,7 +84,7 @@ namespace WBrand.Data.EF
                 foreach (var entity in entities)
                     DbSet.Remove(entity);
                 var count = await DbContext.SaveChangesAsync();
-                await this.LoggingDb(EntityState.Deleted, entities: entities));
+                await this.LoggingDb(EntityState.Deleted, entities: entities);
                 return count;
             }
             catch

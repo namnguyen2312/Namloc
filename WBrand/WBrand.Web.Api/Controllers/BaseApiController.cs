@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WBrand.Common;
 
 namespace WBrand.Web.Api.Controllers
 {
@@ -47,8 +49,17 @@ namespace WBrand.Web.Api.Controllers
         {
             get
             {
-                return DateTimeOffset.UtcNow;
+                return SystemUtils.SystemTimeNow;
             }
         }
+
+        protected string GetCurrentUserId
+        {
+            get
+            {
+                return User.Identity.GetUserId();
+            }
+        }
+        
     }
 }

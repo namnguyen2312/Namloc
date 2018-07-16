@@ -78,6 +78,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseServices.cs" />
+    <Compile Include="Catalog\CatalogAttributeService.cs" />
+    <Compile Include="Catalog\CatalogCategoryService.cs" />
+    <Compile Include="Catalog\ProductAttributeService.cs" />
+    <Compile Include="Catalog\ProductCategoryService.cs" />
+    <Compile Include="Catalog\ProductService.cs" />
     <Compile Include="Identity\ApplicationRoleManager.cs" />
     <Compile Include="Identity\ApplicationSignInManager.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />

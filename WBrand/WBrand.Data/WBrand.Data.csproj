@@ -40,6 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Catalog\ICatalogAttributeRepository.cs" />
+    <Compile Include="Catalog\ICatalogCategoryRepository.cs" />
+    <Compile Include="Catalog\IProductAttributeRepository.cs" />
+    <Compile Include="Catalog\IProductCategoryRepository.cs" />
+    <Compile Include="Catalog\IProductRepository.cs" />
     <Compile Include="IEfRepository.cs" />
     <Compile Include="Logging\ILogDbContextRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,8 +60,6 @@
       <Name>WBrand.Core.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Catalog\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
