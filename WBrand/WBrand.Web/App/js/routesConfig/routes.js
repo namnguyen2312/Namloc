@@ -144,6 +144,21 @@
                     }]
                 }
             })
+            .state('app.editCategory', {
+                url: '/editCategory/:id',
+                templateUrl: '/app/views/catalog/category/category.html',
+                controller: 'editCategoryCtrl',
+                ncyBreadcrumb: {
+                    label: 'Sửa danh mục'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/catalog/category/editCategory.js']
+                        });
+                    }]
+                }
+            })
             .state('app.icons', {
                 url: "/icons",
                 abstract: true,

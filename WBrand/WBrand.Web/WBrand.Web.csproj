@@ -192,6 +192,7 @@
     <Content Include="App\js\controllers.js" />
     <Content Include="App\js\controllers\catalog\category\addCategory.js" />
     <Content Include="App\js\controllers\catalog\category\categoryList.js" />
+    <Content Include="App\js\controllers\catalog\category\editCategory.js" />
     <Content Include="App\js\controllers\charts.js" />
     <Content Include="App\js\controllers\main.js" />
     <Content Include="App\js\controllers\roleGroups\addRoleGroup.js" />

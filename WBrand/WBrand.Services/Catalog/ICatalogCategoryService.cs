@@ -11,6 +11,7 @@ namespace WBrand.Services.Catalog
 {
     public interface ICatalogCategoryService: IBaseServices<CatalogCategory>
     {
+        Task<CatalogCategoryModel> GetByIdAsync(int id);
         Task<IEnumerable<CatalogCategoryModel>> GetAll();
         Task<IEnumerable<CatalogCategoryModel>> GetAll(bool? isPublish);
         Task<CreateCatalogCategoryModel> InsertAsync(CreateCatalogCategoryModel model);

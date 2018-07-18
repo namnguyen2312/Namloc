@@ -28,9 +28,9 @@ namespace WBrand.Web.Api.Controllers.Catalog
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public async Task<CatalogCategoryModel> Get(int id)
         {
-            return "value";
+            return await _catalogCategoryService.GetByIdAsync(id);
         }
 
         // POST api/<controller>
@@ -40,13 +40,15 @@ namespace WBrand.Web.Api.Controllers.Catalog
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public async Task<CatalogCategoryModel> Put([FromBody]CatalogCategoryModel value)
         {
+            return await _catalogCategoryService.UpdateAsync(value);
         }
 
         // DELETE api/<controller>/5
         public void Delete(int id)
         {
+
         }
     }
 }

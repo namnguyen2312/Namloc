@@ -1,4 +1,5 @@
-﻿using AutoMapper.QueryableExtensions;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -25,6 +26,12 @@ namespace WBrand.Services.Facade.Catalog
             _catalogCategoryRepo = catalogCategoryRepo;
         }
 
+        public async Task<CatalogCategoryModel> GetByIdAsync(int id)
+        {
+            var query = await _catalogCategoryRepo.GetByIdAsync(id);
+
+            return Mapper.Map<CatalogCategoryModel>(query);
+        }
         public async Task<IEnumerable<CatalogCategoryModel>> GetAll()
         {
             try
@@ -43,7 +50,7 @@ namespace WBrand.Services.Facade.Catalog
                 }
                 return model;
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
@@ -52,10 +59,12 @@ namespace WBrand.Services.Facade.Catalog
 
         public async Task<IEnumerable<CatalogCategoryModel>> GetAll(bool? isPublish)
         {
-            var query = await _catalogCategoryRepo.TableNoTracking.Where(x => !x.IsDel).OrderBy(o => o.ParentId).QueryTo<CatalogCategoryModel>().ToListAsync();
+            var query = await _catalogCategoryRepo.TableNoTracking.Where(x => !x.IsDel).OrderBy(o => o.ParentId).ToListAsync();
+            
             if (isPublish != null)
                 query = query.Where(x => x.IsPublish == isPublish.Value).ToList();
-            return query;
+            var queryModel = Mapper.Map<IEnumerable<CatalogCategoryModel>>(query);
+            return queryModel;
         }
 
         public async Task<CreateCatalogCategoryModel> InsertAsync(CreateCatalogCategoryModel model)

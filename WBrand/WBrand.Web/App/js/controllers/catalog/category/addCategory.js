@@ -6,7 +6,6 @@ angular
 addCategoryCtrl.$inject = ['$scope', 'apiService', 'notificationService', '$state'];
 function addCategoryCtrl($scope, apiService, notificationService, $state) {
 
-    $scope.isUpdate = false;
     $scope.data = {
         
     };
