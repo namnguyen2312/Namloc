@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Reflection;
@@ -9,6 +10,7 @@ using Autofac;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
 using AutoMapper;
+using AutoMapper.Configuration;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
@@ -49,20 +51,46 @@ namespace WBrand.Web.App_Start
             builder.RegisterAssemblyTypes(assembliesGpotMapper.ToArray())
                 .Where(t => typeof(Profile).IsAssignableFrom(t) && !t.IsAbstract && t.IsPublic)
                 .As<Profile>();
-
-            builder.Register(c => new MapperConfiguration(cfg =>
+            MapperConfiguration configMapper;
+            builder.Register(c =>
             {
-                cfg.AddProfile(new DomainToViewModelMappingProfile());
-                cfg.AddProfile(new ViewModelToDomainMappingProfile());
-                cfg.AddProfile(new CatalogMappingProfile());
-            })).AsSelf().SingleInstance();
+                var profiles = c.Resolve<IEnumerable<Profile>>();
 
-            builder.Register(c => c.Resolve<MapperConfiguration>()
-                .CreateMapper(c.Resolve))
-                .As<IMapper>()
-                .InstancePerLifetimeScope();
+                configMapper  = new MapperConfiguration(x =>
+                {
+                    // Load in all our AutoMapper profiles that have been registered
+                    foreach (var profile in profiles)
+                    {
+                        x.AddProfile(profile);
+                    }
+                });
+                
+                return configMapper;
+            }
+            )
+            .As<IConfigurationProvider>()
+            //.As<IConfiguration>()
+            .SingleInstance()
+            .AsSelf();
 
+            //builder.Register(tempContext =>
+            //{
+            //    var ctx = tempContext.Resolve<IComponentContext>();
 
+            //    var config = ctx.Resolve<MapperConfiguration>();
+            //    // Create our mapper using our configuration above
+            //    return config.CreateMapper(t => ctx.Resolve(t));
+            //}).As<IMapper>();
+
+            //builder.Register(c => c.Resolve<IConfigurationProvider>()).As<Mapper>().SingleInstance();
+            //builder.Register(c => c.Resolve<MapperConfiguration>()
+            //    .CreateMapper(c.Resolve))
+            //    .As<IMapper>()
+            //    .InstancePerLifetimeScope();
+            //builder.RegisterInstance(typeof(IConfigurationProvider)).SingleInstance();
+            builder.Register(c => c.Resolve<MapperConfiguration>().CreateMapper(c.Resolve)).As<IMapper>().InstancePerLifetimeScope();
+            //builder.RegisterInstance(typeof(IConfigurationProvider)).AsSelf().SingleInstance();
+            //builder.RegisterType<Mapper>().AsSelf().InstancePerLifetimeScope();
             builder.RegisterType<WBrandDbContext>().AsSelf().InstancePerRequest();
 
 
@@ -89,8 +117,11 @@ namespace WBrand.Web.App_Start
                .Where(t => t.Name.EndsWith("Service"))
                .AsImplementedInterfaces().InstancePerRequest();
 
+
+
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+
             System.Web.Http.GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver((IContainer)container); //Set the WebApi DependencyResolver
         }
 
@@ -98,5 +129,6 @@ namespace WBrand.Web.App_Start
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<WBrandDbContext, WBrand.Data.EF.Migrations.Configuration>());
         }
+
     }
 }

@@ -23,7 +23,7 @@ namespace WBrand.Common.AutoMapper
         /// </returns>
         public static IQueryable<TDestination> QueryTo<TDestination>(this IQueryable source, params Expression<Func<TDestination, object>>[] membersToExpand)
         {
-            return source.ProjectTo(Mapper.Configuration, null, membersToExpand);
+            return source.ProjectTo(global::AutoMapper.Mapper.Configuration, null, membersToExpand);
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace WBrand.Common.AutoMapper
         /// </returns>
         public static IQueryable<TDestination> QueryTo<TDestination>(this IQueryable source, IDictionary<string, object> parameters, params string[] membersToExpand)
         {
-            return source.ProjectTo<TDestination>(Mapper.Configuration, parameters, membersToExpand);
+            return source.ProjectTo<TDestination>(global::AutoMapper.Mapper.Configuration, parameters, membersToExpand);
         }
     }
 }

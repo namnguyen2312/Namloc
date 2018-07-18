@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper.QueryableExtensions;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -13,6 +14,7 @@ using WBrand.Data;
 using WBrand.Data.Catalog;
 using WBrand.Services.Catalog;
 
+
 namespace WBrand.Services.Facade.Catalog
 {
     public class CatalogCategoryService : BaseServices<CatalogCategory>, ICatalogCategoryService
@@ -25,19 +27,28 @@ namespace WBrand.Services.Facade.Catalog
 
         public async Task<IEnumerable<CatalogCategoryModel>> GetAll()
         {
-            var query = await _catalogCategoryRepo.TableNoTracking.Where(x => !x.IsDel).OrderBy(o => o.ParentId).QueryTo<CatalogCategoryModel>().ToListAsync();
-
-            foreach (var item in query)
+            try
             {
-                var parentCategory = item.Parent;
+                var query = await _catalogCategoryRepo.TableNoTracking.Where(x => !x.IsDel).OrderBy(o => o.ParentId).ProjectTo<CatalogCategoryModel>().ToListAsync();
 
-                while (parentCategory != null)
+                foreach (var item in query)
                 {
-                    item.Name = $"{parentCategory.Name} >> {item.Name}";
-                    parentCategory = parentCategory.Parent;
+                    var parentCategory = item.Parent;
+
+                    while (parentCategory != null)
+                    {
+                        item.Name = $"{parentCategory.Name} >> {item.Name}";
+                        parentCategory = parentCategory.Parent;
+                    }
                 }
+                return query;
             }
-            return query;
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            
         }
 
         public async Task<IEnumerable<CatalogCategoryModel>> GetAll(bool? isPublish)

@@ -56,7 +56,7 @@ namespace WBrand.Web.Api.Controllers.User
                     TotalPages = (int)Math.Ceiling((decimal)totalRow / pageSize),
                     Items = modelVm
                 };
-
+                
                 response = request.CreateResponse(HttpStatusCode.OK, pagedSet);
 
                 return response;
