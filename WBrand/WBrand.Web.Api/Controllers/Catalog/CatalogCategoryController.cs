@@ -34,8 +34,9 @@ namespace WBrand.Web.Api.Controllers.Catalog
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public async Task<CreateCatalogCategoryModel> Add([FromBody]CreateCatalogCategoryModel value)
         {
+            return await _catalogCategoryService.InsertAsync(value);
         }
 
         // PUT api/<controller>/5

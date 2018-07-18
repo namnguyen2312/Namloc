@@ -129,6 +129,21 @@
                     }]
                 }
             })
+            .state('app.addCategory', {
+                url: '/addCategory',
+                templateUrl: '/app/views/catalog/category/category.html',
+                controller: 'addCategoryCtrl',
+                ncyBreadcrumb: {
+                    label: 'Thêm danh mục'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/catalog/category/addCategory.js']
+                        });
+                    }]
+                }
+            })
             .state('app.icons', {
                 url: "/icons",
                 abstract: true,

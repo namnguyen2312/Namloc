@@ -6,6 +6,7 @@
         'ncy-angular-breadcrumb',
         'angular-loading-bar',
         'ngBootbox',
-        'ngPassword'
+        'ngPassword',
+        'ui.select2'
     ])
 })();

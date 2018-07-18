@@ -36,6 +36,7 @@ namespace WBrand.Web.App_Start
         {
             ConfigAutofac(app);
             ConfigureAuth(app);
+            ConfigAutoMapper();
             UpdateMigration();
         }
 
@@ -66,33 +67,15 @@ namespace WBrand.Web.App_Start
                 });
                 
                 return configMapper;
-            }
-            )
+            })
             .As<IConfigurationProvider>()
             //.As<IConfiguration>()
             .SingleInstance()
             .AsSelf();
 
-            //builder.Register(tempContext =>
-            //{
-            //    var ctx = tempContext.Resolve<IComponentContext>();
-
-            //    var config = ctx.Resolve<MapperConfiguration>();
-            //    // Create our mapper using our configuration above
-            //    return config.CreateMapper(t => ctx.Resolve(t));
-            //}).As<IMapper>();
-
-            //builder.Register(c => c.Resolve<IConfigurationProvider>()).As<Mapper>().SingleInstance();
-            //builder.Register(c => c.Resolve<MapperConfiguration>()
-            //    .CreateMapper(c.Resolve))
-            //    .As<IMapper>()
-            //    .InstancePerLifetimeScope();
-            //builder.RegisterInstance(typeof(IConfigurationProvider)).SingleInstance();
             builder.Register(c => c.Resolve<MapperConfiguration>().CreateMapper(c.Resolve)).As<IMapper>().InstancePerLifetimeScope();
-            //builder.RegisterInstance(typeof(IConfigurationProvider)).AsSelf().SingleInstance();
-            //builder.RegisterType<Mapper>().AsSelf().InstancePerLifetimeScope();
-            builder.RegisterType<WBrandDbContext>().AsSelf().InstancePerRequest();
 
+            builder.RegisterType<WBrandDbContext>().AsSelf().InstancePerRequest();
 
             builder.RegisterType<RoleStore<AppRole>>().As<IRoleStore<AppRole, string>>();
             builder.RegisterType<ApplicationUserStore>().As<IUserStore<AppUser>>().InstancePerRequest();
@@ -117,8 +100,6 @@ namespace WBrand.Web.App_Start
                .Where(t => t.Name.EndsWith("Service"))
                .AsImplementedInterfaces().InstancePerRequest();
 
-
-
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
 
@@ -130,5 +111,15 @@ namespace WBrand.Web.App_Start
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<WBrandDbContext, WBrand.Data.EF.Migrations.Configuration>());
         }
 
+        private void ConfigAutoMapper()
+        {
+
+            Mapper.Initialize(mapperConfigurationExpression =>
+            {
+                mapperConfigurationExpression.AddProfile(new DomainToViewModelMappingProfile());
+                mapperConfigurationExpression.AddProfile(new ViewModelToDomainMappingProfile());
+                mapperConfigurationExpression.AddProfile(new CatalogMappingProfile());
+            });
+        }
     }
 }

@@ -12,10 +12,7 @@ namespace WBrand.Web.Kernel.Mappers
     {
         public CatalogMappingProfile()
         {
-            CreateMap<CatalogCategory, CatalogCategoryModel>()
-                .ForMember(d => d.Id, o => o.MapFrom(s => s.Id))
-                .ForMember(d => d.Name, o => o.MapFrom(s => s.Name)).ReverseMap()
-                ;
+            CreateMap<CatalogCategory, CatalogCategoryModel>().MaxDepth(999);
             CreateMap<CatalogCategoryModel, CatalogCategory>();
             CreateMap<CreateCatalogCategoryModel, CatalogCategory>();
 
