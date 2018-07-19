@@ -10,6 +10,7 @@ namespace WBrand.Services.Catalog
 {
     public interface ICatalogAttributeService : IBaseServices<CatalogAttribute>
     {
+        Task<CatalogAttributeModel> GetByIdAsync(int id);
         Task<IEnumerable<CatalogAttributeModel>> GetAll();
         Task<CreateCatalogAttributeModel> InsertAsync(CreateCatalogAttributeModel model);
         Task<CatalogAttributeModel> UpdateAsync(CatalogAttributeModel model);

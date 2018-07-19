@@ -12,11 +12,10 @@ namespace WBrand.Web.Kernel.Mappers
     {
         public CatalogMappingProfile()
         {
-            CreateMap<CatalogCategory, CatalogCategoryModel>()
-                .ReverseMap();
+            CreateMap<CatalogCategory, CatalogCategoryModel>().ReverseMap();
             CreateMap<CreateCatalogCategoryModel, CatalogCategory>();
 
-            CreateMap<CatalogAttributeModel, CatalogAttribute>();
+            CreateMap<CatalogAttributeModel, CatalogAttribute>().ReverseMap();
             CreateMap<CreateCatalogAttributeModel, CatalogAttribute>();
         }
     }

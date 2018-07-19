@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -23,7 +24,15 @@ namespace WBrand.Services.Facade.Catalog
 
         public async Task<IEnumerable<CatalogAttributeModel>> GetAll()
         {
-            return await _catalogAttributeRepo.TableNoTracking.Where(x => !x.IsDel).QueryTo<CatalogAttributeModel>().ToListAsync();
+            var query = await _catalogAttributeRepo.TableNoTracking.Where(x => !x.IsDel).ToListAsync();
+            var queryModel = Mapper.Map<IEnumerable<CatalogAttributeModel>>(query);
+            return queryModel;
+        }
+
+        public async Task<CatalogAttributeModel> GetByIdAsync(int id)
+        {
+            var entity = await _catalogAttributeRepo.GetByIdAsync(id);
+            return Mapper.Map<CatalogAttributeModel>(entity);
         }
 
         public async Task<CreateCatalogAttributeModel> InsertAsync(CreateCatalogAttributeModel model)
