@@ -4,7 +4,7 @@
             <div class="card">
                 <div class="card-body">
                     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                    <button type="button" ui-sref="app.addCategory" class="btn btn-primary">Thêm mới</button>
+                    <button type="button" ui-sref="app.addAttribute" class="btn btn-primary">Thêm mới</button>
                 </div>
             </div>
         </div>
@@ -13,25 +13,25 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <i class="fa fa-align-justify"></i> Danh mục sản phẩm
+                    <i class="fa fa-align-justify"></i> Thuộc tính sản phẩm
                 </div>
                 <div class="card-body">
                     <table class="table table-bordered table-striped table-sm">
                         <thead>
                             <tr>
                                 <th>Tên</th>
-                                <th style="width: 10%">Hiển thị</th>
+                                <th style="width: 20%">Mô tả</th>
                                 <th style="width: 10%">#</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="item in data">
-                                <td><a ui-sref="app.editCatalogCategory({id:item.Id})">{{item.Name}}</a></td>
+                                <td><a ui-sref="app.editAttribute({id:item.Id})">{{item.Name}}</a></td>
                                 <td style="text-align:center">
-                                    <input class="form-check-input" type="checkbox" checked="{{item.IsPublish}}">
+                                    {{item.Description}}
                                 </td>
                                 <td style="text-align:center">
-                                    <a ui-sref="app.editCategory({id:item.Id})" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>
+                                    <a ui-sref="app.editAttribute({id:item.Id})" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>
                                     <button class="btn btn-sm btn-danger" ng-click="del(item.Id)"><i class="fa fa-trash-o"></i></button>
                                 </td>
                             </tr>

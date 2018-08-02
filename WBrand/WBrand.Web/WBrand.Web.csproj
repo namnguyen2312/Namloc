@@ -190,6 +190,9 @@
   <ItemGroup>
     <Content Include="App\js\app.js" />
     <Content Include="App\js\controllers.js" />
+    <Content Include="App\js\controllers\catalog\attribute\addAttribute.js" />
+    <Content Include="App\js\controllers\catalog\attribute\attributeList.js" />
+    <Content Include="App\js\controllers\catalog\attribute\editAttribute.js" />
     <Content Include="App\js\controllers\catalog\category\addCategory.js" />
     <Content Include="App\js\controllers\catalog\category\categoryList.js" />
     <Content Include="App\js\controllers\catalog\category\editCategory.js" />
@@ -212,6 +215,8 @@
     <Content Include="App\js\shared\services\authenticationService.js" />
     <Content Include="App\js\shared\services\loginService.js" />
     <Content Include="App\js\shared\services\notificationService.js" />
+    <Content Include="App\views\catalog\attribute\attribute.html" />
+    <Content Include="App\views\catalog\attribute\attributeList.html" />
     <Content Include="App\views\catalog\category\category.html" />
     <Content Include="App\views\catalog\category\categoryList.html" />
     <Content Include="App\views\charts.html" />

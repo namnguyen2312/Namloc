@@ -10,14 +10,17 @@ using WBrand.Services.Catalog;
 
 namespace WBrand.Web.Api.Controllers.Catalog
 {
-    public class CatalogAttributeController : ApiController
+    [RoutePrefix("api/catalogAttribute")]
+    public class CatalogAttributeController : BaseApiController
     {
         ICatalogAttributeService _catalogAttributeService;
         public CatalogAttributeController(ICatalogAttributeService catalogAttributeService)
         {
             _catalogAttributeService = catalogAttributeService;
         }
-        // GET api/<controller>
+
+        [HttpGet]
+        [Route("GetAll")]
         public async Task<IEnumerable<CatalogAttributeModel>> GetAll()
         {
             return await _catalogAttributeService.GetAll();
@@ -36,7 +39,7 @@ namespace WBrand.Web.Api.Controllers.Catalog
         }
 
         // PUT api/<controller>/5
-        public async Task<CatalogAttributeModel> Put(int id, [FromBody]CatalogAttributeModel value)
+        public async Task<CatalogAttributeModel> Put([FromBody]CatalogAttributeModel value)
         {
             return await _catalogAttributeService.UpdateAsync(value);
         }

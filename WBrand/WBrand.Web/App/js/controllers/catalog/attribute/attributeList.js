@@ -1,10 +1,10 @@
 ﻿//chart.js
 angular
     .module('app')
-    .controller('categoryCtrl', categoryCtrl)
+    .controller('attributeCtrl', attributeCtrl)
 
-categoryCtrl.$inject = ['$scope', 'apiService', 'notificationService','$ngBootbox'];
-function categoryCtrl($scope, apiService, notificationService, $ngBootbox) {
+attributeCtrl.$inject = ['$scope', 'apiService', 'notificationService', '$ngBootbox'];
+function attributeCtrl($scope, apiService, notificationService, $ngBootbox) {
 
     $scope.data = [];
     $scope.search = search;
@@ -17,7 +17,7 @@ function categoryCtrl($scope, apiService, notificationService, $ngBootbox) {
                     id: item.Id
                 }
             }
-            apiService.del('api/catalogCategory/delete', config, function () {
+            apiService.del('api/catalogAttribute/delete', config, function () {
                 notificationService.displaySuccess('Xóa thành công');
                 search();
             }, function () {
@@ -27,7 +27,7 @@ function categoryCtrl($scope, apiService, notificationService, $ngBootbox) {
     }
 
     function search() {
-        apiService.get('/api/catalogCategory/getAll', null, function (result) {
+        apiService.get('/api/catalogAttribute/getAll', null, function (result) {
             $scope.data = result.data;
         }, function () {
             console.log('load failed data');

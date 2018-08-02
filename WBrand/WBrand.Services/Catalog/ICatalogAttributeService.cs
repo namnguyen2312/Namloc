@@ -14,5 +14,6 @@ namespace WBrand.Services.Catalog
         Task<IEnumerable<CatalogAttributeModel>> GetAll();
         Task<CreateCatalogAttributeModel> InsertAsync(CreateCatalogAttributeModel model);
         Task<CatalogAttributeModel> UpdateAsync(CatalogAttributeModel model);
+        void DeleteById(int id);
     }
 }

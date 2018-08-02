@@ -159,6 +159,21 @@
                     }]
                 }
             })
+            .state('app.catalog.attribute', {
+                url: '/attribute',
+                templateUrl: '/app/views/catalog/attribute/attributeList.html',
+                controller: 'attributeCtrl',
+                ncyBreadcrumb: {
+                    label: 'Thuộc tính sản phẩm'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/catalog/attribute/attributeList.js']
+                        });
+                    }]
+                }
+            })
             .state('app.icons', {
                 url: "/icons",
                 abstract: true,

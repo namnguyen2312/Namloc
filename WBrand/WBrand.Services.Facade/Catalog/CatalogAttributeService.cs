@@ -22,6 +22,20 @@ namespace WBrand.Services.Facade.Catalog
             _catalogAttributeRepo = catalogAttributeRepo;
         }
 
+        public void DeleteById(int id)
+        {
+            try
+            {
+                var entity = _catalogAttributeRepo.GetById(id);
+                entity.IsDel = true;
+                _catalogAttributeRepo.Update(entity);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public async Task<IEnumerable<CatalogAttributeModel>> GetAll()
         {
             var query = await _catalogAttributeRepo.TableNoTracking.Where(x => !x.IsDel).ToListAsync();

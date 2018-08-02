@@ -46,9 +46,10 @@ namespace WBrand.Web.Api.Controllers.Catalog
         }
 
         // DELETE api/<controller>/5
+        [HttpDelete]
         public void Delete(int id)
         {
-
+            _catalogCategoryService.DeleteById(id);
         }
     }
 }

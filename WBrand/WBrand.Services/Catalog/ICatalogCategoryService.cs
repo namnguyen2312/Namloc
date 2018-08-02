@@ -16,5 +16,7 @@ namespace WBrand.Services.Catalog
         Task<IEnumerable<CatalogCategoryModel>> GetAll(bool? isPublish);
         Task<CreateCatalogCategoryModel> InsertAsync(CreateCatalogCategoryModel model);
         Task<CatalogCategoryModel> UpdateAsync(CatalogCategoryModel model);
+
+        void DeleteById(int id);
     }
 }

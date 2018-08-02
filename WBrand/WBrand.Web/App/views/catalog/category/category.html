@@ -35,8 +35,16 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">Danh mục cha</label>
                             <div class="col-md-9">
-                                <select ui-select2 ng-model="data.ParentId" class="form-control"  ng-options="option.Id as option.Name for option in categories">
-                                </select>
+                                <select ui-select2 ng-model="data.ParentId" class="form-control" ng-options="option.Id as option.Name for option in categories"></select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label">Hiển thị</label>
+                            <div class="col-md-9">
+                                <div class="form-check checkbox">
+                                    <input class="form-check-input" type="checkbox" ng-model="data.IsPublish">
+                                </div>
+
                             </div>
                         </div>
                     </div>

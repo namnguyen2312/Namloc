@@ -1,0 +1,32 @@
+﻿<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <form novalidate role="form" name="frm" class="form-horizontal">
+                    <div class="card-header">
+                        <strong>Thông tin nhóm</strong>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.name.$invalid && !frm.name.$pristine }">
+                            <label class="col-md-3 col-form-label" for="text-input">Tên thuộc tính</label>
+                            <div class="col-md-9">
+                                <input required type="text" id="text-name" name="name" ng-model="data.Name" maxlength="128" class="form-control" placeholder="Tên thuộc tính">
+                            </div>
+                        </div>
+                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.Description.$invalid && !frm.Description.$pristine }">
+                            <label class="col-md-3 col-form-label" for="text-Description">Mô tả</label>
+                            <div class="col-md-9">
+                                <input type="text" id="text-Description" name="Description" ng-model="data.Description" maxlength="128" class="form-control" placeholder="Nhập mô tả">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" ng-click="save()" class="btn btn-sm btn-primary" ng-disabled="frm.$invalid"><i class="fa fa-dot-circle-o"></i> Lưu</button>
+                        <button type="reset" class="btn btn-sm btn-danger" ui-sref="app.catalog.attribute"><i class="fa fa-ban"></i> Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

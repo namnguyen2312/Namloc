@@ -104,5 +104,19 @@ namespace WBrand.Services.Facade.Catalog
             }
             
         }
+
+        public void DeleteById(int id)
+        {
+            try
+            {
+                var entity = _catalogCategoryRepo.GetById(id);
+                entity.IsDel = true;
+                _catalogCategoryRepo.Update(entity);
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }
