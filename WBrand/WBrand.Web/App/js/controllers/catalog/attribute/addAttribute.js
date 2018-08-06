@@ -1,10 +1,10 @@
 ﻿//chart.js
 angular
     .module('app')
-    .controller('addCategoryCtrl', addCategoryCtrl)
+    .controller('addAttributeCtrl', addAttributeCtrl)
 
-addCategoryCtrl.$inject = ['$scope', 'apiService', 'notificationService', '$state'];
-function addCategoryCtrl($scope, apiService, notificationService, $state) {
+addAttributeCtrl.$inject = ['$scope', 'apiService', 'notificationService', '$state'];
+function addAttributeCtrl($scope, apiService, notificationService, $state) {
 
     $scope.data = {
 

@@ -174,6 +174,21 @@
                     }]
                 }
             })
+            .state('app.catalogAddAttribute', {
+                url: '/catalogAddAttribute',
+                templateUrl: '/app/views/catalog/attribute/attribute.html',
+                controller: 'addAttributeCtrl',
+                ncyBreadcrumb: {
+                    label: 'Thêm thuộc tính mới'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/catalog/attribute/addAttribute.js']
+                        });
+                    }]
+                }
+            })
             .state('app.icons', {
                 url: "/icons",
                 abstract: true,

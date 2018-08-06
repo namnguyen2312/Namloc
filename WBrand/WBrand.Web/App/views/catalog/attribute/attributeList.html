@@ -4,7 +4,7 @@
             <div class="card">
                 <div class="card-body">
                     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                    <button type="button" ui-sref="app.addAttribute" class="btn btn-primary">Thêm mới</button>
+                    <button type="button" ui-sref="app.catalogAddAttribute" class="btn btn-primary">Thêm mới</button>
                 </div>
             </div>
         </div>
@@ -27,10 +27,10 @@
                         <tbody>
                             <tr ng-repeat="item in data">
                                 <td><a ui-sref="app.editAttribute({id:item.Id})">{{item.Name}}</a></td>
-                                <td style="text-align:center">
+                                <td style="text-align:left">
                                     {{item.Description}}
                                 </td>
-                                <td style="text-align:center">
+                                <td style="text-align:left">
                                     <a ui-sref="app.editAttribute({id:item.Id})" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>
                                     <button class="btn btn-sm btn-danger" ng-click="del(item.Id)"><i class="fa fa-trash-o"></i></button>
                                 </td>
