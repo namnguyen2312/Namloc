@@ -17,6 +17,9 @@ namespace WBrand.Web.Kernel.Mappers
 
             CreateMap<CatalogAttributeModel, CatalogAttribute>().ReverseMap();
             CreateMap<CreateCatalogAttributeModel, CatalogAttribute>();
+
+            CreateMap<Product, ProductModel>().ReverseMap();
+            CreateMap<CreateProductModel, Product>();
         }
     }
 }

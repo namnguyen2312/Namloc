@@ -144,6 +144,7 @@
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\Catalog\CatalogAttributeController.cs" />
     <Compile Include="Controllers\Catalog\CatalogCategoryController.cs" />
+    <Compile Include="Controllers\Catalog\ProductController.cs" />
     <Compile Include="Controllers\User\AppGroupController.cs" />
     <Compile Include="Controllers\User\AppRoleController.cs" />
     <Compile Include="Controllers\User\AppUserController.cs" />

@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WBrand.Core.Domain.Entities.Catalog
+namespace WBrand.Core.Domain.Models.Catalog
 {
-    public class Product:SeoEntity<long>
+    public class ProductModel
     {
-        [MaxLength(128)]
+        public long Id { set; get; }
         public string Name { set; get; }
         public decimal Price { set; get; }
         public decimal Cost { set; get; }
@@ -27,6 +27,5 @@ namespace WBrand.Core.Domain.Entities.Catalog
         public bool IsDel { set; get; }
         public bool IsNew { set; get; }
         public bool IsPublish { set; get; }
-        public DateTimeOffset PublishDate { set; get; }
     }
 }

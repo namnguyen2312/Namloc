@@ -7,7 +7,8 @@ using WBrand.Core.Domain.Entities.Catalog;
 
 namespace WBrand.Services.Catalog
 {
-    public interface IProductService:IBaseServices<Product>
+    public interface IProductService : IBaseServices<Product>
     {
+
     }
 }
