@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WBrand.Core.Domain.Models.Catalog
 {
-    public class ProductModel
+    public class ProductModel : SeoModel
     {
         public long Id { set; get; }
         public string Name { set; get; }
@@ -27,5 +27,7 @@ namespace WBrand.Core.Domain.Models.Catalog
         public bool IsDel { set; get; }
         public bool IsNew { set; get; }
         public bool IsPublish { set; get; }
+
+        public IEnumerable<ProductCategoryModel> ProductCategories { set; get; }
     }
 }

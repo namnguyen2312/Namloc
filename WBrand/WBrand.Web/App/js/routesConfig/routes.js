@@ -189,6 +189,51 @@
                     }]
                 }
             })
+            .state('app.catalogEditAttribute', {
+                url: '/catalogEditAttribute',
+                templateUrl: '/app/views/catalog/attribute/attribute.html',
+                controller: 'editAttributeCtrl',
+                ncyBreadcrumb: {
+                    label: 'Sửa thuộc tính'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/catalog/attribute/editAttribute.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.catalog.product', {
+                url: '/product',
+                templateUrl: '/app/views/catalog/product/productList.html',
+                controller: 'productCtrl',
+                ncyBreadcrumb: {
+                    label: 'Sản phẩm'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/catalog/product/productList.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.addProduct', {
+                url: '/addProduct',
+                templateUrl: '/app/views/catalog/product/product.html',
+                controller: 'addProductCtrl',
+                ncyBreadcrumb: {
+                    label: 'Thêm sản phẩm mới'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/catalog/product/addProduct.js']
+                        });
+                    }]
+                }
+            })
             .state('app.icons', {
                 url: "/icons",
                 abstract: true,

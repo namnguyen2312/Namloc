@@ -36,8 +36,8 @@ namespace WBrand.Services.Facade.Catalog
         {
             try
             {
-                var queryModel = await _catalogCategoryRepo.TableNoTracking.Where(x => !x.IsDel).OrderBy(o => o.ParentId).ToListAsync();
-                var model = AutoMapper.Mapper.Map<IEnumerable<CatalogCategoryModel>>(queryModel);
+                var query =  _catalogCategoryRepo.TableNoTracking.Where(x => !x.IsDel).Include(x=>x.Parent).OrderBy(o => o.ParentId).ToListAsync();
+                var model = AutoMapper.Mapper.Map<IEnumerable<CatalogCategoryModel>>(query);
                 foreach (var item in model)
                 {
                     var parentCategory = item.Parent;

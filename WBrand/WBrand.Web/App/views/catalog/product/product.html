@@ -1,0 +1,136 @@
+﻿<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12 mb-4">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" data-target="#info" role="tab" aria-controls="info">Thông tin sản phẩm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" data-target="#category" role="tab" aria-controls="category">Danh mục</a>
+                </li>
+            </ul>
+            <form novalidate role="form" name="frm" class="form-horizontal">
+                <div class="tab-content">
+
+                    <div class="tab-pane active" id="info" role="tabpanel">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <div class="form-group row" ng-class="{ 'is-invalid' : frm.name.$invalid && !frm.name.$pristine }">
+                                        <label class="col-md-3 col-form-label" for="text-input">Tên sản phẩm</label>
+                                        <div class="col-md-9">
+                                            <input required type="text" id="text-name" name="name" ng-model="data.Name" maxlength="128" class="form-control" placeholder="Tên nhóm">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" ng-class="{ 'is-invalid' : frm.sku.$invalid && !frm.sku.$pristine }">
+                                        <label class="col-md-3 col-form-label" for="text-input">Mã SKU</label>
+                                        <div class="col-md-9">
+                                            <input required type="text" id="text-sku" name="sku" ng-model="data.Name" maxlength="128" class="form-control" placeholder="Tên nhóm">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" ng-class="{ 'is-invalid' : frm.ShortContent.$invalid && !frm.ShortContent.$pristine }">
+                                        <label class="col-md-3 col-form-label" for="text-input">Mô tả ngắn</label>
+                                        <div class="col-md-9">
+                                            <input type="text" id="text-ShortContent" name="ShortContent" ng-model="data.ShortContent" maxlength="128" class="form-control" placeholder="Nhập mô tả ngắn">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label" for="text-input">Ảnh đại diện</label>
+                                        <div class="col-md-9">
+                                            <ul class="list-inline">
+                                                <li><img src="{{data.Image}}" width="100" /></li>
+                                            </ul>
+                                            <button class="btn btn-success" type="button" ng-click="chooseImage()">Chọn ảnh...</button>
+                                            <input type="hidden" class="form-control" name="Image" ng-model="data.Image">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label" for="text-input">Ảnh sản phẩm</label>
+                                        <div class="col-md-9">
+                                            <ul class="list-inline">
+                                                <li ng-repeat="img in moreImages"><img ng-src="{{img}}" width="100" /></li>
+                                            </ul>
+                                            <button class="btn btn-default" type="button" ng-click="chooseMoreImage(1)">Chọn ảnh</button>
+                                            <button class="btn btn-danger" type="button" ng-click="deleteMoreImage(1)">Xóa ảnh</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label" for="text-input">Ảnh kỹ thuật</label>
+                                        <div class="col-md-9">
+                                            <ul class="list-inline">
+                                                <li ng-repeat="img in moreImagesTechnical"><img ng-src="{{img}}" width="100" /></li>
+                                            </ul>
+                                            <button class="btn btn-default" type="button" ng-click="chooseMoreImage(2)">Chọn ảnh</button>
+                                            <button class="btn btn-danger" type="button" ng-click="deleteMoreImage(2)">Xóa ảnh</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" ng-class="{ 'is-invalid' : frm.MetaTitle.$invalid && !frm.MetaTitle.$pristine }">
+                                        <label class="col-md-3 col-form-label" for="text-input">Meta title</label>
+                                        <div class="col-md-9">
+                                            <input type="text" id="text-MetaTitle" name="MetaTitle" ng-model="data.MetaTitle" maxlength="128" class="form-control" placeholder="Nhập title">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" ng-class="{ 'is-invalid' : frm.MetaDescription.$invalid && !frm.MetaDescription.$pristine }">
+                                        <label class="col-md-3 col-form-label" for="text-input">Meta Description</label>
+                                        <div class="col-md-9">
+                                            <input type="text" id="text-MetaDescription" name="MetaDescription" ng-model="data.MetaDescription" maxlength="128" class="form-control" placeholder="Nhập description">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" ng-class="{ 'is-invalid' : frm.MetaKeyword.$invalid && !frm.MetaKeyword.$pristine }">
+                                        <label class="col-md-3 col-form-label" for="text-input">Meta Keyword</label>
+                                        <div class="col-md-9">
+                                            <input type="text" id="text-MetaKeyword" name="MetaKeyword" ng-model="data.MetaKeyword" maxlength="128" class="form-control" placeholder="Nhập keyword">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label">Hiển thị</label>
+                                        <div class="col-md-9">
+                                            <div class="form-check checkbox">
+                                                <input class="form-check-input" type="checkbox" ng-model="data.IsPublish">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="button" ng-click="save()" class="btn btn-sm btn-primary" ng-disabled="frm.$invalid"><i class="fa fa-dot-circle-o"></i> Lưu</button>
+                                    <button type="reset" class="btn btn-sm btn-danger" ui-sref="app.catalog.category"><i class="fa fa-ban"></i> Hủy</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="category" role="tabpanel">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <table class="table table-bordered table-striped table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:10%">#</th>
+                                                <th>Danh mục</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="item in data">
+                                                <td><input type="checkbox" ng-checked="data.CategoryIds.indexOf(item.Id) > -1" ng-click="toggleCategories(item.Id)" /></td>
+                                                <td>{{item.Name}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>

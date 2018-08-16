@@ -1,0 +1,79 @@
+﻿<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <button type="button" ui-sref="app.addProduct" class="btn btn-primary">Tạo sản phẩm</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <input type="text" id="input2-group2" name="input2-group2" class="form-control" ng-model="filter" placeholder="từ khóa">
+                                <span class="input-group-append">
+                                    <button type="button" class="btn btn-primary">Tìm</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <select ui-select2 ng-model="item.categoryId" class="form-control">
+                                    <option value="">Chọn danh mục</option>
+                                    <option ng-repeat="option in categories" value="{{option.Id}}">{{option.Name}}</option>
+                                </select>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-align-justify"></i> Sản phẩm
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th style="width:10%">Hình ảnh</th>
+                                <th>Sản phẩm</th>
+                                <th>Ngày tạo</th>
+                                <th>Hiển thị</th>
+                                <th style="width: 10%">#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in data">
+                                <td><img ng-src="item.Image" /></td>
+                                <td><a ui-sref="app.editProduct({id:item.Id})">{{item.Name}}</a></td>
+
+                                <td>{{item.CreatedDate | date:'dd/MM/yyyy hh:mm:ss'}}</td>
+                                <td style="text-align:center">
+                                    <input class="form-check-input" type="checkbox" readonly checked="{{item.IsPublish}}">
+                                </td>
+                                <td style="text-align:center">
+                                    <a ui-sref="app.editProduct({id:item.Id})" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>
+                                    <button class="btn btn-sm btn-danger" ng-click="deleteItem(item.Id)"><i class="fa fa-trash-o"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="search(page)"></pager-directive>
+                </div>
+            </div>
+        </div>
+        <!--/.col-->
+    </div>
+    <!--/.row-->
+
+
+
+</div>

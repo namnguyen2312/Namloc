@@ -11,5 +11,7 @@ namespace WBrand.Core.Domain.Models.Catalog
         public ProductModel Product { set; get; }
 
         public List<ProductCategoryModel> ProductCategories { set; get; }
+
+        public List<int> CategoryIds { set; get; }
     }
 }

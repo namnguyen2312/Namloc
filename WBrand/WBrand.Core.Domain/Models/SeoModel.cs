@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WBrand.Core.Domain.Models
 {
-    public class SeoModel
+    public class SeoModel : AudiModel
     {
         [MaxLength(256)]
         public string MetaTitle { set; get; }

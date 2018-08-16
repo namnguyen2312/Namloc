@@ -7,6 +7,7 @@
         'angular-loading-bar',
         'ngBootbox',
         'ngPassword',
+        'ngCkeditor',
         'ui.select2'
     ])
 })();
