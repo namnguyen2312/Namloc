@@ -49,6 +49,7 @@ namespace WBrand.Web.Controllers
             {
                 return RedirectToAction("login-cms");
             }
+            Session["IsAuthorized"] = true;
             return View("Index");
         }
 
@@ -66,7 +67,7 @@ namespace WBrand.Web.Controllers
                     if (user.UserType == 0)
                     {
                         await this.GetToken(model);
-                        Session["IsAuthorized"] = true;
+                        
                         return RedirectToAction("system", "Admin");
                     }
                     else

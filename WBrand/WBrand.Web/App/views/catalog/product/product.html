@@ -20,13 +20,13 @@
                                     <div class="form-group row" ng-class="{ 'is-invalid' : frm.name.$invalid && !frm.name.$pristine }">
                                         <label class="col-md-3 col-form-label" for="text-input">Tên sản phẩm</label>
                                         <div class="col-md-9">
-                                            <input required type="text" id="text-name" name="name" ng-model="data.Name" maxlength="128" class="form-control" placeholder="Tên nhóm">
+                                            <input required type="text" id="text-name" name="name" ng-model="data.Name" maxlength="128" class="form-control" placeholder="Tên sản phẩm">
                                         </div>
                                     </div>
                                     <div class="form-group row" ng-class="{ 'is-invalid' : frm.sku.$invalid && !frm.sku.$pristine }">
                                         <label class="col-md-3 col-form-label" for="text-input">Mã SKU</label>
                                         <div class="col-md-9">
-                                            <input required type="text" id="text-sku" name="sku" ng-model="data.Name" maxlength="128" class="form-control" placeholder="Tên nhóm">
+                                            <input required type="text" id="text-sku" name="sku" ng-model="data.SKU" maxlength="128" class="form-control" placeholder="Mã sku">
                                         </div>
                                     </div>
                                     <div class="form-group row" ng-class="{ 'is-invalid' : frm.ShortContent.$invalid && !frm.ShortContent.$pristine }">
@@ -36,7 +36,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="text-input">Ảnh đại diện</label>
+                                        <label class="col-md-3 col-form-label" for="text-input">Ảnh sản phẩm đại diện</label>
                                         <div class="col-md-9">
                                             <ul class="list-inline">
                                                 <li><img src="{{data.Image}}" width="100" /></li>
@@ -48,9 +48,9 @@
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="text-input">Ảnh sản phẩm</label>
                                         <div class="col-md-9">
-                                            <ul class="list-inline">
-                                                <li ng-repeat="img in moreImages"><img ng-src="{{img}}" width="100" /></li>
-                                            </ul>
+                                            <div class="card-body">
+                                                <img ng-repeat="img in moreImages" ng-src="{{img}}" width="100" />
+                                            </div>
                                             <button class="btn btn-default" type="button" ng-click="chooseMoreImage(1)">Chọn ảnh</button>
                                             <button class="btn btn-danger" type="button" ng-click="deleteMoreImage(1)">Xóa ảnh</button>
                                         </div>
@@ -58,9 +58,9 @@
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="text-input">Ảnh kỹ thuật</label>
                                         <div class="col-md-9">
-                                            <ul class="list-inline">
-                                                <li ng-repeat="img in moreImagesTechnical"><img ng-src="{{img}}" width="100" /></li>
-                                            </ul>
+                                            <div class="card-body">
+                                                <img ng-repeat="img in moreImagesTechnical" ng-src="{{img}}" width="100" />
+                                            </div>
                                             <button class="btn btn-default" type="button" ng-click="chooseMoreImage(2)">Chọn ảnh</button>
                                             <button class="btn btn-danger" type="button" ng-click="deleteMoreImage(2)">Xóa ảnh</button>
                                         </div>
@@ -95,7 +95,7 @@
                                 </div>
                                 <div class="card-footer">
                                     <button type="button" ng-click="save()" class="btn btn-sm btn-primary" ng-disabled="frm.$invalid"><i class="fa fa-dot-circle-o"></i> Lưu</button>
-                                    <button type="reset" class="btn btn-sm btn-danger" ui-sref="app.catalog.category"><i class="fa fa-ban"></i> Hủy</button>
+                                    <button type="reset" class="btn btn-sm btn-danger" ui-sref="app.catalog.product"><i class="fa fa-ban"></i> Hủy</button>
                                 </div>
 
                             </div>
@@ -115,19 +115,19 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr ng-repeat="item in data">
+                                            <tr ng-repeat="item in categories">
                                                 <td><input type="checkbox" ng-checked="data.CategoryIds.indexOf(item.Id) > -1" ng-click="toggleCategories(item.Id)" /></td>
                                                 <td>{{item.Name}}</td>
                                             </tr>
                                         </tbody>
                                     </table>
 
+                                </div>
                             </div>
                         </div>
+
+
                     </div>
-
-
-                </div>
             </form>
 
         </div>

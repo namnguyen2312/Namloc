@@ -23,7 +23,7 @@ namespace WBrand.Web.Api.Controllers.Catalog
         [Route("GetAll")]
         public PaginationSet<ProductModel> GetAll(int page, int pageSize, string filter = "", int categoryId = 0)
         {
-            return _productService.GetAll(page + 1, pageSize, filter);
+            return _productService.GetAll(page + 1, pageSize, filter, categoryId);
         }
 
         public ProductModel Get(long id)
@@ -38,8 +38,12 @@ namespace WBrand.Web.Api.Controllers.Catalog
         }
 
         // PUT api/<controller>/5
+        [HttpPut]
+        [Route("Put")]
         public UpdateProductModel Put([FromBody]UpdateProductModel value)
         {
+            //var test = value;
+            
             return _productService.Update(value);
         }
 

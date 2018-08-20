@@ -200,6 +200,7 @@
     <Content Include="App\js\controllers\catalog\category\categoryList.js" />
     <Content Include="App\js\controllers\catalog\category\editCategory.js" />
     <Content Include="App\js\controllers\catalog\product\addProduct.js" />
+    <Content Include="App\js\controllers\catalog\product\editProduct.js" />
     <Content Include="App\js\controllers\catalog\product\productList.js" />
     <Content Include="App\js\controllers\charts.js" />
     <Content Include="App\js\controllers\main.js" />

@@ -12,6 +12,7 @@ using WBrand.Data;
 using WBrand.Data.Catalog;
 using WBrand.Services.Catalog;
 using AutoMapper.QueryableExtensions;
+using WBrand.Common.Helper;
 
 namespace WBrand.Services.Facade.Catalog
 {
@@ -33,14 +34,19 @@ namespace WBrand.Services.Facade.Catalog
             _productRepo.Update(entity);
         }
 
-        public PaginationSet<ProductModel> GetAll(int pageIndex, int pageSize, string filter = "")
+        public PaginationSet<ProductModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0)
         {
             var query = _productRepo.TableNoTracking.Where(x => !x.IsDel);
 
             if (!string.IsNullOrWhiteSpace(filter))
                 query = query.Where(x => x.Name.Contains(filter));
+            if (categoryId != 0)
+                query = from q in query
+                        join c in _productCategoryRepo.TableNoTracking.Where(x => x.CategoryId == categoryId)
+                        on q.Id equals c.ProductId
+                        select q;
 
-            var result = query.ToPagedList(pageIndex, pageSize);
+            var result = query.OrderBy(x => x.Name).ToPagedList(pageIndex, pageSize);
 
             return new PaginationSet<ProductModel>
             {
@@ -66,8 +72,7 @@ namespace WBrand.Services.Facade.Catalog
             try
             {
                 var newProduct = Mapper.Map<Product>(model.Product);
-
-
+                newProduct.CreatedDate = CoreHelper.SystemTimeNow;
                 _productRepo.BeginTran();
                 _productRepo.Insert(newProduct);
                 if (model.CategoryIds.Count > 0)
@@ -93,14 +98,14 @@ namespace WBrand.Services.Facade.Catalog
             try
             {
                 var updateProduct = Mapper.Map<Product>(model.Product);
-
+                updateProduct.UpdatedDate = CoreHelper.SystemTimeNow;
                 _productRepo.BeginTran();
                 _productRepo.Update(updateProduct);
 
                 var entityProductCat = _productCategoryRepo.Table.Where(x => x.ProductId == model.Product.Id).ToList();
 
                 _productCategoryRepo.Delete(entityProductCat);
-                if (model.CategoryIds.Count > 0)
+                if (model.CategoryIds != null && model.CategoryIds.Count > 0)
                 {
                     var newProductCat = CreateListCat(model.CategoryIds, updateProduct.Id);
                     _productCategoryRepo.Insert(newProductCat);
@@ -112,7 +117,7 @@ namespace WBrand.Services.Facade.Catalog
             }
             catch
             {
-                _productRepo.RollbackTran();
+                //_productRepo.RollbackTran();
                 throw;
             }
         }

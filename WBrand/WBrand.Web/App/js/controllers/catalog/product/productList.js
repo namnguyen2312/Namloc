@@ -20,7 +20,7 @@ function productCtrl($scope, apiService, notificationService, $ngBootbox) {
                 params: {
                     id: item.Id
                 }
-            }
+            };
             apiService.del('api/product/delete', config, function () {
                 notificationService.displaySuccess('Xóa thành công');
                 search();

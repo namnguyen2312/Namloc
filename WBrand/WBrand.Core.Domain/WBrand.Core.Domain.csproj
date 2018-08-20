@@ -89,6 +89,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\WBrand.Common\WBrand.Common.csproj">
+      <Project>{0CD436CA-0978-40EB-A9F6-195B39FE4599}</Project>
+      <Name>WBrand.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

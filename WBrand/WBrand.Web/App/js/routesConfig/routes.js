@@ -209,7 +209,7 @@
                 templateUrl: '/app/views/catalog/product/productList.html',
                 controller: 'productCtrl',
                 ncyBreadcrumb: {
-                    label: 'Sản phẩm'
+                    label: 'Danh sách sản phẩm'
                 },
                 resolve: {
                     loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -230,6 +230,21 @@
                     loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                         return $ocLazyLoad.load({
                             files: ['/app/js/controllers/catalog/product/addProduct.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.editProduct', {
+                url: '/editProduct/:id',
+                templateUrl: '/app/views/catalog/product/product.html',
+                controller: 'editProductCtrl',
+                ncyBreadcrumb: {
+                    label: 'Sửa sản phẩm'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/catalog/product/editProduct.js']
                         });
                     }]
                 }

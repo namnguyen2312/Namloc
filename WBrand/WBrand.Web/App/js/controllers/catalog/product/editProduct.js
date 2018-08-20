@@ -1,10 +1,10 @@
 ﻿//chart.js
 angular
     .module('app')
-    .controller('addProductCtrl', addProductCtrl)
+    .controller('editProductCtrl', editProductCtrl)
 
-addProductCtrl.$inject = ['$scope', 'apiService', 'notificationService', '$state'];
-function addProductCtrl($scope, apiService, notificationService, $state) {
+editProductCtrl.$inject = ['$scope', 'apiService', 'notificationService', '$state', '$stateParams'];
+function editProductCtrl($scope, apiService, notificationService, $state, $stateParams) {
 
     $scope.data = {
         CategoryIds: []
@@ -27,14 +27,29 @@ function addProductCtrl($scope, apiService, notificationService, $state) {
 
         product.Product.Images = JSON.stringify($scope.moreImages);
         product.Product.ImagesTechnical = JSON.stringify($scope.moreImagesTechnical);
-        apiService.post('api/product/Add', product,
+        apiService.put('api/product/put', product,
             function (result) {
-                notificationService.displaySuccess($scope.data.Name + ' đã được thêm mới.');
+                notificationService.displaySuccess('Đã cập nhật');
                 $state.go('app.catalog.product');
             }, function (error) {
                 $("input").prop('disabled', false);
                 notificationService.displayError(error.data.Message);
             });
+    }
+
+    function loadDetail() {
+        apiService.get('api/product/' + $stateParams.id, null, function (result) {
+            $scope.data = result.data;
+            if ($scope.data.Images != null && $scope.data.Images != "") {
+                $scope.moreImages = JSON.parse($scope.data.Images);
+            }
+            if ($scope.data.ImagesTechnical != null && $scope.data.ImagesTechnical != "") {
+                $scope.moreImagesTechnical = JSON.parse($scope.data.ImagesTechnical);
+            }
+            $scope.data.CategoryIds = result.data.ProductCategories;
+        }, function (error) {
+            notificationService.displayError(error.data);
+        });
     }
 
     function chooseImage(item) {
@@ -85,7 +100,7 @@ function addProductCtrl($scope, apiService, notificationService, $state) {
                     $scope.moreImagesTechnical.splice($scope.moreImagesTechnical.length - 1, 1);
                 }
         }
-        
+
     }
 
     function loadCategories() {
@@ -150,5 +165,6 @@ function addProductCtrl($scope, apiService, notificationService, $state) {
     }
 
     loadCategories();
+    loadDetail();
 }
 

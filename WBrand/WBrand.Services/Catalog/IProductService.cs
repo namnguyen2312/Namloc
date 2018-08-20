@@ -17,7 +17,7 @@ namespace WBrand.Services.Catalog
 
         UpdateProductModel Update(UpdateProductModel model);
 
-        PaginationSet<ProductModel> GetAll(int pageIndex, int pageSize, string filter = "");
+        PaginationSet<ProductModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0);
 
         void DeleteById(long id);
     }
