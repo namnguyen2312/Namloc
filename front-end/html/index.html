@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Main Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="../images/icon/favicon.png" type="image/x-icon">
+
+    <!-- Web Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=vietnamese" rel="stylesheet">
+
+     <!-- Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/Swiper-4.0.6/dist/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../libs/accordion-menu/css/style.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../libs/jquery.mmenu/jquery.mmenu.css"/>
+
+    <!-- Template CSS-->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file://-->
+    <!--if lt IE 9
+    script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+    script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+
+    -->
+    <script type="text/javascript" src="../libs/Swiper-4.0.6/dist/js/swiper.min.js"></script>
+    <script type="text/javascript" src="../libs/jssor.slider/js/jssor.slider.min.js" ></script>
+    <script type="text/javascript">
+        jssor_1_slider_init = function() {
+
+            var jssor_1_SlideshowTransitions = [
+              {$Duration:1200,$Opacity:2}
+            ];
+
+            var jssor_1_options = {
+              $AutoPlay: 1,
+              $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions,
+                $TransitionsOrder: 1
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*#region responsive code begin*/
+
+            var MAX_WIDTH = 3000;
+
+            function ScaleSlider() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+
+                if (containerWidth) {
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+
+            ScaleSlider();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        };
+    </script>
+  </head>
+  <body class="home main-home">
+    <!-- <div id="timing">asdasd</div> -->
+    <div id="preloaderKDZ"></div>
+    <div class="gtrip-site">
+      <header class="header header-style-1">
+        <div class="top-bar">
+          <div class="container">
+            <div class="row">
+              <div class="top-sidebar top-bar-left col-md-8">
+                <aside id="text-11" class="widget widget_text">
+                  <div class="textwidget">
+                    <i class="fa fa-envelope" aria-hidden="true"></i> info@globalopentrip.com <i style="margin-left: 15px" class="fa fa-phone" aria-hidden="true"></i> +(84) 985-011-402
+                  </div>
+                </aside>
+              </div>
+              <div class="top-sidebar top-bar-right col-md-4">
+                <aside id="text-6" class="widget widget_text">
+                  <div class="textwidget"><a href="">Vn</a> | <a href="">
+                  En</a></div>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header-top header-top-style-1">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="header-logo">
+                  <h1><a href="index.html"><img src="../images/icon/Logo.png" alt="logo"/></a></h1>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="search clearfix">
+                  <input type="text" name="search" placeholder="tìm sản phẩm" id="">
+                  <button type="submit" class="searchButton"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </div>
+                <div class="location">
+                  <ul>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i><span>Hotline: (+84) 28 66709888</span></li>
+                    <li><i class="fa fa-envelope" aria-hidden="true"></i><span>Email: sales@namlocalu.com</span></li>
+                  </ul>
+                  <div class="add1"><i class="fa fa-map-marker" aria-hidden="true"></i><span>15/9 B-C Trương Thị Như, Ấp 4, Xuân Thới Sơn, Huyện Hóc Môn</span></div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <img src="../images/iso.png" alt="">
+              </div>
+              <!-- <div class="col-md-6">
+                <div class="main-nav-wrapper">
+                    <nav id="primary-menu" class="main-nav pull-left">
+                      <ul class="nav">
+                        <li class="menu-item"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="active menu-item"><a href="tour.html">Tour</a>
+                        </li>
+                        <li class="menu-item"><a href="blog.html">Blog</a>
+                        </li>
+                        <li class="menu-item"><a href="visa.html">Dịch Vụ Visa</a>
+                        </li>
+                        <li class="menu-item"><a href="contact.html">Liên Hệ</a>
+                        </li>
+                      </ul>
+                    </nav>
+                    <div class="pull-right">
+                    <div class="icon-search-menu">
+                      <i class="wicon fa fa-search"></i>
+                      <div id="searchBox" class="hide-search">
+                        <input id="search-ajax" placeholder="Search" type="search"/>
+                        <button><i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
+                    <div class="shopping-cart-icon">
+                      <div class="widget_shopping_cart_content">
+                        <div class="widget_shopping_cart_icon"><i class="wicon fa fa-shopping-bag"></i><span class="total">0</span></div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="header-bottom">
+          <div class="container">
+
+            <div class="main-nav-wrapper">
+              <div class="header-left">
+                <nav id="primary-menu" class="main-nav">
+                  <ul class="nav">
+                    <li class="active menu-item menu-home"><a href="#">Home</a>
+                    </li>
+                    <li class="mega-menu menu-item"><a href="#">Giới Thiệu</a>
+                    </li>
+                    <li class="menu-item menu-blog"><a href="#">Tin Tức</a>
+                      <ul class="sub-menu">
+                        <li><a href="#">Tin Tức</a></li>
+                        <li><a href="#">Tin Tức</a></li>
+                        <li><a href="#">Tin Tức</a></li>
+                      </ul>
+                    </li>
+                    <li class="menu-item menu-project"><a href="project-4-columns-portrait.html">Project</a>
+                    </li>
+                    <li class="menu-item menu-shop"><a href="#">Sản Phẩm</a>
+                    </li>
+                    <li class="menu-item menu-blog"><a href="#">Năng Lực</a>
+                      <ul class="sub-menu">
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="book-service.html">Book Service</a></li>
+                        <li><a href="page-404.html">404 Page</a></li>
+                      </ul>
+                    </li>
+                    <li class="menu-item menu-shop"><a href="#">Liên Hệ</a>
+                    </li>
+                  </ul>
+                </nav>
+                <!-- .header-main-nav-->
+              </div>
+            </div>
+          </div>
+        </div>
+       <div class="mobile-menu">
+          <div class="col-3 text-left"><a id="primary-menu" href="#"><i class="fa fa-bars"></i></a></div>
+          <div class="col-3 text-center">
+            <div class="logo">
+              <h1><a href="index.html"><img src="../images/icon/mobile-logo.png" alt="logo"/></a></h1>
+            </div>
+          </div>
+          <div class="col-3 text-right">
+            <div class="header-right">
+              <div class="search-button-wrapper header-customize-item style-default">
+                <div class="icon-search-menu">
+                  <i class="wicon1 fa fa-search"></i>
+                  <div id="searchBox1" class="hide-search" >
+                    <input id="search-ajax" placeholder="Search" type="search"/>
+                    <button><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav id="my-menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tour.html">Tour</a>
+              <ul>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="">Dich Vu</a></li>
+                <li><a href="visa.html">Visa</a></li>
+              </ul>
+            </li>
+            <li><a href="contact.html">Lien He</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="example-wrapper">
+        <div class="div-box">
+    <style>
+        /* jssor slider loading skin spin css */
+        .jssorl-009-spin img {
+            animation-name: jssorl-009-spin;
+            animation-duration: 1.6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes jssorl-009-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .jssorb051 .i {position:absolute;cursor:pointer;}
+        .jssorb051 .i .b {fill:#fff;fill-opacity:0.5;}
+        .jssorb051 .i:hover .b {fill-opacity:.7;}
+        .jssorb051 .iav .b {fill-opacity: 1;}
+        .jssorb051 .i.idn {opacity:.3;}
+
+        .jssora051 {display:block;position:absolute;cursor:pointer;}
+        .jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+        .jssora051:hover {opacity:.8;}
+        .jssora051.jssora051dn {opacity:.5;}
+        .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+    </style>
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="../libs/jssor.slider/svg/loading/static-svg/spin.svg" />
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;">
+            <div>
+                <img data-u="image" src="../images/test/001.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="../images/test/002.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="../images/test/003.jpg" />
+            </div>
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+            <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                </svg>
+            </div>
+        </div>
+        <!-- Arrow Navigator -->
+        <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+            <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+            </svg>
+        </div>
+        <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+            <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+            </svg>
+        </div>
+    </div>
+    <script type="text/javascript">jssor_1_slider_init();</script>
+        </div>
+
+        <div class="div-box mb20">
+          <div class="product-list">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4 mb20">
+                  <div class="product-content">
+                    <h5><a href="">Lorem ipsum dolor sit amet</a></h5>
+                    <img src="../images/product-1.png" alt="product 1">
+                  </div>
+                </div>
+                <div class="col-md-4 mb20">
+                  <div class="product-content">
+                    <h5><a href="">Lorem ipsum dolor sit amet</a></h5>
+                    <img src="../images/product-1.png" alt="product 1">
+                  </div>
+                </div>
+                <div class="col-md-4 mb20">
+                  <div class="product-content">
+                    <h5><a href="">Lorem ipsum dolor sit amet</a></h5>
+                    <img src="../images/product-1.png" alt="product 1">
+                  </div>
+                </div>
+                <div class="col-md-4 mb20">
+                  <div class="product-content">
+                    <h5><a href="">Lorem ipsum dolor sit amet</a></h5>
+                    <img src="../images/product-1.png" alt="product 1">
+                  </div>
+                </div>
+                <div class="col-md-4 mb20">
+                  <div class="product-content">
+                    <h5><a href="">Lorem ipsum dolor sit amet</a></h5>
+                    <img src="../images/product-1.png" alt="product 1">
+                  </div>
+                </div>
+                <div class="col-md-4 mb20">
+                  <div class="product-content">
+                    <h5><a href="">Lorem ipsum dolor sit amet</a></h5>
+                    <img src="../images/product-1.png" alt="product 1">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="div-box mb">
+          <div class="services">
+            <div class="container">
+              <div class="h-title">
+                <h2 class="title-style1 mb45">Dịch vụ Namloc</h2>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="services-content mt20">
+                    <img src="../images/oval-3.png" alt="">
+                    <h3>Thiết kế</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="services-content mt20">
+                    <img src="../images/group-7.png" alt="">
+                    <h3>Sản Xuất Tổng Thể</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="services-content mt20">
+                    <img src="../images/group-8.png" alt="">
+                    <h3>Sơn tỉnh điện</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="div-box mb">
+          <div class="hot-news">
+            <div class="container">
+              <div class="h-title">
+                <h2 class="title-style1 mb45">Tin Tức</h2>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="border-sd clearfix mt20">
+                    <div class="news-img"><img class="img-responsive" src="../images/news-1.png" alt=""></div>
+                    <div class="news-content">
+                      <h4>img-responsive</h4>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                      <a class="readmore" href="#">đọc thêm</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="border-sd clearfix mt20">
+                    <div class="news-img"><img class="img-responsive" src="../images/news-3.png" alt=""></div>
+                    <div class="news-content">
+                      <h4>img-responsive Lorem ipsum dolor</h4>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                      <a class="readmore" href="#">đọc thêm</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="border-sd clearfix mt20">
+                    <div class="news-img"><img class="img-responsive" src="../images/news-3.png" alt=""></div>
+                    <div class="news-content">
+                      <h4>img-responsive</h4>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                      <a class="readmore" href="#">đọc thêm</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="border-sd clearfix mt20">
+                    <div class="news-img">
+                      <img class="img-responsive" src="../images/news-2.png" alt="">
+                    </div>
+                    <div class="news-content">
+                      <h4>img-responsive</h4>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                      <a class="readmore" href="#">đọc thêm</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="div-box mb">
+          <div class="videos">
+            <div class="container">
+              <div class="h-title">
+                <h2 class="title-style1 mb45">Video Namloc</h2>
+              </div>
+              <div class="row">
+                <div class="col-md-8 col-sm-12">
+                  <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LnDUYZHDQAg"></iframe>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                  <div class="video-list">
+                    <ul>
+                      <li><a href="#"><i class="fa fa-play" aria-hidden="true"></i>vietbuild saigon 2018 cung Namloc</a></li>
+                      <li><a href="#"><i class="fa fa-play" aria-hidden="true"></i>cau tao nhom dinh hinh cua so</a></li>
+                      <li><a href="#"><i class="fa fa-play" aria-hidden="true"></i>them dinh dinh chu V</a></li>
+                      <li><a href="#"><i class="fa fa-play" aria-hidden="true"></i>quy trinh san xuat nhom hinh cua namloc</a></li>
+                      <li><a href="#"><i class="fa fa-play" aria-hidden="true"></i>them dinh dinh chu V</a></li>
+                      <li><a href="#"><i class="fa fa-play" aria-hidden="true"></i>them dinh dinh chu V</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="div-box">
+          <div class="partner">
+            <div class="swiper-container service-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="../images/logo-1.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="../images/logo-2.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="../images/logo-3.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="../images/logo-4.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="../images/logo-5.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="../images/logo-6.png" alt="">
+                </div>
+              </div>
+              <!-- Add Arrows -->
+              <!-- <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="div-box">
+          <footer id="footer-wrapper-style2">
+            <div class="footer-top">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <ul class="pp">
+                      <li><a href="#" class="pandp">Chính sách & quy định chung</a></li>
+                      <li><a href="#" class="pandp active">Chính sách mua hàng & thanh toán</a></li>
+                      <li><a href="#" class="pandp">Chính sách vận chuyển</a></li>
+                      <li><a href="#" class="pandp">Chính sách đổi trả</a></li>
+                      <li><a href="#" class="pandp">Chính sách bảo hành</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-md-12">
+                      <h3>CÔNG TY TNHH DV NAM LỘC</h3>
+                  </div>
+                  <div class="col-md-6 col-sm-6 mt40-1">
+                    <div>
+                      <h4>Trụ sở chính hồ chí minh</h4>
+                      <div class="icon-info">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <p>15/9 B-C Trương Thị Như, Ấp 4, Xuân Thới Sơn, Huyện Hóc Môn</p>
+                      </div>
+                      <div class="icon-info">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <p>Điện thoại: (+84) 28 66709888</p>
+                      </div>
+                      <div class="icon-info">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <p>Email: sales@namlocalu.com</p>
+                      </div>
+                      <div class="icon-info">
+                        <i class="fa fa-mobile" aria-hidden="true"></i>
+                        <p>Hotline: (+84) 28 66709888</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 mt40-1">
+                    <div>
+                      <h4>Nhà Máy Sản Xuất</h4>
+                      <div class="icon-info">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <p>15/9 B-C Trương Thị Như, Ấp 4, Xuân Thới Sơn, Huyện Hóc Môn</p>
+                      </div>
+                      <div class="icon-info">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <p>Điện thoại: (+84) 28 66709888</p>
+                      </div>
+                      <div class="icon-info">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <p>Email: sales@namlocalu.com</p>
+                      </div>
+                      <div class="icon-info">
+                        <i class="fa fa-mobile" aria-hidden="true"></i>
+                        <p>Hotline: (+84) 28 66709888</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="nl-ref col-md-12">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <h5>let's connect:</h5>
+                          <ul id="social-footer">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                          </ul>
+                        </div>
+                        <div class="col-md-4">
+                          <h5>Tải ứng dụng mua hàng:</h5>
+                          <ul class="app-footer">
+                            <li><a href="#"><img src="../images/icon/app-store-buttons-android.png" alt=""></a></li>
+                            <li><a href="#"><img src="../images/icon/appstore-icon.png" alt=""></a></li>
+                          </ul>
+                        </div>
+                        <div class="col-md-4">
+                          <img src="../images/icon/dadangky.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              <div class="container">
+                <p class="copyright">Namloc © 2017 Copyright, All Right Reserved 2017 Designed by <span class="company-trademark">Namloc</span></p>
+              </div>
+            </div>
+          </footer>
+        </div>
+
+      </div>
+    </div>
+    <!-- .mv-site-->
+    <div><a class="skype" href="skype:hophamthuytien87?chat"></a></div>
+    <div class="popup-wrapper">
+    </div>
+    <!-- .popup-wrapper-->
+    <div class="click-back-top-body">
+      <button type="button" class="sn-btn sn-btn-style-17 sn-back-to-top fixed-right-bottom"><i class="btn-icon fa fa-angle-up"></i></button>
+    </div>
+
+    <!-- Vendor jQuery-->
+    <script type="text/javascript" src="../libs/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../libs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../libs/jquery/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../libs/jquery.mmenu/jquery.mmenu.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+  </body>
+</html>
