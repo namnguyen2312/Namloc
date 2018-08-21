@@ -46,7 +46,7 @@ function editProductCtrl($scope, apiService, notificationService, $state, $state
             if ($scope.data.ImagesTechnical != null && $scope.data.ImagesTechnical != "") {
                 $scope.moreImagesTechnical = JSON.parse($scope.data.ImagesTechnical);
             }
-            $scope.data.CategoryIds = result.data.ProductCategories;
+            $scope.data.CategoryIds = result.data.CategoryIds;
         }, function (error) {
             notificationService.displayError(error.data);
         });
