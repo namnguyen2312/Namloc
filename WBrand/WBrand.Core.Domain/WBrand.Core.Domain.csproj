@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Entities\AudiEntity.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Blog\BlogPost.cs" />
     <Compile Include="Entities\Catalog\CatalogAttribute.cs" />
     <Compile Include="Entities\Catalog\CatalogCategory.cs" />
     <Compile Include="Entities\Catalog\Product.cs" />
