@@ -34,50 +34,6 @@
 
     -->
     <script type="text/javascript" src="../libs/Swiper-4.0.6/dist/js/swiper.min.js"></script>
-    <script type="text/javascript" src="../libs/jssor.slider/js/jssor.slider.min.js" ></script>
-    <script>
-      function  jssor_slider_init(containerId) {
-      var jssor_1_options = {
-        // $AutoPlay: 1,
-        $ArrowNavigatorOptions: {
-          $Class: $JssorArrowNavigator$
-        },
-        $ThumbnailNavigatorOptions: {
-          $Class: $JssorThumbnailNavigator$,
-          $SpacingX: 5,
-          $SpacingY: 5
-        }
-      };
-
-      var jssor_1_slider = new $JssorSlider$(containerId, jssor_1_options);
-
-      /*#region responsive code begin*/
-
-      var MAX_WIDTH = 1300;
-
-      function ScaleSlider() {
-          var containerElement = jssor_1_slider.$Elmt.parentNode;
-          var containerWidth = containerElement.clientWidth;
-
-          if (containerWidth) {
-
-              var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
-
-              jssor_1_slider.$ScaleWidth(expectedWidth);
-          }
-          else {
-              window.setTimeout(ScaleSlider, 30);
-          }
-      }
-
-      ScaleSlider();
-
-      $Jssor$.$AddEvent(window, "load", ScaleSlider);
-      $Jssor$.$AddEvent(window, "resize", ScaleSlider);
-      $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
-      /*#endregion responsive code end*/
-  };
-</script>
   </head>
   <body class="home main-home">
     <div id="preloaderKDZ"></div>
@@ -236,249 +192,95 @@
         </nav>
       </header>
       <div id="example-wrapper">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="desc-scrum">
-                <p>Trang chu </p>
-                <p>Nhom dinh hinh </p>
-                <p>Nhom dinh hinh IT40x40R1 </p>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div class="div-box mb">
           <div class="tour-wrapper">
             <div class="container">
+              <div class="story-title">
+                <h3 class="mt">Lịch Sử Công Ty</h3>
+                <p class="leader">Lorem ipsum dolor sit amet, tellus sit, convallis wisi id magna faucibus lobortis mattis, tempus quisque bibendususpendis se. Habitasse facilisi id ligula ut commodo ac erat sed blandit mauris, consequat cras.</p>
+              </div>
               <div class="row">
                 <div class="col-md-12 col-sm-12">
-                  <div class="productdt-wrap">
-                    <div class="productdt-content">
-                      <div class="col-md-5">
-                        <div id="jssor3" class="product-imgs">
-                          <!-- Loading Screen -->
-                          <div data-u="loading" class="js-spin jssorl-009-spin">
-                              <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="../svg/loading/static-svg/spin.svg" />
-                          </div>
-                          <div data-u="slides" class="imgs-detail">
-                              <div>
-                                  <img data-u="image" src="../images/002.jpg" />
-                                  <img data-u="thumb" src="../images/thumb-002.jpg" />
-                              </div>
-                              <div>
-                                  <img data-u="image" src="../images/003.jpg" />
-                                  <img data-u="thumb" src="../images/thumb-003.jpg" />
-                              </div>
-                              <div>
-                                  <img data-u="image" src="../images/004.jpg" />
-                                  <img data-u="thumb" src="../images/thumb-004.jpg" />
-                              </div>
-                          </div>
-                          <!-- Thumbnail Navigator -->
-                          <div data-u="thumbnavigator" class="thumbnails jssort101" " data-autocenter="1" data-scale-bottom="0.75">
-                              <div data-u="slides">
-                                  <div data-u="prototype" class="p thumbnails-dt">
-                                      <div data-u="thumbnailtemplate" class="t"></div>
-                                  </div>
-                              </div>
-                          </div>
-                          <!-- Arrow Navigator -->
-                          <div data-u="arrowleft" class="jssora106" style="width:55px;height:55px;top:162px;left:30px;" data-scale="0.75">
-                              <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                                  <circle class="c" cx="8000" cy="8000" r="6260.9"></circle>
-                                  <polyline class="a" points="7930.4,5495.7 5426.1,8000 7930.4,10504.3 "></polyline>
-                                  <line class="a" x1="10573.9" y1="8000" x2="5426.1" y2="8000"></line>
-                              </svg>
-                          </div>
-                          <div data-u="arrowright" class="jssora106" style="width:55px;height:55px;top:162px;right:30px;" data-scale="0.75">
-                              <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                                  <circle class="c" cx="8000" cy="8000" r="6260.9"></circle>
-                                  <polyline class="a" points="8069.6,5495.7 10573.9,8000 8069.6,10504.3 "></polyline>
-                                  <line class="a" x1="5426.1" y1="8000" x2="10573.9" y2="8000"></line>
-                              </svg>
-                          </div>
-                          <script>jssor_slider_init(jssor3);</script>
-                      </div>
-                      </div>
-                      <div class="col-md-7">
-                        <div class="single-product">
-                          <div class="prt-header">
-                            <h2>Nhôm định hình IT40x40R1</h2>
-                            <div>Thương hiệu: <span class="brand">nhat ban</span>SKU: <span class="sku">0334434534</span></div>
-                            <ul class="product-social">
-                              <li><a href="#"><img class="img-responsive" src="../images/icon/facebook.png" alt=""></a></li>
-                              <li><a href="#"><img class="img-responsive" src="../images/icon/twitter.png" alt=""></a></li>
-                              <li><a href="#"><img class="img-responsive" src="../images/icon/youtube.png" alt=""></a></li>
-                              <li><a href="#"><img class="img-responsive" src="../images/icon/google.png" alt=""></a></li>
-                            </ul>
-                          </div>
-                          <div class="pr-content">
-                            <span style="color:blue">Lý do lựa chọn thanh nhôm định hình Namloc</span></br>
-                              - Chất lượng nhôm định hình luôn đạt tiêu chuẩn quốc tế</br>
-                              - Đa dạng mẫu mã và kích thước</br>
-                              - Giá nhôm định hình cạnh tranh</br>
-                              - Tính chất nhôm luôn sáng bóng, chịu lực tốt, chổng gỉ sét, chịu tác động môi trường xung quanh</br>
-                              - Phù hợp với các công trình xây dựng, các ứng dụng công nghiệp
-                          </div>
-                          <div class="pr-button">
-                            <div><button class="hotline-bt">Liên Hệ: 0909753988</button></div>
-                            <div class="readline"><span>hoac gửi mail để nhận báo giá</span></div>
-                            <div class="sendmail-bt"><input type="text" placeholder="@email.com"><button type="submit" class="searchButton">gui</button></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                  <div class="container1">
+                    <div id="timeline">
+                      <div class="timeline-item">
+                        <div class="timeline-icon">
+                          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                           width="15px" height="15px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
+                        </svg>
 
-        <div class="div-box mb">
-          <div class="tour-wrapper">
-            <div class="container">
-              <div class="h-title">
-                <h2 class="title-style1 mb45">Chi tiet ky thuat</h2>
-              </div>
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <div class="specific-wrap">
-                    <div class="specific-content">
-                      <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
-                          <!-- Loading Screen -->
-                          <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
-                              <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="../libs/jssor.slider/svg/loading/static-svg/spin.svg" />
-                          </div>
-                          <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;">
-                              <div>
-                                  <img data-u="image" src="../images/test/001.jpg" />
-                              </div>
-                              <div>
-                                  <img data-u="image" src="../images/test/002.jpg" />
-                              </div>
-                              <div>
-                                  <img data-u="image" src="../images/test/003.jpg" />
-                              </div>
-                          </div>
-                          <!-- Arrow Navigator -->
-                          <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
-                              <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                                  <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
-                              </svg>
-                          </div>
-                          <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
-                              <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                                  <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
-                              </svg>
-                          </div>
-                          <script>jssor_slider_init("jssor_1");</script>
+                        </div>
+                        <div class="timeline-content">
+                          <h4>Khánh thành nhà máy Namloc Hóc Môn</h4>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.</br>
+                            <img class="img-responsive" src="../images/img2.png" alt="">
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="div-box mb">
-          <div class="tour-wrapper">
-            <div class="container">
-              <div class="h-title">
-                <h2 class="title-style1 mb45">San pham lien quan</h2>
-              </div>
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <div class="product-wrap">
-                    <div class="product-content">
-                      <div class="col-md-3 mt20">
-                        <div class="product-ct">
-                          <div class="product-img">
-                            <a href="product_detail.html"><img class="img-responsive" src="../images/product-03.png" alt=""></a>
-                          </div>
-                          <div class="product-info">
-                            <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                            <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                          </div>
+                      <div class="timeline-item clearfix">
+                        <div class="timeline-icon">
+                          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                   width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
+                </svg>
+
+                        </div>
+                        <div class="timeline-content right">
+                          <h4>Sản Phẩm Thép Định Hình Namloc</h4>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo. Maiores magnam modi ab libero praesentium blanditiis consequatur aspernatur accusantium maxime molestiae sunt ipsa. </br>
+                            <img class="img-responsive" src="../images/img2.png" alt="">
+                          </p>
                         </div>
                       </div>
-                      <div class="col-md-3 mt20">
-                        <div class="product-ct">
-                          <div class="product-img">
-                            <a href="product_detail.html"><img class="img-responsive" src="../images/product-03.png" alt=""></a>
-                          </div>
-                          <div class="product-info">
-                            <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                            <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                          </div>
+
+                      <div class="timeline-item">
+                        <div class="timeline-icon">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                   width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
+                </svg>
+
+                        </div>
+                        <div class="timeline-content">
+                          <h4>LOREM IPSUM DOLOR</h4>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo. Maiores magnam modi ab libero praesentium blanditiis consequatur aspernatur accusantium maxime molestiae sunt ipsa.
+                          </p>
                         </div>
                       </div>
-                      <div class="col-md-3 mt20">
-                        <div class="product-ct">
-                          <div class="product-img">
-                            <a href="product_detail.html"><img class="img-responsive" src="../images/product-03.png" alt=""></a>
-                          </div>
-                          <div class="product-info">
-                            <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                            <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                          </div>
+                      <div class="timeline-item clearfix">
+                        <div class="timeline-icon">
+                          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                   width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
+                </svg>
+
+                        </div>
+                        <div class="timeline-content right">
+                          <h4>Sản Phẩm Thép Định Hình Namloc</h4>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo. Maiores magnam modi ab libero praesentium blanditiis consequatur aspernatur accusantium maxime molestiae sunt ipsa.
+
+                            <img class="img-responsive" src="../images/img2.png" alt="">
+                          </p>
                         </div>
                       </div>
-                      <div class="col-md-3 mt20">
-                        <div class="product-ct">
-                          <div class="product-img">
-                            <a href="product_detail.html"><img class="img-responsive" src="../images/product-03.png" alt=""></a>
-                          </div>
-                          <div class="product-info">
-                            <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                            <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                          </div>
+                      <div class="timeline-item">
+                        <div class="timeline-icon">
+                          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                   width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
+                </svg>
+
                         </div>
-                      </div>
-                      <div class="col-md-3 mt20">
-                        <div class="product-ct">
-                          <div class="product-img">
-                            <a href="product_detail.html"><img class="img-responsive" src="../images/product-03.png" alt=""></a>
-                          </div>
-                          <div class="product-info">
-                            <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                            <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-3 mt20">
-                        <div class="product-ct">
-                          <div class="product-img">
-                            <a href="product_detail.html"><img class="img-responsive" src="../images/product-03.png" alt=""></a>
-                          </div>
-                          <div class="product-info">
-                            <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                            <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-3 mt20">
-                        <div class="product-ct">
-                          <div class="product-img">
-                            <a href="product_detail.html"><img class="img-responsive" src="../images/product-03.png" alt=""></a>
-                          </div>
-                          <div class="product-info">
-                            <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                            <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-3 mt20">
-                        <div class="product-ct">
-                          <div class="product-img">
-                            <a href="product_detail.html"><img class="img-responsive" src="../images/product-03.png" alt=""></a>
-                          </div>
-                          <div class="product-info">
-                            <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                            <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                          </div>
+                        <div class="timeline-content">
+                          <h4>Khánh thành nhà máy Namloc Hóc Môn</h4>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo. Maiores magnam modi ab libero praesentium blanditiis consequatur aspernatur accusantium maxime molestiae sunt ipsa.
+
+                          <img class="img-responsive" src="../images/img1.png" alt="">
+                          </p>
                         </div>
                       </div>
                     </div>

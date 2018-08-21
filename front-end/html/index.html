@@ -35,57 +35,6 @@
     -->
     <script type="text/javascript" src="../libs/Swiper-4.0.6/dist/js/swiper.min.js"></script>
     <script type="text/javascript" src="../libs/jssor.slider/js/jssor.slider.min.js" ></script>
-    <script type="text/javascript">
-        jssor_1_slider_init = function() {
-
-            var jssor_1_SlideshowTransitions = [
-              {$Duration:1200,$Opacity:2}
-            ];
-
-            var jssor_1_options = {
-              $AutoPlay: 1,
-              $SlideshowOptions: {
-                $Class: $JssorSlideshowRunner$,
-                $Transitions: jssor_1_SlideshowTransitions,
-                $TransitionsOrder: 1
-              },
-              $ArrowNavigatorOptions: {
-                $Class: $JssorArrowNavigator$
-              },
-              $BulletNavigatorOptions: {
-                $Class: $JssorBulletNavigator$
-              }
-            };
-
-            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-
-            /*#region responsive code begin*/
-
-            var MAX_WIDTH = 3000;
-
-            function ScaleSlider() {
-                var containerElement = jssor_1_slider.$Elmt.parentNode;
-                var containerWidth = containerElement.clientWidth;
-
-                if (containerWidth) {
-
-                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
-
-                    jssor_1_slider.$ScaleWidth(expectedWidth);
-                }
-                else {
-                    window.setTimeout(ScaleSlider, 30);
-                }
-            }
-
-            ScaleSlider();
-
-            $Jssor$.$AddEvent(window, "load", ScaleSlider);
-            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
-            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
-            /*#endregion responsive code end*/
-        };
-    </script>
   </head>
   <body class="home main-home">
     <!-- <div id="timing">asdasd</div> -->
@@ -246,38 +195,6 @@
       </header>
       <div id="example-wrapper">
         <div class="div-box">
-    <style>
-        /* jssor slider loading skin spin css */
-        .jssorl-009-spin img {
-            animation-name: jssorl-009-spin;
-            animation-duration: 1.6s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-        }
-
-        @keyframes jssorl-009-spin {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-
-        .jssorb051 .i {position:absolute;cursor:pointer;}
-        .jssorb051 .i .b {fill:#fff;fill-opacity:0.5;}
-        .jssorb051 .i:hover .b {fill-opacity:.7;}
-        .jssorb051 .iav .b {fill-opacity: 1;}
-        .jssorb051 .i.idn {opacity:.3;}
-
-        .jssora051 {display:block;position:absolute;cursor:pointer;}
-        .jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
-        .jssora051:hover {opacity:.8;}
-        .jssora051.jssora051dn {opacity:.5;}
-        .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
-    </style>
     <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
@@ -314,7 +231,6 @@
             </svg>
         </div>
     </div>
-    <script type="text/javascript">jssor_1_slider_init();</script>
         </div>
 
         <div class="div-box mb20">
