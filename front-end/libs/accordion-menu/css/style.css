@@ -32,8 +32,9 @@ Main Components
   padding: 18px 18px 18px 64px;
   /*background: #4d5158;
   box-shadow: inset 0 -1px #555960;*/
-  color: rgba(0,0,0,0.8);
-  font-size: 1.6rem;
+  font-size: 0.7rem;
+      border-bottom: 1px solid #e0e0e0;
+    color: #636363;
 }
 .no-touch .cd-accordion-menu label:hover, .no-touch .cd-accordion-menu a:hover {
   background: #52565d;
