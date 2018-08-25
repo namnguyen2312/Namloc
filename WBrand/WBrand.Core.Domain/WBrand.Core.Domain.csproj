@@ -71,6 +71,8 @@
     <Compile Include="Entities\SeoEntity.cs" />
     <Compile Include="Entities\System\LogDbContext.cs" />
     <Compile Include="Models\AudiModel.cs" />
+    <Compile Include="Models\Blog\BlogPostModel.cs" />
+    <Compile Include="Models\Blog\CreateBlogPostModel.cs" />
     <Compile Include="Models\Catalog\CatalogAttributeModel.cs" />
     <Compile Include="Models\Catalog\CatalogCategoryModel.cs" />
     <Compile Include="Models\Catalog\CreateCatalogAttributeModel.cs" />
