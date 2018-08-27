@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Blog\IBlogPostRepository.cs" />
     <Compile Include="Catalog\ICatalogAttributeRepository.cs" />
     <Compile Include="Catalog\ICatalogCategoryRepository.cs" />
     <Compile Include="Catalog\IProductAttributeRepository.cs" />

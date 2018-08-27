@@ -64,6 +64,7 @@ namespace WBrand.Services.Facade.Catalog
             var entity = _productRepo.GetById(id);
             var model = Mapper.Map<ProductModel>(entity);
             model.ProductCategories = Mapper.Map<IEnumerable<ProductCategoryModel>>(_productCategoryRepo.TableNoTracking.Where(x => x.ProductId == model.Id));
+            model.CategoryIds = model.ProductCategories.Select(x => x.CategoryId).ToList();
             return model;
         }
 

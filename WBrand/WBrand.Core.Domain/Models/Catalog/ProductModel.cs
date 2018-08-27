@@ -27,7 +27,7 @@ namespace WBrand.Core.Domain.Models.Catalog
         public bool IsDel { set; get; }
         public bool IsNew { set; get; }
         public bool IsPublish { set; get; }
-
+        public List<int> CategoryIds { set; get; }
         public IEnumerable<ProductCategoryModel> ProductCategories { set; get; }
     }
 }
