@@ -142,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\Blog\BlogPostCategoryController.cs" />
     <Compile Include="Controllers\Blog\BlogPostController.cs" />
     <Compile Include="Controllers\Catalog\CatalogAttributeController.cs" />
     <Compile Include="Controllers\Catalog\CatalogCategoryController.cs" />

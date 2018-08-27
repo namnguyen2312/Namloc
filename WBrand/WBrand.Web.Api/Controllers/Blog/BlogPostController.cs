@@ -8,6 +8,7 @@ using WBrand.Services.Blog;
 
 namespace WBrand.Web.Api.Controllers.Blog
 {
+    [RoutePrefix("api/blogPost")]
     public class BlogPostController : BaseApiController
     {
         IBlogPostService _blogPostService;

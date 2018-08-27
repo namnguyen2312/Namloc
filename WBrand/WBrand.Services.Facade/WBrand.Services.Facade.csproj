@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseServices.cs" />
+    <Compile Include="Blog\BlogPostCategoryService.cs" />
     <Compile Include="Blog\BlogPostService.cs" />
     <Compile Include="Catalog\CatalogAttributeService.cs" />
     <Compile Include="Catalog\CatalogCategoryService.cs" />

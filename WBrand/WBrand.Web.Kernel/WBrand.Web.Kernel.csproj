@@ -88,6 +88,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mappers\BlogMappingProfile.cs" />
     <Compile Include="Mappers\DomainToViewModelMappingProfile.cs" />
     <Compile Include="Mappers\CatalogMappingProfile.cs" />
     <Compile Include="Mappers\ViewModelToDomainMappingProfile.cs" />

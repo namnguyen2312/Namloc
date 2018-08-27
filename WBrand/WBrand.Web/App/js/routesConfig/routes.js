@@ -249,6 +249,44 @@
                     }]
                 }
             })
+            .state('app.blog', {
+                url: "/blog",
+                abstract: true,
+                template: '<ui-view></ui-view>',
+                ncyBreadcrumb: {
+                    label: 'Bài viết'
+                }
+            })
+            .state('app.blog.category', {
+                url: '/blogCategory',
+                templateUrl: '/app/views/blogs/category/categoryList.html',
+                controller: 'blogCategoryCtrl',
+                ncyBreadcrumb: {
+                    label: 'Danh mục bài viết'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/blogs/category/categoryList.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.addBlogCategory', {
+                url: '/addBlogCategory',
+                templateUrl: '/app/views/blogs/category/category.html',
+                controller: 'addBlogCategoryCtrl',
+                ncyBreadcrumb: {
+                    label: 'Thêm danh mục bài viết'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/blogs/category/addCategory.js']
+                        });
+                    }]
+                }
+            })
             .state('app.icons', {
                 url: "/icons",
                 abstract: true,

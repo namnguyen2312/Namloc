@@ -56,6 +56,7 @@
     <Compile Include="Entities\AudiEntity.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Blog\BlogPost.cs" />
+    <Compile Include="Entities\Blog\BlogPostCategory.cs" />
     <Compile Include="Entities\Catalog\CatalogAttribute.cs" />
     <Compile Include="Entities\Catalog\CatalogCategory.cs" />
     <Compile Include="Entities\Catalog\Product.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Entities\SeoEntity.cs" />
     <Compile Include="Entities\System\LogDbContext.cs" />
     <Compile Include="Models\AudiModel.cs" />
+    <Compile Include="Models\Blog\BlogPostCategoryModel.cs" />
     <Compile Include="Models\Blog\BlogPostModel.cs" />
     <Compile Include="Models\Blog\CreateBlogPostModel.cs" />
     <Compile Include="Models\Catalog\CatalogAttributeModel.cs" />

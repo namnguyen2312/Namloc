@@ -7,7 +7,7 @@ using WBrand.Core.Domain.Entities.Blog;
 
 namespace WBrand.Data.Blog
 {
-    public interface IBlogPostRepository : IEfRepository<BlogPost>
+    public interface IBlogPostCategoryRepository: IEfRepository<BlogPostCategory>
     {
     }
 }

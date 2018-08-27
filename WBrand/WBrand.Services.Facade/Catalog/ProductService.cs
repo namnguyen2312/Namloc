@@ -73,7 +73,9 @@ namespace WBrand.Services.Facade.Catalog
             try
             {
                 var newProduct = Mapper.Map<Product>(model.Product);
+                newProduct.Name = newProduct.Name.Trim();
                 newProduct.CreatedDate = CoreHelper.SystemTimeNow;
+                newProduct.Alias = StringHelper.ToUrlFriendlyWithDate(newProduct.Name,newProduct.CreatedDate.Value.DateTime);
                 _productRepo.BeginTran();
                 _productRepo.Insert(newProduct);
                 if (model.CategoryIds.Count > 0)
@@ -100,6 +102,8 @@ namespace WBrand.Services.Facade.Catalog
             {
                 var updateProduct = Mapper.Map<Product>(model.Product);
                 updateProduct.UpdatedDate = CoreHelper.SystemTimeNow;
+                updateProduct.Name = updateProduct.Name.Trim();
+                updateProduct.Alias = StringHelper.ToUrlFriendlyWithDate(updateProduct.Name,updateProduct.CreatedDate.Value.DateTime);
                 _productRepo.BeginTran();
                 _productRepo.Update(updateProduct);
 

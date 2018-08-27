@@ -15,14 +15,14 @@ function categoryCtrl($scope, apiService, notificationService, $ngBootbox) {
             var config = {
                 params: {
                     id: item.Id
-                }
-            }
+                };
+            };
             apiService.del('api/catalogCategory/delete', config, function () {
                 notificationService.displaySuccess('Xóa thành công');
                 search();
             }, function () {
                 notificationService.displayError('Xóa không thành công');
-            })
+            });
         });
     }
 

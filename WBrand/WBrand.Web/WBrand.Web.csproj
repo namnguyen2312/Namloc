@@ -194,6 +194,7 @@
     <Content Include="App\js\app.js" />
     <Content Include="App\js\controllers.js" />
     <Content Include="App\js\controllers\blogs\blogPost\blogPostList.js" />
+    <Content Include="App\js\controllers\blogs\category\categoryList.js" />
     <Content Include="App\js\controllers\catalog\attribute\addAttribute.js" />
     <Content Include="App\js\controllers\catalog\attribute\attributeList.js" />
     <Content Include="App\js\controllers\catalog\attribute\editAttribute.js" />
@@ -224,6 +225,7 @@
     <Content Include="App\js\shared\services\notificationService.js" />
     <Content Include="App\views\blogs\blogPost\blogPost.html" />
     <Content Include="App\views\blogs\blogPost\blogPostList.html" />
+    <Content Include="App\views\blogs\category\categoryList.html" />
     <Content Include="App\views\catalog\attribute\attribute.html" />
     <Content Include="App\views\catalog\attribute\attributeList.html" />
     <Content Include="App\views\catalog\category\category.html" />
@@ -5597,7 +5599,7 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\js\controllers\blogs\blogPost\" />
+    <Folder Include="App\js\shared\filter\" />
     <Folder Include="Assets\libs\checklist-model\test\" />
     <Folder Include="Models\" />
   </ItemGroup>

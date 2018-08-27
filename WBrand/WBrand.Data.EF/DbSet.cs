@@ -31,7 +31,7 @@ namespace WBrand.Data.EF
         /// </summary>
         public DbSet<BlogPost> BlogPosts { set; get; }
 
-
+        public DbSet<BlogPostCategory> BlogPostCategories { set; get; }
 
         public DbSet<LogDbContext> LogDbContexts { set; get; }
         
