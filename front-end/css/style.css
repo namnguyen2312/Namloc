@@ -892,7 +892,7 @@ div.sub-menu .sub-menu-mega {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 25px 0px 18px 18px;
+    border-width: 26px 0px 18px 18px;
     border-color: transparent transparent transparent #f5954f;
     position: absolute;
     top: 0;
@@ -927,7 +927,7 @@ div.sub-menu .sub-menu-mega {
   .services-content h3 {
     font-size: 1.5rem;
     padding-top: 5px;
-    padding-bottom: 5px; }
+    padding-bottom: 0px; }
 
 .product-list {
   background-color: #dedede;
@@ -936,7 +936,7 @@ div.sub-menu .sub-menu-mega {
     position: relative; }
     .product-list .product-content h5 {
       position: absolute;
-      bottom: 5px;
+      bottom: 0px;
       left: 0;
       right: 0;
       text-align: center;
@@ -2160,6 +2160,9 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
   @media only screen and (min-width: 768px) and (max-width: 991px) {
   #text-6 {
     display: none; }
+  .cate-title {
+    font-size: 14px;
+    padding: 10px 27px 12px 15px; }
   .header-logo {
     width: 60px; }
     .header-logo h1 {
@@ -2274,6 +2277,14 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
   @media only screen and (max-width: 767px) {
   .block-content.b1 {
     margin-top: 20px; }
+  .news-ct .news-info h3 {
+    font-size: 1.25rem; }
+  .article-head h3 {
+    font-size: 1.5rem; }
+  .desc-scrum {
+    font-size: 10px; }
+  .header .header-bottom {
+    display: none; }
   .mb40-1 {
     margin-bottom: 40px; }
   .mt40-1 {
@@ -2288,7 +2299,7 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
     padding-top: 10px;
     padding-bottom: 0px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8); }
+    background-color: #f5954f; }
     .mobile-menu .text-left {
       color: #fff;
       text-align: left; }
@@ -2415,6 +2426,8 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
   .swiper-container {
     width: 100%;
     height: 225px; }
+  .news-ct img {
+    padding-right: 0px; }
   .swiper-slide .slider-content {
     top: 15%;
     left: 15%; }
