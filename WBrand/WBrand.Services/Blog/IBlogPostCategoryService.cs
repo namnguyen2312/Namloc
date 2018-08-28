@@ -12,6 +12,8 @@ namespace WBrand.Services.Blog
     {
         BlogPostCategoryModel GetById(int id);
 
+        IEnumerable<BlogPostCategoryModel> GetAll();
+
         PaginationSet<BlogPostCategoryModel> GetAll(int pageIndex, int pageSize, string filter = "");
 
         BlogPostCategoryModel Insert(BlogPostCategoryModel model);

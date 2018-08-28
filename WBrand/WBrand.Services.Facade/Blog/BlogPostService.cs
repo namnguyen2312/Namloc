@@ -36,7 +36,7 @@ namespace WBrand.Services.Facade.Blog
             return new PaginationSet<BlogPostModel>
             {
                 Items = Mapper.Map<IEnumerable<BlogPostModel>>(result.ToList()),
-                Page = pageIndex,
+                Page = pageIndex -1,
                 PageSize = pageSize,
                 TotalCount = result.TotalItemCount,
                 TotalPages = result.PageCount

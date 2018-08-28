@@ -48,11 +48,16 @@ namespace WBrand.Services.Facade.Blog
             return new PaginationSet<BlogPostCategoryModel>
             {
                 Items = Mapper.Map<IEnumerable<BlogPostCategoryModel>>(result.ToList()),
-                Page = pageIndex,
+                Page = pageIndex -1,
                 PageSize = pageSize,
                 TotalCount = result.TotalItemCount,
                 TotalPages = result.PageCount
             };
+        }
+
+        public IEnumerable<BlogPostCategoryModel> GetAll()
+        {
+            return _blogPostCategoryRepository.TableNoTracking.Where(x => x.IsDel == false).QueryTo<BlogPostCategoryModel>().ToList();
         }
 
         public BlogPostCategoryModel GetById(int id)
@@ -67,6 +72,7 @@ namespace WBrand.Services.Facade.Blog
                 var entity = model.MapTo<BlogPostCategory>();
                 entity.Name = entity.Name.Trim();
                 entity.Alias = StringHelper.ToUrlFriendly(entity.Name);
+                entity.CreatedDate = CoreHelper.SystemTimeNow;
                 _blogPostCategoryRepository.Insert(entity);
                 return model;
             }

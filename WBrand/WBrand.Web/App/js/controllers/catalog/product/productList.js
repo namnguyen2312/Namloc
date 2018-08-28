@@ -6,7 +6,7 @@ angular
 productCtrl.$inject = ['$scope', 'apiService', 'notificationService', '$ngBootbox'];
 function productCtrl($scope, apiService, notificationService, $ngBootbox) {
 
-    $scope.pageSize = 20;
+    $scope.pageSize = 5;
     $scope.pageIndex = 0;
     $scope.pagesCount = 0;
     $scope.totalCount = 0;

@@ -4,42 +4,14 @@
             <div class="card">
                 <form novalidate role="form" name="frm" class="form-horizontal">
                     <div class="card-header">
-                        <strong>Thông tin nhóm</strong>
+                        <strong>Thông tin danh mục bài viết</strong>
                     </div>
                     <div class="card-body">
 
                         <div class="form-group row" ng-class="{ 'is-invalid' : frm.name.$invalid && !frm.name.$pristine }">
-                            <label class="col-md-3 col-form-label" for="text-input">Tên bài viết</label>
+                            <label class="col-md-3 col-form-label" for="text-input">Tên nhóm</label>
                             <div class="col-md-9">
                                 <input required type="text" id="text-name" name="name" ng-model="data.Name" maxlength="128" class="form-control" placeholder="Tên nhóm">
-                            </div>
-                        </div>
-                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.ShortContent.$invalid && !frm.ShortContent.$pristine }">
-                            <label class="col-md-3 col-form-label" for="text-input">Mô tả ngắn</label>
-                            <div class="col-md-9">
-                                <textarea required type="text" id="text-ShortContent" name="ShortContent" ng-model="data.ShortContent" maxlength="512" rows="3" class="form-control" placeholder="Mô tả ngắn"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-md-3 col-form-label" for="text-input">Ảnh sản phẩm đại diện</label>
-                            <div class="col-md-9">
-                                <ul class="list-inline">
-                                    <li><img src="{{data.Image}}" width="100" /></li>
-                                </ul>
-                                <button class="btn btn-success" type="button" ng-click="chooseImage()">Chọn ảnh...</button>
-                                <input type="hidden" class="form-control" name="Image" ng-model="data.Image">
-                            </div>
-                        </div>
-                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.fullContent.$invalid && !frm.fullContent.$pristine }">
-                            <label class="col-md-3 col-form-label" for="text-input">Bài viết</label>
-                            <div class="col-md-9">
-                                <textarea required type="text" id="text-fullContent" name="fullContent" ng-model="data.FullContent" ckeditor="ckeditorOptions" rows="30" class="form-control" placeholder="Nội dung"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.publishDate.$invalid && !frm.publishDate.$pristine }">
-                            <label class="col-md-3 col-form-label" for="text-input">Ngày xuất bản</label>
-                            <div class="col-md-9">
-                                <input required type="text" id="publishDate" name="publishDate" ng-model="data.PublishDate" class="form-control">
                             </div>
                         </div>
                         <div class="form-group row" ng-class="{ 'is-invalid' : frm.MetaTitle.$invalid && !frm.MetaTitle.$pristine }">
@@ -61,12 +33,6 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-md-3 col-form-label">Danh mục cha</label>
-                            <div class="col-md-9">
-                                <select ui-select2 ng-model="data.ParentId" class="form-control" ng-options="option.Id as option.Name for option in categories"></select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
                             <label class="col-md-3 col-form-label">Hiển thị</label>
                             <div class="col-md-9">
                                 <div class="form-check checkbox">
@@ -78,7 +44,7 @@
                     </div>
                     <div class="card-footer">
                         <button type="button" ng-click="save()" class="btn btn-sm btn-primary" ng-disabled="frm.$invalid"><i class="fa fa-dot-circle-o"></i> Lưu</button>
-                        <button type="reset" class="btn btn-sm btn-danger" ui-sref="app.catalog.category"><i class="fa fa-ban"></i> Hủy</button>
+                        <button type="reset" class="btn btn-sm btn-danger" ui-sref="app.blog.category"><i class="fa fa-ban"></i> Hủy</button>
                     </div>
                 </form>
             </div>

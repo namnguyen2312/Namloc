@@ -51,7 +51,7 @@ namespace WBrand.Services.Facade.Catalog
             return new PaginationSet<ProductModel>
             {
                 Items = Mapper.Map<IEnumerable<ProductModel>>(result.ToList()),
-                Page = pageIndex,
+                Page = pageIndex -1,
                 PageSize = pageSize,
                 TotalCount = result.TotalItemCount,
                 TotalPages = result.PageCount
@@ -122,7 +122,7 @@ namespace WBrand.Services.Facade.Catalog
             }
             catch
             {
-                //_productRepo.RollbackTran();
+                _productRepo.RollbackTran();
                 throw;
             }
         }

@@ -26,6 +26,13 @@ namespace WBrand.Web.Api.Controllers.Blog
             return _blogPostCategoryService.GetAll(page + 1, pageSize, filter);
         }
 
+        [HttpGet]
+        [Route("GetAllNoPaging")]
+        public IEnumerable<BlogPostCategoryModel> GetAllNoPaging()
+        {
+            return _blogPostCategoryService.GetAll();
+        }
+
         public BlogPostCategoryModel Get(int id)
         {
             return _blogPostCategoryService.GetById(id);

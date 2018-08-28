@@ -31,7 +31,7 @@ function blogCategoryCtrl($scope, apiService, notificationService, $ngBootbox) {
         });
     }
 
-    function search() {
+    function search(page) {
         page = page || 0;
         var config = {
             params: {

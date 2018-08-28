@@ -287,6 +287,36 @@
                     }]
                 }
             })
+            .state('app.editBlogCategory', {
+                url: '/editBlogCategory/:id',
+                templateUrl: '/app/views/blogs/category/category.html',
+                controller: 'editBlogCategoryCtrl',
+                ncyBreadcrumb: {
+                    label: 'Sửa danh mục bài viết'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/blogs/category/editCategory.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.blog.post', {
+                url: '/blogPost',
+                templateUrl: '/app/views/blogs/blogPost/blogPost.html',
+                controller: 'blogPostCtrl',
+                ncyBreadcrumb: {
+                    label: 'Danh sách bài viết'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/blogs/blogPost/blogPostList.js']
+                        });
+                    }]
+                }
+            })
             .state('app.icons', {
                 url: "/icons",
                 abstract: true,
