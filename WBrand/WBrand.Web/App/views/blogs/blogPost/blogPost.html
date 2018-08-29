@@ -14,6 +14,12 @@
                                 <input required type="text" id="text-name" name="name" ng-model="data.Name" maxlength="128" class="form-control" placeholder="Tên nhóm">
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label">Danh mục cha</label>
+                            <div class="col-md-9">
+                                <select ui-select2 ng-model="data.CategoryId" class="form-control" ng-options="option.Id as option.Name for option in categories"></select>
+                            </div>
+                        </div>
                         <div class="form-group row" ng-class="{ 'is-invalid' : frm.ShortContent.$invalid && !frm.ShortContent.$pristine }">
                             <label class="col-md-3 col-form-label" for="text-input">Mô tả ngắn</label>
                             <div class="col-md-9">
@@ -60,12 +66,7 @@
                                 <input type="text" id="text-MetaKeyword" name="MetaKeyword" ng-model="data.MetaKeyword" maxlength="128" class="form-control" placeholder="Nhập keyword">
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label class="col-md-3 col-form-label">Danh mục cha</label>
-                            <div class="col-md-9">
-                                <select ui-select2 ng-model="data.ParentId" class="form-control" ng-options="option.Id as option.Name for option in categories"></select>
-                            </div>
-                        </div>
+
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">Hiển thị</label>
                             <div class="col-md-9">

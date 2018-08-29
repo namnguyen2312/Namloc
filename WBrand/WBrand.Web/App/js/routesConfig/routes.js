@@ -304,7 +304,7 @@
             })
             .state('app.blog.post', {
                 url: '/blogPost',
-                templateUrl: '/app/views/blogs/blogPost/blogPost.html',
+                templateUrl: '/app/views/blogs/blogPost/blogPostList.html',
                 controller: 'blogPostCtrl',
                 ncyBreadcrumb: {
                     label: 'Danh sách bài viết'
