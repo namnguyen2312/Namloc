@@ -14,5 +14,6 @@ namespace WBrand.Services.Blog
         PaginationSet<BlogPostModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0);
         BlogPostModel Insert(BlogPostModel model);
         BlogPostModel Update(BlogPostModel model);
+        void DeleteById(long id);
     }
 }

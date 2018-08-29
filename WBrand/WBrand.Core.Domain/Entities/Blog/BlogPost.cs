@@ -12,6 +12,9 @@ namespace WBrand.Core.Domain.Entities.Blog
         [MaxLength(128)]
         public string Name { set; get; }
 
+        [MaxLength(1024)]
+        public string Image { set; get; }
+
         [MaxLength(128)]
         public string ShortContent { set; get; }
 

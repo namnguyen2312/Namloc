@@ -317,6 +317,21 @@
                     }]
                 }
             })
+            .state('app.addBlogPost', {
+                url: '/addBlogPost',
+                templateUrl: '/app/views/blogs/blogPost/blogPost.html',
+                controller: 'addBlogPostCtrl',
+                ncyBreadcrumb: {
+                    label: 'Tạo bài viết'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/blogs/blogPost/addBlogPost.js']
+                        });
+                    }]
+                }
+            })
             .state('app.icons', {
                 url: "/icons",
                 abstract: true,

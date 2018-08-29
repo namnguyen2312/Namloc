@@ -23,6 +23,19 @@ namespace WBrand.Services.Facade.Blog
             _blogPostRepository = blogPostRepository;
         }
 
+        public void DeleteById(long id)
+        {
+            try
+            {
+                var entity = _blogPostRepository.GetById(id);
+                _blogPostRepository.Delete(entity);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public PaginationSet<BlogPostModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0)
         {
             var query = _blogPostRepository.TableNoTracking.Where(x => x.IsDel == false);

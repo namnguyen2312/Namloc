@@ -7,6 +7,7 @@ addBlogPostCtrl.$inject = ['$scope', 'apiService', 'notificationService', '$stat
 function addBlogPostCtrl($scope, apiService, notificationService, $state) {
 
     $scope.data = {
+        CategoryId: 0
     };
 
     $scope.chooseImage = chooseImage;
@@ -14,7 +15,7 @@ function addBlogPostCtrl($scope, apiService, notificationService, $state) {
 
     function save() {
         $("input").prop('disabled', true);
-
+        $scope.data.PublishDate = $('#publishDate').datetimepicker('getValue');
         apiService.post('api/blogPost/Add', $scope.data,
             function (result) {
                 notificationService.displaySuccess($scope.data.Name + ' đã được thêm mới.');
@@ -37,13 +38,24 @@ function addBlogPostCtrl($scope, apiService, notificationService, $state) {
 
 
     function loadCategories() {
-        apiService.get('api/catalogCategory/getAllNoPaging', null, function (result) {
+        apiService.get('api/blogPostCategory/getAllNoPaging', null, function (result) {
+            var initCat = {
+                Id: 0,
+                Name: 'Chọn danh mục'
+            };
             $scope.categories = result.data;
+            $scope.categories.unshift(initCat);
         }, function () {
             console.log('Cannot get data');
         });
     }
 
+    $('#publishDate').datetimepicker({
+        format: 'd/m/Y H:i',
+        lang: 'vi',
+        defaultDate: new Date(),
+        closeOnDateSelect: true
+    });
 
     loadCategories();
 }
