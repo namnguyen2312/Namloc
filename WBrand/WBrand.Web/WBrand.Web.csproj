@@ -195,6 +195,7 @@
     <Content Include="App\js\controllers.js" />
     <Content Include="App\js\controllers\blogs\blogPost\addBlogPost.js" />
     <Content Include="App\js\controllers\blogs\blogPost\blogPostList.js" />
+    <Content Include="App\js\controllers\blogs\blogPost\editBlogPost.js" />
     <Content Include="App\js\controllers\blogs\category\addCategory.js" />
     <Content Include="App\js\controllers\blogs\category\categoryList.js" />
     <Content Include="App\js\controllers\blogs\category\editCategory.js" />

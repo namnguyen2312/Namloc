@@ -12,6 +12,7 @@ angular
     .directive('tab', bootstrapTabsDirective)
     .directive('button', cardCollapseDirective)
     .directive('pagerDirective', pagerDirective)
+    .directive('datetimePicker', datetimePicker)
 
 function includeReplace() {
     var directive = {
@@ -283,5 +284,24 @@ function pagerDirective() {
                 }
 
             }]
+    }
+}
+
+//datetime picker
+function datetimePicker() {
+    var directive = {
+        restrict: 'A',
+        dateId: '@',
+        link: link
+    }
+    return directive;
+
+    function link(scope, element, attrs) {
+        $(scope.dateId).datetimepicker({
+            format: 'd/m/Y H:i',
+            lang: 'vi',
+            defaultDate: new Date(),
+            closeOnDateSelect: true
+        });
     }
 }
