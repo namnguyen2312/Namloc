@@ -4,7 +4,7 @@
             <div class="card">
                 <form novalidate role="form" name="frm" class="form-horizontal">
                     <div class="card-header">
-                        <strong>Thông tin nhóm</strong>
+                        <strong>Thông tin bài viết</strong>
                     </div>
                     <div class="card-body">
 
@@ -18,8 +18,8 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">Danh mục</label>
                             <div class="col-md-9">
-                                <select ui-select2 ng-model="data.CategoryId" class="form-control">
-                                    <option ng-repeat="option in categories" value="{{option.Id}}">{{option.Name}}</option>
+                                <select ui-select2 ng-model="data.CategoryId"  class="form-control" ng-options="option.Id as option.Name for option in categories">
+                                    <!--<option ng-repeat="option in categories" value="{{option.Id}}">{{option.Name}}</option>-->
                                 </select>
                             </div>
                         </div>
@@ -49,6 +49,7 @@
                             <label class="col-md-3 col-form-label" for="text-input">Ngày xuất bản</label>
                             <div class="col-md-9">
                                 <input required type="text" id="publishDate" name="publishDate" ng-model="data.PublishDate" class="form-control">
+                                <code ng-show="frm.publishDate.$invalid">Chọn ngày</code>
                             </div>
                         </div>
                         <div class="form-group row" ng-class="{ 'is-invalid' : frm.MetaTitle.$invalid && !frm.MetaTitle.$pristine }">

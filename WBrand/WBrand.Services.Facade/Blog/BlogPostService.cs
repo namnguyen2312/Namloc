@@ -86,7 +86,7 @@ namespace WBrand.Services.Facade.Blog
             {
                 var entity = model.MapTo<BlogPost>();
                 entity.Name = entity.Name.Trim();
-                entity.CreatedDate = CoreHelper.SystemTimeNow;
+                entity.UpdatedDate = CoreHelper.SystemTimeNow;
                 entity.Alias = StringHelper.ToUrlFriendlyWithDate(entity.Name, entity.CreatedDate.Value.DateTime);
                 _blogPostRepository.Update(entity);
                 return model;

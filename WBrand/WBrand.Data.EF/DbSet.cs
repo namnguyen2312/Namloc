@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using WBrand.Core.Domain.Entities.Blog;
 using WBrand.Core.Domain.Entities.Catalog;
 using WBrand.Core.Domain.Entities.Identity;
+using WBrand.Core.Domain.Entities.SlideShow;
 using WBrand.Core.Domain.Entities.System;
 
 namespace WBrand.Data.EF
@@ -35,7 +36,7 @@ namespace WBrand.Data.EF
 
         public DbSet<LogDbContext> LogDbContexts { set; get; }
         
-
+        public DbSet<SlideShow> SlideShows { set; get; }
         /// <summary>
         /// Identity table
         /// </summary>

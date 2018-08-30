@@ -11,13 +11,15 @@ function editBlogPostCtrl($scope, apiService, notificationService, $state, $stat
     };
 
     $scope.save = save;
+    $scope.chooseImage = chooseImage;
 
     function save() {
         $("input").prop('disabled', true);
+        $scope.data.PublishDate = moment($scope.data.PublishDate, "DD/MM/YYYY HH:ss").format();
         apiService.put('api/blogPost/put', $scope.data,
             function (result) {
                 notificationService.displaySuccess($scope.data.Name + ' đã cập nhật.');
-                $state.go('app.blog.category');
+                $state.go('app.blog.post');
             }, function (error) {
                 $("input").prop('disabled', false);
                 notificationService.displayError(error.data.Message);
@@ -50,18 +52,25 @@ function editBlogPostCtrl($scope, apiService, notificationService, $state, $stat
     function loadDetail() {
         apiService.get('api/blogPost/' + $stateParams.id, null, function (result) {
             $scope.data = result.data;
+            $scope.data.PublishDate = moment(result.data.PublishDate).format('DD/MM/YYYY HH:ss');
         }, function () {
             console.log('Cannot get data');
         });
     }
 
+
+
+
+
     $('#publishDate').datetimepicker({
         format: 'd/m/Y H:i',
         lang: 'vi',
-        defaultDate: new Date(),
         closeOnDateSelect: true
     });
 
+    $(".select2").select2();
+
     loadCategories();
     loadDetail();
+
 }

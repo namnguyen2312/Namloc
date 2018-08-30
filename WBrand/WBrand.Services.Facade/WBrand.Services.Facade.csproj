@@ -101,6 +101,7 @@
     <Compile Include="User\AppRoleService.cs" />
     <Compile Include="User\AppUserService.cs" />
     <Compile Include="User\PermissionService.cs" />
+    <Compile Include="WebSystem\SlideShowService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WBrand.Common\WBrand.Common.csproj">

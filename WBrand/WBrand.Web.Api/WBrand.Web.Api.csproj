@@ -150,6 +150,7 @@
     <Compile Include="Controllers\User\AppGroupController.cs" />
     <Compile Include="Controllers\User\AppRoleController.cs" />
     <Compile Include="Controllers\User\AppUserController.cs" />
+    <Compile Include="Controllers\WebSystem\SlideShowController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
