@@ -1,0 +1,48 @@
+﻿<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <form novalidate role="form" name="frm" class="form-horizontal">
+                    <div class="card-header">
+                        <strong>Thông tin slide hình</strong>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.name.$invalid && !frm.name.$pristine }">
+                            <label class="col-md-3 col-form-label" for="text-input">Tên hình</label>
+                            <div class="col-md-9">
+                                <input type="text" id="text-name" name="name" ng-model="data.Name" maxlength="128" class="form-control" placeholder="Tên hình">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="text-input">Hình</label>
+                            <div class="col-md-9">
+                                <ul class="list-inline">
+                                    <li><img src="{{data.Image}}" width="100" /></li>
+                                </ul>
+                                <button class="btn btn-success" type="button" ng-click="chooseImage()">Chọn ảnh...</button>
+                                <input type="hidden" class="form-control" name="Image" ng-model="data.Image">
+                            </div>
+                        </div>
+                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.URL.$invalid && !frm.URL.$pristine }">
+                            <label class="col-md-3 col-form-label" for="text-input">URL</label>
+                            <div class="col-md-9">
+                                <input type="text" id="text-URL" name="url" ng-model="data.URL" maxlength="1024" class="form-control" placeholder="Nhập keyword">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label">Vị trí slide</label>
+                            <div class="col-md-9">
+                                <select ui-select2 required ng-model="data.Position" class="form-control" ng-options="option.Id as option.Name for option in positions"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" ng-click="save()" class="btn btn-sm btn-primary" ng-disabled="frm.$invalid"><i class="fa fa-dot-circle-o"></i> Lưu</button>
+                        <button type="reset" class="btn btn-sm btn-danger" ui-sref="app.system.slideShow"><i class="fa fa-ban"></i> Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

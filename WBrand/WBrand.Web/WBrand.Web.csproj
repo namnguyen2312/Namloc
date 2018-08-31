@@ -214,6 +214,8 @@
     <Content Include="App\js\controllers\roleGroups\editRoleGroup.js" />
     <Content Include="App\js\controllers\roleGroups\roleGroupList.js" />
     <Content Include="App\js\controllers\roles\roleList.js" />
+    <Content Include="App\js\controllers\system\slide\add.js" />
+    <Content Include="App\js\controllers\system\slide\list.js" />
     <Content Include="App\js\controllers\users\addUser.js" />
     <Content Include="App\js\controllers\users\editUser.js" />
     <Content Include="App\js\controllers\users\userList.js" />
@@ -221,6 +223,7 @@
     <Content Include="App\js\routesConfig\routes.js" />
     <Content Include="App\js\directives.js" />
     <Content Include="App\js\routes.js" />
+    <Content Include="App\js\routesConfig\routesSystem.js" />
     <Content Include="App\js\shared\app.common.js" />
     <Content Include="App\js\shared\filter\filterBool.js" />
     <Content Include="App\js\shared\services\apiService.js" />
@@ -266,6 +269,8 @@
     <Content Include="App\views\roleGroups\roleGroupList.html" />
     <Content Include="App\views\roles\roleList.html" />
     <Content Include="App\views\shared\pagerDirective.html" />
+    <Content Include="App\views\system\slide\list.html" />
+    <Content Include="App\views\system\slide\slide.html" />
     <Content Include="App\views\users\user.html" />
     <Content Include="App\views\users\userList.html" />
     <Content Include="App\views\vendors\css\chart.css" />
@@ -5603,6 +5608,28 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="UploadedFiles\images\350-met-500-met-chieu-dai-2080-t-khe-cam-nhom-dinh-hinh-day-ra-ngoai-khung-cnc-500-met-quoc-te.jpg" />
+    <Content Include="UploadedFiles\images\8ecb85db9aa39c724f0c84318eb59684.jpg" />
+    <Content Include="UploadedFiles\images\9716_P_1522111458604.jpg" />
+    <Content Include="UploadedFiles\images\IIS Pool.PNG" />
+    <Content Include="UploadedFiles\images\IP.PNG" />
+    <Content Include="UploadedFiles\images\ke-goc-nhom-dinh-hinh-duc.jpg" />
+    <Content Include="UploadedFiles\images\nhom-30x60.jpg" />
+    <Content Include="UploadedFiles\images\nhom-dinh-hinh-20x40-jpg-20130327200936fs6VUw75aC.jpg" />
+    <Content Include="UploadedFiles\images\nhom-dinh-hinh-40x80r3.jpg" />
+    <Content Include="UploadedFiles\images\nhom-dinh-hinh-trang-2020.jpg" />
+    <Content Include="UploadedFiles\images\Thanh-nhom-dinh-hinh-IT40x40L-600x250.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Images\350-met-500-met-chieu-dai-2080-t-khe-cam-nhom-dinh-hinh-day-ra-ngoai-khung-cnc-500-met-quoc-te.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Images\8ecb85db9aa39c724f0c84318eb59684.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Images\9716_P_1522111458604.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Images\IIS Pool.PNG" />
+    <Content Include="UploadedFiles\_thumbs\Images\IP.PNG" />
+    <Content Include="UploadedFiles\_thumbs\Images\ke-goc-nhom-dinh-hinh-duc.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Images\nhom-30x60.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Images\nhom-dinh-hinh-20x40-jpg-20130327200936fs6VUw75aC.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Images\nhom-dinh-hinh-40x80r3.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Images\nhom-dinh-hinh-trang-2020.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Images\Thanh-nhom-dinh-hinh-IT40x40L-600x250.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

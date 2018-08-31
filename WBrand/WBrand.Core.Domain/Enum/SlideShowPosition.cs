@@ -9,6 +9,8 @@ namespace WBrand.Core.Domain.Enum
 {
     public enum SlideShowPosition
     {
+        [Display(Description = "Tất cả vị trí")]
+        All = 0,
         [Display(Description = "Slide header trang chủ")]
         HeaderHome = 10
 

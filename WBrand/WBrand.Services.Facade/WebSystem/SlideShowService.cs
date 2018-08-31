@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WBrand.Common.Helper;
 using WBrand.Core.Domain.Entities.SlideShow;
 using WBrand.Core.Domain.Enum;
 using WBrand.Data;
@@ -39,6 +40,12 @@ namespace WBrand.Services.Facade.WebSystem
                 query = query.Where(x => x.Position == position);
 
             return query.ToList();
+        }
+
+        public IEnumerable<dynamic> GetAllPosition()
+        {
+            var list = EnumHelper.ToDictionary(typeof(SlideShowPosition)).Select(x => new { Id = x.Key, Name = x.Value });
+            return list;
         }
     }
 }

@@ -5,7 +5,10 @@ angular
 
 addBlogPostCtrl.$inject = ['$scope', 'apiService', 'notificationService', '$state'];
 function addBlogPostCtrl($scope, apiService, notificationService, $state) {
-
+    var d = new Date();
+    var month = d.getMonth();
+    var day = d.getDate();
+    var year = d.getFullYear();
     $scope.data = {
         CategoryId: 0
     };
@@ -56,7 +59,6 @@ function addBlogPostCtrl($scope, apiService, notificationService, $state) {
         defaultDate: new Date(),
         closeOnDateSelect: true
     });
-
     loadCategories();
 }
 

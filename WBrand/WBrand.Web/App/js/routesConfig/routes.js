@@ -129,7 +129,7 @@
                     }]
                 }
             })
-            .state('app.addCategory', {
+            .state('app.catalog.addCategory', {
                 url: '/addCategory',
                 templateUrl: '/app/views/catalog/category/category.html',
                 controller: 'addCategoryCtrl',

@@ -10,6 +10,7 @@ using WBrand.Services.WebSystem;
 
 namespace WBrand.Web.Api.Controllers.WebSystem
 {
+    [RoutePrefix("api/slideShow")]
     public class SlideShowController : BaseApiController
     {
         ISlideShowService _slideShowService;
@@ -20,11 +21,17 @@ namespace WBrand.Web.Api.Controllers.WebSystem
 
         [HttpGet]
         [Route("GetAll")]
-        public IEnumerable<SlideShow> GetAll(SlideShowPosition position)
+        public IEnumerable<SlideShow> GetAll(SlideShowPosition position = 0)
         {
             return _slideShowService.GetAll(position);
         }
 
+        [HttpGet]
+        [Route("GetAllPosition")]
+        public IEnumerable<dynamic> GetAllPosition()
+        {
+            return _slideShowService.GetAllPosition();
+        }
 
         public SlideShow Get(int id)
         {

@@ -12,6 +12,8 @@ namespace WBrand.Services.WebSystem
     {
         IEnumerable<SlideShow> GetAll(SlideShowPosition position = 0);
 
+        IEnumerable<dynamic> GetAllPosition();
+
         void DeleteById(int id);
     }
 }
