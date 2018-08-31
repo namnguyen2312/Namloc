@@ -7,7 +7,7 @@ addSlideShowCtrl.$inject = ['$scope', 'apiService', 'notificationService', '$sta
 function addSlideShowCtrl($scope, apiService, notificationService, $state) {
 
     $scope.data = {
-
+        Position: 0
     };
 
     $scope.chooseImage = chooseImage;
@@ -25,7 +25,7 @@ function addSlideShowCtrl($scope, apiService, notificationService, $state) {
 
     function loadPosition() {
         apiService.get('api/slideShow/getAllPosition', null, function (result) {
-            $scope.position = result.data;
+            $scope.positions = result.data;
         }, function () {
             console.log('Cannot get data');
         });

@@ -27,10 +27,20 @@ function slideShowCtrl($scope, apiService, notificationService, $ngBootbox) {
         });
     }
 
+    function loadPosition() {
+        apiService.get('api/slideShow/getAllPosition', null, function (result) {
+            $scope.positions = result.data;
+        }, function () {
+            console.log('Cannot get data');
+        });
+    }
+
     function search() {
-        var config ={
-            position: $scope.position
-        }
+        var config = {
+            params: {
+                position: $scope.position
+            }
+        };
         apiService.get('/api/slideShow/getAll', config, function (result) {
             $scope.data = result.data;
         }, function () {
@@ -38,5 +48,6 @@ function slideShowCtrl($scope, apiService, notificationService, $ngBootbox) {
         });
     }
 
-    $scope.search();
+    search();
+    loadPosition();
 }

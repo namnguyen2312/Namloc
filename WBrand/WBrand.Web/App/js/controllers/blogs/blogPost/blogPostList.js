@@ -70,8 +70,6 @@ function blogPostCtrl($scope, apiService, notificationService, $ngBootbox) {
         });
     }
 
-    
-
     search();
     loadCategory();
 }

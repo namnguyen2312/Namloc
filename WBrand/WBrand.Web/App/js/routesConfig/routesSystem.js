@@ -40,5 +40,19 @@
                     }]
                 }
             })
-            
+            .state('app.system.editSlide', {
+                url: '/editSlideShow/:id',
+                templateUrl: '/app/views/system/slide/slide.html',
+                controller: 'editSlideShowCtrl',
+                ncyBreadcrumb: {
+                    label: 'Sửa slide hình'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/system/slide/edit.js']
+                        });
+                    }]
+                }
+            })
     }]);
