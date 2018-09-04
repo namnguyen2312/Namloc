@@ -1,17 +1,125 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div class="div-box mb">
+    <div class="contact-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="contact-wrap-content">
+                        <div class="contact-content">
+                            <div class="col-md-4 col-sm-4">
+                                <h2>Hỗ Trợ</h2>
+                                <div class="contact-skype">
+                                    <div class="skype-img pull-left">
+                                        <img class="img-responsive" src="/Assets/client/images/75x75.jpg" alt="">
+                                    </div>
+                                    <div class="skype-info">
+                                        <h5>MS Thuy Tien</h5>
+                                        <span class="service-apartment">Tour dulich Visa</span>
+                                        <span><i class="fa fa-skype" aria-hidden="true" style="color: #00a9ff"></i> hophamthuytien87</span>
+                                        <span><i class="fa fa-phone" aria-hidden="true"></i> 0902 456 554</span>
+                                        <span><i class="fa fa-envelope" aria-hidden="true"></i> tien.ho@globalopentrip.com</span>
+                                    </div>
+                                </div>
+                                <div class="contact-skype mt20">
+                                    <div class="skype-img pull-left">
+                                        <img class="img-responsive" src="/Assets/client/images/75x75.jpg" alt="">
+                                    </div>
+                                    <div class="skype-info">
+                                        <h5>MS Thuy Tien</h5>
+                                        <span class="service-apartment">Tour dulich Visa</span>
+                                        <span><i class="fa fa-skype" aria-hidden="true" style="color: #00a9ff"></i> hophamthuytien87</span>
+                                        <span><i class="fa fa-phone" aria-hidden="true"></i> 0902 456 554</span>
+                                        <span><i class="fa fa-envelope" aria-hidden="true"></i> tien.ho@globalopentrip.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <h2>Social</h2>
+                                <div class="contact-social text-center">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <h2>Địa Chỉ</h2>
+                                <div class="contact-info">
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-map" aria-hidden="true"></i>
+                                            <b>Địa Chỉ</b>482/1 Nơ Trang Long, Phường 13, Quận Bình Thạnh, Tp HCM
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            <b>Số Điện Thoại</b>0902456554 – 0985011402
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                            <b>Email</b>info@globalopentrip.com
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="div-box mb">
+    <div class="form-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="contact-wrap-form">
+                        <div class="contact-form">
+                            <h2>Gửi mail để được hỗ trợ</h2>
+                            <p>Để giúp quý khách có được những cảm nhận và phục vụ tốt nhất. Vui lòng liên hệ chúng tôi.</p>
+                            <div class="it-text">
+                                <form action="">
+                                    <div class="col-md-6">
+                                        <input name="Name" type="text" maxlength="64" placeholder="Tên*">
+                                        <input required="" name="Email" type="email" maxlength="64" placeholder="Email*">
+                                        <input name="Title" type="text" maxlength="128" placeholder="Tiêu đề*">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <textarea name="MessageBox" placeholder="Tin nhắn" maxlength="1024"></textarea>
+                                        <button type="submit" class="hbtn1">Gửi</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="div-box">
+    <div id="map"></div>
+    <script>
+            var map;
+            function initMap() {
+              var uluru = {lat: 10.8192196, lng: 106.6991749},
+              map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: uluru
+              });
+              var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+              });
+            }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH2hT2CK7o-nYbiVfVLEhBceS8VEeHbIQ&callback=initMap"
+            async defer></script>
+</div>
