@@ -37,6 +37,8 @@ namespace WBrand.Data.EF
         public DbSet<LogDbContext> LogDbContexts { set; get; }
         
         public DbSet<SlideShow> SlideShows { set; get; }
+
+        public DbSet<SystemInfo> SystemInfos { set; get; }
         /// <summary>
         /// Identity table
         /// </summary>

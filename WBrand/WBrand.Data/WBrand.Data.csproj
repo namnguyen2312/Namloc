@@ -56,6 +56,7 @@
     <Compile Include="User\IAppRoleRepository.cs" />
     <Compile Include="User\IAppUserGroupRepository.cs" />
     <Compile Include="User\IAppUserRepository.cs" />
+    <Compile Include="WebSystem\ISystemInfoRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WBrand.Core.Domain\WBrand.Core.Domain.csproj">

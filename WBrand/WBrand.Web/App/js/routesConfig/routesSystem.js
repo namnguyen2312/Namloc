@@ -55,4 +55,19 @@
                     }]
                 }
             })
+            .state('app.system.info', {
+                url: '/slideShow',
+                templateUrl: '/app/views/system/info/item.html',
+                controller: 'systemInfoCtrl',
+                ncyBreadcrumb: {
+                    label: 'Thông tin hệ thống'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/system/info/item.js']
+                        });
+                    }]
+                }
+            })
     }]);

@@ -78,6 +78,7 @@
     <Compile Include="Repositories\User\AppRoleRepository.cs" />
     <Compile Include="Repositories\User\AppUserGroupRepository.cs" />
     <Compile Include="Repositories\User\AppUserRepository.cs" />
+    <Compile Include="Repositories\WebSystem\SystemInfoRepository.cs" />
     <Compile Include="WBrandDbContext.cs" />
   </ItemGroup>
   <ItemGroup>

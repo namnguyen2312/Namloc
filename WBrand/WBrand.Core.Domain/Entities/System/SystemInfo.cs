@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WBrand.Core.Domain.Enum;
 
 namespace WBrand.Core.Domain.Entities.System
 {
@@ -25,7 +26,13 @@ namespace WBrand.Core.Domain.Entities.System
         public string Logo { set; get; }
 
         [MaxLength(512)]
+        public string CompanyEmail { set; get; }
+
+        [MaxLength(512)]
         public string SystemEmail { set; get; }
+
+        [MaxLength(512)]
+        public string PasswordEmail { set; get; }
 
         [MaxLength(512)]
         public string MetaTitle { set; get; }
@@ -35,5 +42,7 @@ namespace WBrand.Core.Domain.Entities.System
 
         [MaxLength(512)]
         public string MetaKeyword { set; get; }
+
+        public Language LanguageId { set; get; }
     }
 }

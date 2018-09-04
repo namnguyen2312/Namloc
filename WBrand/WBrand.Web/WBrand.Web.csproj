@@ -214,6 +214,7 @@
     <Content Include="App\js\controllers\roleGroups\editRoleGroup.js" />
     <Content Include="App\js\controllers\roleGroups\roleGroupList.js" />
     <Content Include="App\js\controllers\roles\roleList.js" />
+    <Content Include="App\js\controllers\system\info\item.js" />
     <Content Include="App\js\controllers\system\slide\add.js" />
     <Content Include="App\js\controllers\system\slide\edit.js" />
     <Content Include="App\js\controllers\system\slide\list.js" />
@@ -270,6 +271,7 @@
     <Content Include="App\views\roleGroups\roleGroupList.html" />
     <Content Include="App\views\roles\roleList.html" />
     <Content Include="App\views\shared\pagerDirective.html" />
+    <Content Include="App\views\system\info\item.html" />
     <Content Include="App\views\system\slide\list.html" />
     <Content Include="App\views\system\slide\slide.html" />
     <Content Include="App\views\users\user.html" />

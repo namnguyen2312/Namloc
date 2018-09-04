@@ -70,6 +70,7 @@
     <Compile Include="User\IAppUserService.cs" />
     <Compile Include="User\IPermissionService.cs" />
     <Compile Include="WebSystem\ISlideShowService.cs" />
+    <Compile Include="WebSystem\ISystemInfoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WBrand.Common\WBrand.Common.csproj">

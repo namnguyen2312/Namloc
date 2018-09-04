@@ -73,6 +73,7 @@
     <Compile Include="Entities\SlideShow\SlideShow.cs" />
     <Compile Include="Entities\System\LogDbContext.cs" />
     <Compile Include="Entities\System\SystemInfo.cs" />
+    <Compile Include="Enum\Language.cs" />
     <Compile Include="Enum\SlideShowPosition.cs" />
     <Compile Include="Models\AudiModel.cs" />
     <Compile Include="Models\Blog\BlogPostCategoryModel.cs" />
