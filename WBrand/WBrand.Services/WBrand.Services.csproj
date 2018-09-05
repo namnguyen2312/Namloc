@@ -69,6 +69,7 @@
     <Compile Include="User\IAppRoleService.cs" />
     <Compile Include="User\IAppUserService.cs" />
     <Compile Include="User\IPermissionService.cs" />
+    <Compile Include="WebSystem\IBannerService.cs" />
     <Compile Include="WebSystem\ISlideShowService.cs" />
     <Compile Include="WebSystem\ISystemInfoService.cs" />
   </ItemGroup>

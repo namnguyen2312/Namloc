@@ -59,7 +59,7 @@
                                 <td>{{item.PublishDate | date:'dd/MM/yyyy HH:mm:ss'}}</td>
                                 <td style="text-align:center">
                                     <a ui-sref="app.editBlogPost({id:item.Id})" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>
-                                    <button class="btn btn-sm btn-danger" ng-click="deleteItem(item.Id)"><i class="fa fa-trash-o"></i></button>
+                                    <button class="btn btn-sm btn-danger" ng-click="deleteItem(item)"><i class="fa fa-trash-o"></i></button>
                                 </td>
                             </tr>
                         </tbody>

@@ -61,16 +61,12 @@ function editBlogPostCtrl($scope, apiService, notificationService, $state, $stat
 
 
 
-
+    loadCategories();
+    loadDetail();
     $('#publishDate').datetimepicker({
         format: 'd/m/Y H:i',
         lang: 'vi',
         closeOnDateSelect: true
     });
-
-    $(".select2").select2();
-
-    loadCategories();
-    loadDetail();
 
 }

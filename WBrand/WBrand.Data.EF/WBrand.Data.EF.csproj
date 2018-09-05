@@ -72,6 +72,7 @@
     <Compile Include="Repositories\Catalog\ProductCategoryRepository.cs" />
     <Compile Include="Repositories\Catalog\ProductRepository.cs" />
     <Compile Include="Repositories\Logging\LogDbContextRepository.cs" />
+    <Compile Include="Repositories\WebSystem\BannerRepository.cs" />
     <Compile Include="Repositories\WebSystem\SlideShowRepository.cs" />
     <Compile Include="Repositories\User\AppGroupRepository.cs" />
     <Compile Include="Repositories\User\AppRoleGroupRepository.cs" />

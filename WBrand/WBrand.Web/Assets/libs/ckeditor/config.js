@@ -39,5 +39,5 @@ CKEDITOR.editorConfig = function( config ) {
     config.filebrowserUploadUrl = '/Assets/libs/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Files';
     config.filebrowserWindowWidth = '1000';
     config.filebrowserWindowHeight = '700';
-    config.allowedContent = true;
+    config.disableNativeSpellChecker = false;
 };

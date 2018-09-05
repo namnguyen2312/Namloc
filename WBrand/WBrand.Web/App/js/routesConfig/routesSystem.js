@@ -70,4 +70,49 @@
                     }]
                 }
             })
+            .state('app.system.banner', {
+                url: '/banner',
+                templateUrl: '/app/views/system/banner/list.html',
+                controller: 'bannerCtrl',
+                ncyBreadcrumb: {
+                    label: 'Danh sách banner đối tác'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/system/banner/list.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.system.addBanner', {
+                url: '/addBanner',
+                templateUrl: '/app/views/system/banner/banner.html',
+                controller: 'addBannerCtrl',
+                ncyBreadcrumb: {
+                    label: 'Thêm banner'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/system/banner/add.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.system.editBanner', {
+                url: '/editBanner/:id',
+                templateUrl: '/app/views/system/banner/banner.html',
+                controller: 'editBannerCtrl',
+                ncyBreadcrumb: {
+                    label: 'Sửa banner'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/system/banner/edit.js']
+                        });
+                    }]
+                }
+            })
     }]);

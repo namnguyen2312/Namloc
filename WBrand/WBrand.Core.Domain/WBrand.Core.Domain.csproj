@@ -71,8 +71,10 @@
     <Compile Include="Entities\Identity\Status.cs" />
     <Compile Include="Entities\SeoEntity.cs" />
     <Compile Include="Entities\SlideShow\SlideShow.cs" />
+    <Compile Include="Entities\System\Banner.cs" />
     <Compile Include="Entities\System\LogDbContext.cs" />
     <Compile Include="Entities\System\SystemInfo.cs" />
+    <Compile Include="Enum\BannerPosition.cs" />
     <Compile Include="Enum\Language.cs" />
     <Compile Include="Enum\SlideShowPosition.cs" />
     <Compile Include="Models\AudiModel.cs" />
