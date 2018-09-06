@@ -1,4 +1,4 @@
-﻿
+﻿@model WBrand.Common.Page.PaginationSet<WBrand.Core.Domain.Models.Catalog.ProductModel>
 @{
     ViewBag.Title = "Sản phẩm";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -19,174 +19,54 @@
     <div class="tour-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-3">
-                    <div class="tour-category-wrapper mb">
-                        <div class="tour-category-content">
-                            <div class="cate-title"><span class="country">Nhom dinh hinh</span></div>
-                            <ul class="cd-accordion-menu animated">
-                                <li class="has-children">
-                                    <input type="checkbox" name="group-1" id="group-1" checked>
-                                    <label for="group-1">Nhôm  bửng thùng xe tải</label>
-                                    <ul>
-                                        <li class="has-children">
-                                            <input type="checkbox" name="sub-group-1" id="sub-group-1">
-                                            <label for="sub-group-1">Sub Group 1</label>
-                                            <ul>
-                                                <li><a href="#">Image</a></li>
-                                                <li><a href="#">Image</a></li>
-                                                <li><a href="#">Image</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-children">
-                                            <input type="checkbox" name="sub-group-2" id="sub-group-2">
-                                            <label for="sub-group-2">Sub Group 2</label>
-                                            <ul>
-                                                <li><a href="#">Image</a></li>
-                                                <li><a href="#">Image</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Vịnh Hạ Long</a></li>
-                                        <li><a href="#">Sapa</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-children">
-                                    <input type="checkbox" name="group-2" id="group-2">
-                                    <label for="group-2">Nhom hinh chu V</label>
-                                    <ul>
-                                        <li><a href="#">Kontum</a></li>
-                                        <li><a href="#">Huế</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-children">
-                                    <input type="checkbox" name="group-2" id="group-2">
-                                    <label for="group-2">Nhom ong tron</label>
-                                    <ul>
-                                        <li><a href="#">Nhom hop</a></li>
-                                        <li><a href="#">Nhom cua cuon</a></li>
-                                    </ul>
-                                </li>
-                            </ul> <!-- cd-accordion-menu -->
-                        </div>
-                        <div class="tour-category-content mt">
-                            <div class="cate-title"><span class="country">Ban nen doc</span></div>
-                            <div class="spe-news clearfix">
-                                <img src="/Assets/client/images/sp-news1.png" alt="">
-                                <h4><a href="">sự khác biệt giữa nhôm T40 và nhôm T50</a></h4>
-                            </div>
-                            <div class="spe-news clearfix">
-                                <img src="/Assets/client/images/sp-news2.png" alt="">
-                                <h4><a href="">sự khác biệt giữa nhôm T40 và nhôm T50</a></h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @{Html.RenderAction("Category", "Product");}
                 <div class="col-md-9 col-sm-9">
                     <div class="product-wrap">
                         <div class="product-content">
-                            <div class="col-md-4 col-sm-4">
-                                <div class="product-ct">
-                                    <div class="product-img">
-                                        <a href="product_detail.html"><img class="img-responsive" src="/Assets/client/images/product-03.png" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                                        <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="product-ct">
-                                    <div class="product-img">
-                                        <a href="product_detail.html"><img class="img-responsive" src="/Assets/client/images/product-03.png" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                                        <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
+                            @foreach (var item in Model.Items)
+                            {
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="product-ct">
+                                        <div class="product-img">
+                                            <a href="/product/@item.Alias"><img class="img-responsive" src="@item.Image" alt="@item.Name"></a>
+                                        </div>
+                                        <div class="product-info">
+                                            <h5><a href="/product/@item.Alias">@item.Name</a></h5>
+                                            <p>@item.ShortContent</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="product-ct">
-                                    <div class="product-img">
-                                        <a href="product_detail.html"><img class="img-responsive" src="/Assets/client/images/product-03.png" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                                        <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="product-ct">
-                                    <div class="product-img">
-                                        <a href="product_detail.html"><img class="img-responsive" src="/Assets/client/images/product-03.png" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                                        <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="product-ct">
-                                    <div class="product-img">
-                                        <a href="product_detail.html"><img class="img-responsive" src="/Assets/client/images/product-03.png" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                                        <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="product-ct">
-                                    <div class="product-img">
-                                        <a href="product_detail.html"><img class="img-responsive" src="/Assets/client/images/product-03.png" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                                        <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="product-ct">
-                                    <div class="product-img">
-                                        <a href="product_detail.html"><img class="img-responsive" src="/Assets/client/images/product-03.png" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                                        <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="product-ct">
-                                    <div class="product-img">
-                                        <a href="product_detail.html"><img class="img-responsive" src="/Assets/client/images/product-03.png" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                                        <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="product-ct">
-                                    <div class="product-img">
-                                        <a href="product_detail.html"><img class="img-responsive" src="/Assets/client/images/product-03.png" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                                        <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                                    </div>
-                                </div>
-                            </div>
+                            }
                         </div>
                     </div>
                     <div class="hpagination">
                         <nav class="page-navigation">
                             <ul class="pagination1">
+                                @if (Model.TotalPages > 1)
+                                {
+                                    var startPageIndex = Math.Max(1, Model.Page - 5 / 2);
+                                    var endPageIndex = Math.Min(Model.TotalPages, Model.Page + 5 / 2);
+                                    if (Model.Page > 1)
+                                    {
+                                        <li><a href="?p=@(Model.Page-1)@ViewBag.queryParams"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+                                    }
+                                    for (int i = startPageIndex; i <= endPageIndex; i++)
+                                    {
+                                        if (Model.Page == i)
+                                        {
+                                            <li class="active"><a href="?p=@i@ViewBag.queryParams">@i</a></li>
+
+                                        }
+                                        else
+                                        {
+                                            <li><a href="?p=@i@ViewBag.queryParams">@i</a></li>
+                                        }
+                                    }
+                                    if (Model.Page < Model.TotalPages)
+                                    {
+                                        <li><a href="?p=@(Model.Page+1)@ViewBag.queryParams"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                    }
+                                }
                                 <li><a href=""><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
                                 <li class="active"><a href="">1</a></li>
                                 <li><a href="">2</a></li>

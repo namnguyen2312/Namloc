@@ -1,11 +1,16 @@
-﻿<div class="div-box">
+﻿@model IEnumerable<WBrand.Core.Domain.Entities.System.Banner>
+<div class="div-box">
     <div class="partner">
         <div class="swiper-container service-slider">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="/Assets/client/images/logo-1.png" alt="">
-                </div>
-                <div class="swiper-slide">
+                @foreach (var item in Model)
+                {
+                    <div class="swiper-slide">
+                        <img src="@item.Image" alt="@item.Id">
+                    </div>
+                }
+
+                @*<div class="swiper-slide">
                     <img src="/Assets/client/images/logo-2.png" alt="">
                 </div>
                 <div class="swiper-slide">
@@ -19,7 +24,7 @@
                 </div>
                 <div class="swiper-slide">
                     <img src="/Assets/client/images/logo-6.png" alt="">
-                </div>
+                </div>*@
             </div>
             <!-- Add Arrows -->
             <!-- <div class="swiper-button-next"></div>

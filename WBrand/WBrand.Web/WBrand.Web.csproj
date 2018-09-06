@@ -7100,6 +7100,7 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Shared\_Partner.cshtml" />
+    <Content Include="Views\Product\Category.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WBrand.Common\WBrand.Common.csproj">

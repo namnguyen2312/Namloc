@@ -46,7 +46,7 @@
             @RenderBody()
 
 
-            @Html.Partial("_Partner")
+            @{Html.RenderAction("Partner","Common"); }
             @Html.Partial("_Footer")
 
         </div>

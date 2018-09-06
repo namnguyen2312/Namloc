@@ -23,7 +23,7 @@ namespace WBrand.Web.Controllers
         public PartialViewResult Partner()
         {
             var model = _bannerService.GetAll();
-            return PartialView();
+            return PartialView("_Partner", model);
         }
     }
 }
