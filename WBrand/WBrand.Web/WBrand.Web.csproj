@@ -1017,8 +1017,6 @@
     <Content Include="Assets\libs\angular-breadcrumb\dist\angular-breadcrumb.min.js" />
     <Content Include="Assets\libs\angular-breadcrumb\Gruntfile.js" />
     <Content Include="Assets\libs\angular-breadcrumb\package.js" />
-    <Content Include="Assets\libs\angular-breadcrumb\release\angular-breadcrumb.js" />
-    <Content Include="Assets\libs\angular-breadcrumb\release\angular-breadcrumb.min.js" />
     <Content Include="Assets\libs\angular-chart.js\angular-chart.js" />
     <Content Include="Assets\libs\angular-chart.js\dist\angular-chart.js" />
     <Content Include="Assets\libs\angular-chart.js\dist\angular-chart.min.js" />
@@ -6094,9 +6092,6 @@
     <Content Include="Assets\libs\popper.js\docs\_layouts\page-hashtag.html" />
     <Content Include="Assets\libs\popper.js\docs\_layouts\page-nowrap.html" />
     <Content Include="Assets\libs\popper.js\docs\_layouts\page.html" />
-    <Content Include="Assets\libs\popper.js\packages\babel-config\index.js" />
-    <Content Include="Assets\libs\popper.js\packages\bundle\index.js" />
-    <Content Include="Assets\libs\popper.js\packages\eslint-config-popper\index.js" />
     <Content Include="Assets\libs\popper.js\popperjs.png" />
     <Content Include="Assets\libs\select2\dist\css\select2.css" />
     <Content Include="Assets\libs\select2\dist\css\select2.min.css" />
@@ -6356,7 +6351,11 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets\libs\angular-breadcrumb\release\" />
     <Folder Include="Assets\libs\checklist-model\test\" />
+    <Folder Include="Assets\libs\popper.js\packages\babel-config\" />
+    <Folder Include="Assets\libs\popper.js\packages\bundle\" />
+    <Folder Include="Assets\libs\popper.js\packages\eslint-config-popper\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -6869,12 +6868,6 @@
     <Content Include="Assets\libs\popper.js\LICENSE.md" />
     <Content Include="Assets\libs\popper.js\MENTIONS.md" />
     <Content Include="Assets\libs\popper.js\package.json" />
-    <Content Include="Assets\libs\popper.js\packages\babel-config\package.json" />
-    <Content Include="Assets\libs\popper.js\packages\babel-config\yarn.lock" />
-    <Content Include="Assets\libs\popper.js\packages\bundle\package.json" />
-    <Content Include="Assets\libs\popper.js\packages\bundle\yarn.lock" />
-    <Content Include="Assets\libs\popper.js\packages\eslint-config-popper\package.json" />
-    <Content Include="Assets\libs\popper.js\packages\eslint-config-popper\yarn.lock" />
     <Content Include="Assets\libs\popper.js\README.md" />
     <Content Include="Assets\libs\popper.js\yarn.lock" />
     <Content Include="Assets\libs\registry\.bower.json" />
@@ -7098,6 +7091,7 @@
     <Content Include="Assets\client\libs\Swiper-4.0.6\.travis.yml" />
     <None Include="packages.config" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\NamLoc.pubxml" />
     <None Include="Properties\PublishProfiles\WebNamLoc.pubxml" />
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
