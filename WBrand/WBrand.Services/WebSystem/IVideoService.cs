@@ -9,6 +9,9 @@ namespace WBrand.Services.WebSystem
 {
     public interface IVideoService:IBaseServices<Video>
     {
+
+        IEnumerable<Video> GetAll(bool? isShow = null);
+
         void DeleteById(int id);
     }
 }

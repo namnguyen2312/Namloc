@@ -153,6 +153,7 @@
     <Compile Include="Controllers\WebSystem\BannerController.cs" />
     <Compile Include="Controllers\WebSystem\SlideShowController.cs" />
     <Compile Include="Controllers\WebSystem\SystemInfoController.cs" />
+    <Compile Include="Controllers\WebSystem\VideoController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

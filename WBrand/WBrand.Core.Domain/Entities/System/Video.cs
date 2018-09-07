@@ -16,5 +16,7 @@ namespace WBrand.Core.Domain.Entities.System
 
         public DateTimeOffset CreatedDate { set; get; } = DateTimeOffset.UtcNow;
         public bool IsShow { set; get; } = true;
+
+        public int Order { set; get; } = 0;
     }
 }

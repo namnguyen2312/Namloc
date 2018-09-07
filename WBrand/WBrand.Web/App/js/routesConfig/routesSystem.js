@@ -115,4 +115,49 @@
                     }]
                 }
             })
+            .state('app.system.video', {
+                url: '/video',
+                templateUrl: '/app/views/system/video/list.html',
+                controller: 'videoCtrl',
+                ncyBreadcrumb: {
+                    label: 'Danh sách video'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/system/video/list.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.system.addVideo', {
+                url: '/addVideo',
+                templateUrl: '/app/views/system/video/video.html',
+                controller: 'addVideoCtrl',
+                ncyBreadcrumb: {
+                    label: 'Thêm video mới'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/system/video/add.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.system.editVideo', {
+                url: '/editVideo',
+                templateUrl: '/app/views/system/video/video.html',
+                controller: 'editVideoCtrl',
+                ncyBreadcrumb: {
+                    label: 'Sửa video'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/system/video/edit.js']
+                        });
+                    }]
+                }
+            })
     }]);

@@ -22,5 +22,15 @@ namespace WBrand.Services.Facade.WebSystem
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<Video> GetAll(bool? isShow = null)
+        {
+            var query = _videoRepository.TableNoTracking;
+            if (isShow != null)
+                query = query.Where(x => x.IsShow == isShow);
+
+            return query.OrderBy(x => x.Order).ToList();
+
+        }
     }
 }

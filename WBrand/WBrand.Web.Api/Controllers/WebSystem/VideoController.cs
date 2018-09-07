@@ -9,50 +9,48 @@ using WBrand.Services.WebSystem;
 
 namespace WBrand.Web.Api.Controllers.WebSystem
 {
-    [RoutePrefix("api/banner")]
-    public class BannerController : BaseApiController
+    public class VideoController : BaseApiController
     {
-        IBannerService _bannerService;
-
-        public BannerController(IBannerService bannerService)
+        IVideoService _videoService;
+        public VideoController(IVideoService videoService)
         {
-            _bannerService = bannerService;
+            _videoService = videoService;
         }
 
         [HttpGet]
         [Route("GetAll")]
-        public IEnumerable<Banner> GetAll()
+        public IEnumerable<Video> GetAll()
         {
-            return _bannerService.GetAll();
+            return _videoService.GetAll();
         }
 
-       
-        public Banner Get(int id)
+
+        public Video Get(int id)
         {
-            return _bannerService.GetById(id);
+            return _videoService.GetById(id);
         }
 
         // POST api/<controller>
-        public Banner Add([FromBody]Banner value)
+        public Video Add([FromBody]Video value)
         {
-            return _bannerService.Insert(value);
+            return _videoService.Insert(value);
         }
 
         // PUT api/<controller>/5
         [HttpPut]
         [Route("Put")]
-        public Banner Put([FromBody]Banner value)
+        public Video Put([FromBody]Video value)
         {
             //var test = value;
 
-            return _bannerService.Update(value);
+            return _videoService.Update(value);
         }
 
         // DELETE api/<controller>/5
         [HttpDelete]
         public void Delete(int id)
         {
-            _bannerService.DeleteById(id);
+            _videoService.DeleteById(id);
         }
     }
 }

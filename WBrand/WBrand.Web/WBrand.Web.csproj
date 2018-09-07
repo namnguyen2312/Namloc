@@ -224,6 +224,9 @@
     <Content Include="App\js\controllers\system\slide\add.js" />
     <Content Include="App\js\controllers\system\slide\edit.js" />
     <Content Include="App\js\controllers\system\slide\list.js" />
+    <Content Include="App\js\controllers\system\video\add.js" />
+    <Content Include="App\js\controllers\system\video\edit.js" />
+    <Content Include="App\js\controllers\system\video\list.js" />
     <Content Include="App\js\controllers\users\addUser.js" />
     <Content Include="App\js\controllers\users\editUser.js" />
     <Content Include="App\js\controllers\users\userList.js" />
@@ -282,6 +285,8 @@
     <Content Include="App\views\system\info\item.html" />
     <Content Include="App\views\system\slide\list.html" />
     <Content Include="App\views\system\slide\slide.html" />
+    <Content Include="App\views\system\video\list.html" />
+    <Content Include="App\views\system\video\video.html" />
     <Content Include="App\views\users\user.html" />
     <Content Include="App\views\users\userList.html" />
     <Content Include="App\views\vendors\css\chart.css" />
