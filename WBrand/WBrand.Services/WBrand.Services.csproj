@@ -72,6 +72,7 @@
     <Compile Include="WebSystem\IBannerService.cs" />
     <Compile Include="WebSystem\ISlideShowService.cs" />
     <Compile Include="WebSystem\ISystemInfoService.cs" />
+    <Compile Include="WebSystem\IVideoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WBrand.Common\WBrand.Common.csproj">

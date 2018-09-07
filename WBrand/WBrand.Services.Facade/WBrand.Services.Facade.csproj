@@ -104,6 +104,7 @@
     <Compile Include="WebSystem\BannerService.cs" />
     <Compile Include="WebSystem\SlideShowService.cs" />
     <Compile Include="WebSystem\SystemInfoService.cs" />
+    <Compile Include="WebSystem\VideoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WBrand.Common\WBrand.Common.csproj">

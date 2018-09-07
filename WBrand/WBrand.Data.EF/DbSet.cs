@@ -41,6 +41,8 @@ namespace WBrand.Data.EF
         public DbSet<SystemInfo> SystemInfos { set; get; }
 
         public DbSet<Banner> Banners { set; get; }
+
+        public DbSet<Video> Videos { set; get; }
         /// <summary>
         /// Identity table
         /// </summary>

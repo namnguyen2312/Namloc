@@ -74,6 +74,7 @@
     <Compile Include="Entities\System\Banner.cs" />
     <Compile Include="Entities\System\LogDbContext.cs" />
     <Compile Include="Entities\System\SystemInfo.cs" />
+    <Compile Include="Entities\System\Video.cs" />
     <Compile Include="Enum\BannerPosition.cs" />
     <Compile Include="Enum\Language.cs" />
     <Compile Include="Enum\SlideShowPosition.cs" />

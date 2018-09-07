@@ -58,6 +58,7 @@
     <Compile Include="User\IAppUserGroupRepository.cs" />
     <Compile Include="User\IAppUserRepository.cs" />
     <Compile Include="WebSystem\ISystemInfoRepository.cs" />
+    <Compile Include="WebSystem\IVideoRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WBrand.Core.Domain\WBrand.Core.Domain.csproj">
