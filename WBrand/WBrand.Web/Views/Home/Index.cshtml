@@ -134,7 +134,7 @@
                 {
                     <div class="col-md-6">
                         <div class="border-sd clearfix mt20">
-                            <div class="news-img"><img class="img-responsive" src="@post.Image" alt="@post.Name"></div>
+                            <div class="news-img"><img class="img-responsive" src="@Url.Action("Thumbnail", "Image", new {FileName=post.Image, w="292", h="348" })" alt="@post.Name"></div>
                             <div class="news-content">
                                 <h4>@post.Name</h4>
                                 <p>@post.ShortContent</p>
@@ -143,7 +143,7 @@
                         </div>
                     </div>
                 }
-                
+
                 <div class="col-md-6">
                     <div class="border-sd clearfix mt20">
                         <div class="news-img">

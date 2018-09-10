@@ -16,55 +16,57 @@ function blogPostCtrl($scope, apiService, notificationService, $ngBootbox) {
     $scope.search = search;
     $scope.deleteItem = deleteItem;
 
+
     function deleteItem(item) {
-        apiService.del('api/blogPost/' + item.Id, null, function () {
-            notificationService.displaySuccess('Xóa thành công');
-            search();
-        }, function () {
-            notificationService.displayError('Xóa không thành công');
+        $ngBootbox.confirm('Bạn có chắc muốn xóa?').then(function () {
+            apiService.del('api/blogPost/' + item.Id, null, function () {
+                notificationService.displaySuccess('Xóa thành công');
+                search();
+            }, function () {
+                notificationService.displayError('Xóa không thành công');
+            });
         });
-    });
-}
+    }
 
-function loadCategory() {
-    apiService.get('api/blogPostCategory/GetAllNoPaging', null, function (result) {
-        var initCat = {
-            Id: 0,
-            Name: 'Chọn danh mục'
+    function loadCategory() {
+        apiService.get('api/blogPostCategory/GetAllNoPaging', null, function (result) {
+            var initCat = {
+                Id: 0,
+                Name: 'Chọn danh mục'
+            };
+            $scope.categories = result.data;
+            $scope.categories.unshift(initCat);
+        }, function () {
+            console.log('Cannot get data');
+        });
+    }
+
+    function search(page) {
+        page = page || 0;
+        var config = {
+            params: {
+                filter: $scope.filter,
+                categoryId: $scope.categoryId,
+                page: page,
+                pageSize: $scope.pageSize
+            }
         };
-        $scope.categories = result.data;
-        $scope.categories.unshift(initCat);
-    }, function () {
-        console.log('Cannot get data');
-    });
-}
+        apiService.get('/api/blogPost/getAll', config, function (result) {
+            if (result.data.TotalCount == 0) {
+                notificationService.displayWarning('Không có bản ghi nào được tìm thấy.');
+            }
+            $scope.data = result.data.Items;
+            $scope.page = result.data.Page;
+            $scope.pagesCount = result.data.TotalPages;
+            $scope.totalCount = result.data.TotalCount;
+            $scope.loading = false;
+        }, function () {
+            console.log('load failed data');
+            $scope.loading = false;
+        });
+    }
 
-function search(page) {
-    page = page || 0;
-    var config = {
-        params: {
-            filter: $scope.filter,
-            categoryId: $scope.categoryId,
-            page: page,
-            pageSize: $scope.pageSize
-        }
-    };
-    apiService.get('/api/blogPost/getAll', config, function (result) {
-        if (result.data.TotalCount == 0) {
-            notificationService.displayWarning('Không có bản ghi nào được tìm thấy.');
-        }
-        $scope.data = result.data.Items;
-        $scope.page = result.data.Page;
-        $scope.pagesCount = result.data.TotalPages;
-        $scope.totalCount = result.data.TotalCount;
-        $scope.loading = false;
-    }, function () {
-        console.log('load failed data');
-        $scope.loading = false;
-    });
-}
-
-search();
-loadCategory();
+    search();
+    loadCategory();
 }
 

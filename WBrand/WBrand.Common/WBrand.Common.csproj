@@ -57,6 +57,7 @@
     <Compile Include="DisposableObject.cs" />
     <Compile Include="Exceptions\NameDuplicatedException.cs" />
     <Compile Include="AutoMapper\ObjectExtensions.cs" />
+    <Compile Include="Extensions\Dimensions.cs" />
     <Compile Include="Extensions\ImageExtensions.cs" />
     <Compile Include="Helper\CoreHelper.cs" />
     <Compile Include="Helper\EnumHelper.cs" />
