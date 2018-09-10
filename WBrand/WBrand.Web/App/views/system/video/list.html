@@ -23,15 +23,23 @@
                         <thead>
                             <tr>
                                 <th style="width: 10%">Video</th>
+                                <th style="width: 10%">Tên</th>
                                 <th>Đường dẫn</th>
+                                <th>Hiển thị</th>
                                 <th style="width: 10%">#</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="item in data">
-                                <td style="width: 10%"><video ng-src="{{item.URL}}" style="width: 100px;height: 100px" /></td>
+                                <td style="width: 10%">
+                                    <iframe width="200" height="100" src="{{item.URL | trusted}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                </td>
+                                <td>{{item.Name}}</td>
                                 <td>
                                     {{item.URL}}
+                                </td>
+                                <td style="text-align:center">
+                                    <span ng-class="item.IsPublish | filterBoolClass">{{item.IsPublish | filterBoolText}}</span>
                                 </td>
                                 <td style="text-align:center">
                                     <a ui-sref="app.system.editVideo({id:item.Id})" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>

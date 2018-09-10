@@ -8,7 +8,7 @@ using WBrand.Core.Domain.Enum;
 
 namespace WBrand.Core.Domain.Entities.SlideShow
 {
-    public class SlideShow:BaseEntity<int>
+    public class SlideShow : BaseEntity<int>
     {
         [MaxLength(1024)]
         public string Name { set; get; }
@@ -18,6 +18,8 @@ namespace WBrand.Core.Domain.Entities.SlideShow
 
         [MaxLength(2048)]
         public string URL { set; get; }
+
+        public bool IsPublish { set; get; }
 
         public SlideShowPosition Position { set; get; }
     }

@@ -24,6 +24,7 @@
                             <tr>
                                 <th style="width: 10%">Hình</th>
                                 <th>Đường dẫn</th>
+                                <th>Hiển thị</th>
                                 <th style="width: 10%">#</th>
                             </tr>
                         </thead>
@@ -32,6 +33,9 @@
                                 <td style="width: 10%"><img ng-src="{{item.Image}}" style="width: 100px;height: 100px" /></td>
                                 <td>
                                     {{item.URL}}
+                                </td>
+                                <td style="text-align:center">
+                                    <span ng-class="item.IsPublish | filterBoolClass">{{item.IsPublish | filterBoolText}}</span>
                                 </td>
                                 <td style="text-align:center">
                                     <a ui-sref="app.system.editBanner({id:item.Id})" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>

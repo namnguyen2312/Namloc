@@ -146,7 +146,7 @@
                 }
             })
             .state('app.system.editVideo', {
-                url: '/editVideo',
+                url: '/editVideo/:id',
                 templateUrl: '/app/views/system/video/video.html',
                 controller: 'editVideoCtrl',
                 ncyBreadcrumb: {

@@ -33,11 +33,13 @@ namespace WBrand.Services.Facade.WebSystem
             }
         }
 
-        public IEnumerable<SlideShow> GetAll(SlideShowPosition position = 0)
+        public IEnumerable<SlideShow> GetAll(SlideShowPosition position = 0, bool? isPublish = null)
         {
             var query = _slideShowRepository.TableNoTracking;
             if (position != 0)
                 query = query.Where(x => x.Position == position);
+            if (isPublish != null)
+                query = query.Where(x => x.IsPublish == isPublish.Value);
 
             return query.ToList();
         }

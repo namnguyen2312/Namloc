@@ -237,6 +237,7 @@
     <Content Include="App\js\routesConfig\routesSystem.js" />
     <Content Include="App\js\shared\app.common.js" />
     <Content Include="App\js\shared\filter\filterBool.js" />
+    <Content Include="App\js\shared\filter\filterYoutube.js" />
     <Content Include="App\js\shared\services\apiService.js" />
     <Content Include="App\js\shared\services\authData.js" />
     <Content Include="App\js\shared\services\authenticationService.js" />

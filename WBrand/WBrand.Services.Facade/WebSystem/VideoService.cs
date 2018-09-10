@@ -20,14 +20,23 @@ namespace WBrand.Services.Facade.WebSystem
 
         public void DeleteById(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var entity = _videoRepository.GetById(id);
+                _videoRepository.Delete(entity);
+            }
+            catch
+            {
+
+                throw;
+            }
         }
 
-        public IEnumerable<Video> GetAll(bool? isShow = null)
+        public IEnumerable<Video> GetAll(bool? isPublish = null)
         {
             var query = _videoRepository.TableNoTracking;
-            if (isShow != null)
-                query = query.Where(x => x.IsShow == isShow);
+            if (isPublish != null)
+                query = query.Where(x => x.IsPublish == isPublish);
 
             return query.OrderBy(x => x.Order).ToList();
 

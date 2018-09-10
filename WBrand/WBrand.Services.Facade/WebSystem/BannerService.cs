@@ -32,9 +32,12 @@ namespace WBrand.Services.Facade.WebSystem
             }
         }
 
-        public IEnumerable<Banner> GetAll()
+        public IEnumerable<Banner> GetAll(bool? isPublish = null)
         {
-            return _bannerRepository.TableNoTracking.OrderBy(x => x.Order).ToList();
+            var query = _bannerRepository.TableNoTracking;
+            if (isPublish != null)
+                query = query.Where(x => x.IsPublish == isPublish.Value);
+            return query.OrderBy(x => x.Order).ToList();
         }
     }
 }

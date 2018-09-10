@@ -18,6 +18,8 @@ namespace WBrand.Core.Domain.Entities.System
 
         public int Order { set; get; }
 
+        public bool IsPublish { set; get; }
+
         public BannerPosition Position { set; get; } = BannerPosition.Home;
     }
 }

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model WBrand.Web.Kernel.ViewModel.HomeVm
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="div-box">
@@ -8,9 +9,13 @@
             <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="../libs/jssor.slider/svg/loading/static-svg/spin.svg" />
         </div>
         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;">
-            <div>
-                <img data-u="image" src="/Assets/client/images/test/001.jpg" />
-            </div>
+            @foreach (var slide in Model.SlideShows)
+            {
+                <div>
+                    <img data-u="image" src="@slide.URL" />
+                </div>
+            }
+
             <div>
                 <img data-u="image" src="/Assets/client/images/test/002.jpg" />
             </div>
@@ -125,36 +130,20 @@
                 <h2 class="title-style1 mb45">Tin Tức</h2>
             </div>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="border-sd clearfix mt20">
-                        <div class="news-img"><img class="img-responsive" src="/Assets/client/images/news-1.png" alt=""></div>
-                        <div class="news-content">
-                            <h4>img-responsive</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                            <a class="readmore" href="#">đọc thêm</a>
+                @foreach (var post in Model.BlogPosts)
+                {
+                    <div class="col-md-6">
+                        <div class="border-sd clearfix mt20">
+                            <div class="news-img"><img class="img-responsive" src="@post.Image" alt="@post.Name"></div>
+                            <div class="news-content">
+                                <h4>@post.Name</h4>
+                                <p>@post.ShortContent</p>
+                                <a class="readmore" href="/blog/@post.Alias">đọc thêm</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="border-sd clearfix mt20">
-                        <div class="news-img"><img class="img-responsive" src="/Assets/client/images/news-3.png" alt=""></div>
-                        <div class="news-content">
-                            <h4>img-responsive Lorem ipsum dolor</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                            <a class="readmore" href="#">đọc thêm</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="border-sd clearfix mt20">
-                        <div class="news-img"><img class="img-responsive" src="/Assets/client/images/news-3.png" alt=""></div>
-                        <div class="news-content">
-                            <h4>img-responsive</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                            <a class="readmore" href="#">đọc thêm</a>
-                        </div>
-                    </div>
-                </div>
+                }
+                
                 <div class="col-md-6">
                     <div class="border-sd clearfix mt20">
                         <div class="news-img">
@@ -181,18 +170,20 @@
             <div class="row">
                 <div class="col-md-8 col-sm-12">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LnDUYZHDQAg"></iframe>
+                        @if (Model.Videos.Count() > 0)
+                        {
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LnDUYZHDQAg" name="iframe_video"></iframe>
+                        }
+
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <div class="video-list">
                         <ul>
-                            <li><a href="#"><i class="fa fa-play" aria-hidden="true"></i>vietbuild saigon 2018 cung Namloc</a></li>
-                            <li><a href="#"><i class="fa fa-play" aria-hidden="true"></i>cau tao nhom dinh hinh cua so</a></li>
-                            <li><a href="#"><i class="fa fa-play" aria-hidden="true"></i>them dinh dinh chu V</a></li>
-                            <li><a href="#"><i class="fa fa-play" aria-hidden="true"></i>quy trinh san xuat nhom hinh cua namloc</a></li>
-                            <li><a href="#"><i class="fa fa-play" aria-hidden="true"></i>them dinh dinh chu V</a></li>
-                            <li><a href="#"><i class="fa fa-play" aria-hidden="true"></i>them dinh dinh chu V</a></li>
+                            @foreach (var video in Model.Videos)
+                            {
+                                <li><a href="@video.URL" target="iframe_video"><i class="fa fa-play" aria-hidden="true"></i>@video.Name</a></li>
+                            }
                         </ul>
                     </div>
                 </div>

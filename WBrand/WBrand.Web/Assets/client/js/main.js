@@ -1,7 +1,7 @@
 $(document).ready(function() {
  var mySwiper = new Swiper ('.main-slider', {
     // Optional parameters
-    loop: true,
+    loop: false,
     // If we need pagination
     autoplay: {
         delay: 10000,
@@ -22,7 +22,7 @@ $(document).ready(function() {
     slidesPerView: 7,
     // spaceBetween: 30,
     slidesPerGroup: 1,
-    loop: true,
+    loop: false,
     loopFillGroupWithBlank: true,
     // pagination: {
     //   el: '.swiper-pagination',

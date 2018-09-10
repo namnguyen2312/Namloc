@@ -10,7 +10,7 @@ namespace WBrand.Services.WebSystem
 {
     public interface ISlideShowService : IBaseServices<SlideShow>
     {
-        IEnumerable<SlideShow> GetAll(SlideShowPosition position = 0);
+        IEnumerable<SlideShow> GetAll(SlideShowPosition position = 0,bool? isPublish= null);
 
         IEnumerable<dynamic> GetAllPosition();
 

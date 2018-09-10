@@ -9,7 +9,7 @@ namespace WBrand.Services.WebSystem
 {
     public interface IBannerService : IBaseServices<Banner>
     {
-        IEnumerable<Banner> GetAll();
+        IEnumerable<Banner> GetAll(bool? IsPublish= null);
 
         void DeleteById(int id);
     }

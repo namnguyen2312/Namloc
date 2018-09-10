@@ -63,6 +63,11 @@ namespace WBrand.Services.Facade.Blog
             return model;
         }
 
+        public IEnumerable<BlogPost> GetTop4()
+        {
+            return _blogPostRepository.TableNoTracking.Where(x => x.IsPublish == true && x.IsDel == false && x.PublishDate <= DateTimeOffset.UtcNow);
+        }
+
         public BlogPostModel Insert(BlogPostModel model)
         {
             try

@@ -9,6 +9,7 @@ using WBrand.Services.WebSystem;
 
 namespace WBrand.Web.Api.Controllers.WebSystem
 {
+    [RoutePrefix("api/video")]
     public class VideoController : BaseApiController
     {
         IVideoService _videoService;

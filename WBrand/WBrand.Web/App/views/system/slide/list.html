@@ -42,6 +42,7 @@
                                 <th style="width: 10%">Hình</th>
                                 <th style="width: 20%">Tên</th>
                                 <th>Đường dẫn</th>
+                                <th>Hiển thị</th>
                                 <th style="width: 10%">#</th>
                             </tr>
                         </thead>
@@ -51,6 +52,9 @@
                                 <td><a ui-sref="app.system.editSlide({id:item.Id})">{{item.Name}}</a></td>
                                 <td>
                                     {{item.URL}}
+                                </td>
+                                <td style="text-align:center">
+                                    <span ng-class="item.IsPublish | filterBoolClass">{{item.IsPublish | filterBoolText}}</span>
                                 </td>
                                 <td style="text-align:center">
                                     <a ui-sref="app.system.editSlide({id:item.Id})" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>
