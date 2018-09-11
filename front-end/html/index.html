@@ -35,48 +35,50 @@
     -->
     <script type="text/javascript" src="../libs/Swiper-4.0.6/dist/js/swiper.min.js"></script>
     <script type="text/javascript" src="../libs/jssor.slider/js/jssor.slider.min.js" ></script>
-    <script>
-      function  jssor_slider_init(containerId) {
-      var jssor_1_options = {
-        // $AutoPlay: 1,
-        $ArrowNavigatorOptions: {
-          $Class: $JssorArrowNavigator$
-        },
-        $ThumbnailNavigatorOptions: {
-          $Class: $JssorThumbnailNavigator$,
-          $SpacingX: 5,
-          $SpacingY: 5
-        }
-      };
+    <script type="text/javascript">
+        jssor_1_slider_init = function() {
 
-      var jssor_1_slider = new $JssorSlider$(containerId, jssor_1_options);
+            var jssor_1_options = {
+              $AutoPlay: 1,
+              $SlideDuration: 800,
+              $SlideEasing: $Jease$.$OutQuint,
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
 
-      /*#region responsive code begin*/
+            var jssor_1_slider = new $JssorSlider$("jssor1", jssor_1_options);
 
-      var MAX_WIDTH = 2900;
+            /*#region responsive code begin*/
 
-      function ScaleSlider() {
-          var containerElement = jssor_1_slider.$Elmt.parentNode;
-          var containerWidth = containerElement.clientWidth;
+            var MAX_WIDTH = 3000;
 
-          if (containerWidth) {
+            function ScaleSlider() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
 
-              var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+                if (containerWidth) {
 
-              jssor_1_slider.$ScaleWidth(expectedWidth);
-          }
-          else {
-              window.setTimeout(ScaleSlider, 30);
-          }
-      }
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
 
-      ScaleSlider();
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
 
-      $Jssor$.$AddEvent(window, "load", ScaleSlider);
-      $Jssor$.$AddEvent(window, "resize", ScaleSlider);
-      $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
-      /*#endregion responsive code end*/
-  };
+            ScaleSlider();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        };
+    </script>
 </script>
   </head>
   <body class="home main-home">
@@ -222,7 +224,7 @@
             </div>
         </div>
         <!-- Bullet Navigator -->
-        <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+        <div data-u="navigator" class="jssorb052" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
             <div data-u="prototype" class="i" style="width:16px;height:16px;">
                 <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
                     <circle class="b" cx="8000" cy="8000" r="5800"></circle>
@@ -240,7 +242,7 @@
                 <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
             </svg>
         </div>
-        <script>jssor_slider_init(jssor1);</script>
+        <script>jssor_1_slider_init();</script>
     </div>
         </div>
 
