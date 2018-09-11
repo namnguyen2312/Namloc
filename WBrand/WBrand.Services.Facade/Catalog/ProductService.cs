@@ -68,6 +68,11 @@ namespace WBrand.Services.Facade.Catalog
             return model;
         }
 
+        public IEnumerable<Product> GetTop6()
+        {
+            return _productRepo.TableNoTracking.Where(x => x.IsDel == false && x.IsPublish == true && x.IsHome == true).OrderBy(x => x.Name).Take(6).ToList();
+        }
+
         public CreateProductModel Insert(CreateProductModel model)
         {
             try

@@ -65,7 +65,7 @@ namespace WBrand.Services.Facade.Blog
 
         public IEnumerable<BlogPost> GetTop4()
         {
-            return _blogPostRepository.TableNoTracking.Where(x => x.IsPublish == true && x.IsDel == false && x.PublishDate <= DateTimeOffset.UtcNow);
+            return _blogPostRepository.TableNoTracking.Where(x => x.IsPublish == true && x.IsDel == false && x.PublishDate <= DateTimeOffset.UtcNow).Take(4).ToList();
         }
 
         public BlogPostModel Insert(BlogPostModel model)

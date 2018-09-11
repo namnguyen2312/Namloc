@@ -1,9 +1,30 @@
-﻿
+﻿@model IEnumerable<WBrand.Core.Domain.Models.Catalog.CatalogCategoryModel>
 <div class="col-md-3 col-sm-3">
     <div class="tour-category-wrapper mb">
         <div class="tour-category-content">
             <div class="cate-title"><span class="country">Nhom dinh hinh</span></div>
             <ul class="cd-accordion-menu animated">
+                @foreach (var item in Model)
+                {
+                    var parent = item.Parent;
+
+                    <li class="has-children">
+                        <input type="checkbox" name="group-2" id="group-2">
+                        <a href="/product/cat/@item.Alias"><label for="group-2">Nhom hinh chu V</label></a>
+                        @if (parent != null)
+                        {
+                            while (parent != null)
+                            {
+                                <ul>
+                                    <li><a href="/product/cat/@parent.Alias">@parent.Name</a></li>
+                                </ul>
+                                @parent = parent.Parent;
+                            }
+
+                        }
+
+                    </li>
+                }
                 <li class="has-children">
                     <input type="checkbox" name="group-1" id="group-1" checked>
                     <label for="group-1">Nhôm  bửng thùng xe tải</label>

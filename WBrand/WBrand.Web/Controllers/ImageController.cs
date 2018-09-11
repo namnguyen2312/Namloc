@@ -11,7 +11,7 @@ namespace WBrand.Web.Controllers
 {
     public class ImageController : Controller
     {
-        [OutputCache(Duration = 3600, VaryByParam = "filename, h, w")]
+        //[OutputCache(Duration = 3600, VaryByParam = "filename, h, w")]
         public ActionResult Thumbnail(string filename, int h, int w)
         {
             var uri = new Uri(Request.Url.AbsoluteUri);

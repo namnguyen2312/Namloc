@@ -28,7 +28,7 @@
                                 <div class="col-md-4 col-sm-4">
                                     <div class="product-ct">
                                         <div class="product-img">
-                                            <a href="/product/@item.Alias"><img class="img-responsive" src="@item.Image" alt="@item.Name"></a>
+                                            <a href="/product/@(item.Alias).html"><img class="img-responsive" src="@item.Image" alt="@item.Name"></a>
                                         </div>
                                         <div class="product-info">
                                             <h5><a href="/product/@item.Alias">@item.Name</a></h5>
@@ -48,30 +48,30 @@
                                     var endPageIndex = Math.Min(Model.TotalPages, Model.Page + 5 / 2);
                                     if (Model.Page > 1)
                                     {
-                                        <li><a href="?p=@(Model.Page-1)@ViewBag.queryParams"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+                                        <li><a href="?p=@(Model.Page-1)"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
                                     }
                                     for (int i = startPageIndex; i <= endPageIndex; i++)
                                     {
                                         if (Model.Page == i)
                                         {
-                                            <li class="active"><a href="?p=@i@ViewBag.queryParams">@i</a></li>
+                                            <li class="active"><a href="?p=@i">@i</a></li>
 
                                         }
                                         else
                                         {
-                                            <li><a href="?p=@i@ViewBag.queryParams">@i</a></li>
+                                            <li><a href="?p=@i">@i</a></li>
                                         }
                                     }
                                     if (Model.Page < Model.TotalPages)
                                     {
-                                        <li><a href="?p=@(Model.Page+1)@ViewBag.queryParams"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                        <li><a href="?p=@(Model.Page+1)"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                                     }
                                 }
-                                <li><a href=""><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+                                @*<li><a href=""><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
                                 <li class="active"><a href="">1</a></li>
                                 <li><a href="">2</a></li>
                                 <li><a href="">3</a></li>
-                                <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>*@
                             </ul>
                         </nav>
                     </div>

@@ -19,6 +19,8 @@ namespace WBrand.Services.Catalog
 
         PaginationSet<ProductModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0);
 
+        IEnumerable<Product> GetTop6();
+
         void DeleteById(long id);
     }
 }

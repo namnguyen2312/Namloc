@@ -49,42 +49,15 @@
     <div class="product-list">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 mb20">
-                    <div class="product-content">
-                        <h5><a href="">Lorem ipsum dolor sit amet</a></h5>
-                        <img class="img-responsive" src="/Assets/client/images/product-1.png" alt="product 1">
+                @foreach (var product in Model.Products)
+                {
+                    <div class="col-md-4 mb20">
+                        <div class="product-content">
+                            <h5><a href="">@product.Name</a></h5>
+                            <img class="img-responsive" src="@Url.Action("Thumbnail", "Image", new {FileName=product.Image, w="859", h="506" })" alt="@product.Name">
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb20">
-                    <div class="product-content">
-                        <h5><a href="">Lorem ipsum dolor sit amet</a></h5>
-                        <img class="img-responsive" src="/Assets/client/images/product-1.png" alt="product 1">
-                    </div>
-                </div>
-                <div class="col-md-4 mb20">
-                    <div class="product-content">
-                        <h5><a href="">Lorem ipsum dolor sit amet</a></h5>
-                        <img class="img-responsive" src="/Assets/client/images/product-1.png" alt="product 1">
-                    </div>
-                </div>
-                <div class="col-md-4 mb20">
-                    <div class="product-content">
-                        <h5><a href="">Lorem ipsum dolor sit amet</a></h5>
-                        <img class="img-responsive" src="/Assets/client/images/product-1.png" alt="product 1">
-                    </div>
-                </div>
-                <div class="col-md-4 mb20">
-                    <div class="product-content">
-                        <h5><a href="">Lorem ipsum dolor sit amet</a></h5>
-                        <img class="img-responsive" src="/Assets/client/images/product-1.png" alt="product 1">
-                    </div>
-                </div>
-                <div class="col-md-4 mb20">
-                    <div class="product-content">
-                        <h5><a href="">Lorem ipsum dolor sit amet</a></h5>
-                        <img class="img-responsive" src="/Assets/client/images/product-1.png" alt="product 1">
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </div>
@@ -143,19 +116,6 @@
                         </div>
                     </div>
                 }
-
-                <div class="col-md-6">
-                    <div class="border-sd clearfix mt20">
-                        <div class="news-img">
-                            <img class="img-responsive" src="/Assets/client/images/news-2.png" alt="">
-                        </div>
-                        <div class="news-content">
-                            <h4>img-responsive</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                            <a class="readmore" href="#">đọc thêm</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
