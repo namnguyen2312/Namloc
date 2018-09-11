@@ -23,6 +23,8 @@ namespace WBrand.Services.Catalog
 
         IEnumerable<Product> GetTop6();
 
+        IEnumerable<ProductModel> GetRandom(int amountItem);
+
         void DeleteById(long id);
     }
 }

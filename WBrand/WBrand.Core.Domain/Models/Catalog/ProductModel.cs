@@ -31,6 +31,7 @@ namespace WBrand.Core.Domain.Models.Catalog
         public bool IsPublish { set; get; }
         public bool IsHome { set; get; }
         public List<int> CategoryIds { set; get; }
+        public IEnumerable<ProductModel> ProductRandoms { set; get; }
         public IEnumerable<ProductCategoryModel> ProductCategories { set; get; }
     }
 }

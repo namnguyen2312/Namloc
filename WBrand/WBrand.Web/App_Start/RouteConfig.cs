@@ -16,7 +16,8 @@ namespace WBrand.Web
 
             routes.MapRoute(
                 name: "productDetail",
-                url: "product/detail/{slug}",
+                url: "product/{slug}.html",
+                constraints: new { slug = @"^([a-z0-9]+\-)*[a-z0-9]+$"},
                 defaults: new { controller = "Product", action = "Detail", slug = UrlParameter.Optional },
                 namespaces: new string[] { "NBT.Web.Controllers" }
             );

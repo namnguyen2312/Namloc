@@ -38,7 +38,7 @@ namespace WBrand.Services.Facade.Catalog
             _productRepo.Update(entity);
         }
 
-        public PaginationSet<ProductModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0,string category="")
+        public PaginationSet<ProductModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0, string category = "")
         {
             var query = _productRepo.TableNoTracking.Where(x => !x.IsDel);
 
@@ -49,12 +49,12 @@ namespace WBrand.Services.Facade.Catalog
                         join c in _productCategoryRepo.TableNoTracking.Where(x => x.CategoryId == categoryId)
                         on q.Id equals c.ProductId
                         select q;
-            if(!string.IsNullOrWhiteSpace(category))
+            if (!string.IsNullOrWhiteSpace(category))
                 query = from q in query
                         join c in _productCategoryRepo.TableNoTracking
                         on q.Id equals c.ProductId
-                        join cat in _catalogCategoryRepository.TableNoTracking.Where(x=>x.Alias == category)
-                        on c.CategoryId equals cat.Id 
+                        join cat in _catalogCategoryRepository.TableNoTracking.Where(x => x.Alias == category)
+                        on c.CategoryId equals cat.Id
                         select q;
 
             var result = query.OrderBy(x => x.Name).ToPagedList(pageIndex, pageSize);
@@ -62,7 +62,7 @@ namespace WBrand.Services.Facade.Catalog
             return new PaginationSet<ProductModel>
             {
                 Items = Mapper.Map<IEnumerable<ProductModel>>(result.ToList()),
-                Page = pageIndex -1,
+                Page = pageIndex - 1,
                 PageSize = pageSize,
                 TotalCount = result.TotalItemCount,
                 TotalPages = result.PageCount
@@ -84,6 +84,11 @@ namespace WBrand.Services.Facade.Catalog
             return model;
         }
 
+        public IEnumerable<ProductModel> GetRandom(int amountItem)
+        {
+            return _productRepo.TableNoTracking.Where(x => x.IsDel == false && x.IsPublish == true).QueryTo<ProductModel>().OrderBy(o => Guid.NewGuid()).Take(amountItem).ToList();
+        }
+
         public IEnumerable<Product> GetTop6()
         {
             return _productRepo.TableNoTracking.Where(x => x.IsDel == false && x.IsPublish == true && x.IsHome == true).OrderBy(x => x.Name).Take(6).ToList();
@@ -96,7 +101,7 @@ namespace WBrand.Services.Facade.Catalog
                 var newProduct = Mapper.Map<Product>(model.Product);
                 newProduct.Name = newProduct.Name.Trim();
                 newProduct.CreatedDate = CoreHelper.SystemTimeNow;
-                newProduct.Alias = StringHelper.ToUrlFriendlyWithDate(newProduct.Name,newProduct.CreatedDate.Value.DateTime);
+                newProduct.Alias = StringHelper.ToUrlFriendlyWithDate(newProduct.Name, newProduct.CreatedDate.Value.DateTime);
                 _productRepo.BeginTran();
                 _productRepo.Insert(newProduct);
                 if (model.CategoryIds.Count > 0)
@@ -124,7 +129,7 @@ namespace WBrand.Services.Facade.Catalog
                 var updateProduct = Mapper.Map<Product>(model.Product);
                 updateProduct.UpdatedDate = CoreHelper.SystemTimeNow;
                 updateProduct.Name = updateProduct.Name.Trim();
-                updateProduct.Alias = StringHelper.ToUrlFriendlyWithDate(updateProduct.Name,updateProduct.CreatedDate.Value.DateTime);
+                updateProduct.Alias = StringHelper.ToUrlFriendlyWithDate(updateProduct.Name, updateProduct.CreatedDate.Value.DateTime);
                 _productRepo.BeginTran();
                 _productRepo.Update(updateProduct);
 

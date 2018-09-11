@@ -29,6 +29,7 @@ namespace WBrand.Web.Controllers
         public ActionResult Detail(string slug)
         {
             var model = _productService.GetByAlias(slug);
+            model.ProductRandoms = _productService.GetRandom(8);
             model.Imgs = JsonConvert.DeserializeObject<IEnumerable<string>>(model.Images);
             model.ImgTechs = JsonConvert.DeserializeObject<IEnumerable<string>>(model.ImagesTechnical);
             return View(model);

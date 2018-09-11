@@ -3,6 +3,17 @@
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="desc-scrum">
+                <p>Trang chu </p>
+                <p>Nhom dinh hinh </p>
+                <p>Nhom dinh hinh IT40x40R1 </p>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="div-box mb">
     <div class="tour-wrapper">
         <div class="container">
@@ -14,7 +25,7 @@
                                 <div id="jssor3" class="product-imgs">
                                     <!-- Loading Screen -->
                                     <div data-u="loading" class="js-spin jssorl-009-spin">
-                                        <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="/Assets/client/libs/jssor.slider/svg/loading/static-svg/spin.svg" />
+                                        <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="../svg/loading/static-svg/spin.svg" />
                                     </div>
                                     <div data-u="slides" class="imgs-detail">
                                         <div>
@@ -59,7 +70,7 @@
                             <div class="col-md-7">
                                 <div class="single-product">
                                     <div class="prt-header">
-                                        <h2>Nhôm định hình IT40x40R1</h2>
+                                        <h2>@Model.Name</h2>
                                         <div>Thương hiệu: <span class="brand">nhat ban</span>SKU: <span class="sku">0334434534</span></div>
                                         <ul class="product-social">
                                             <li><a href="#"><img class="img-responsive" src="/Assets/client/images/icon/facebook.png" alt=""></a></li>
@@ -148,94 +159,21 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="product-wrap">
                         <div class="product-content">
-                            <div class="col-md-3 col-sm-6 mt20">
-                                <div class="product-ct">
-                                    <div class="product-img">
-                                        <a href="product_detail.html"><img class="img-responsive" src="/Assets/client/images/product-03.png" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                                        <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 mt20">
-                                <div class="product-ct">
-                                    <div class="product-img">
-                                        <a href="product_detail.html"><img class="img-responsive" src="/Assets/client/images/product-03.png" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                                        <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
+                            @foreach (var item in Model.ProductRandoms)
+                            {
+                                <div class="col-md-3 col-sm-6 mt20">
+                                    <div class="product-ct">
+                                        <div class="product-img">
+                                            <a href="/product/@(item.Alias).html"><img class="img-responsive" src="@Url.Action("Thumbnail", "Image", new {FileName=item.Image, w="861", h="643" })" alt="@item.Name" alt="@item.Name"></a>
+                                        </div>
+                                        <div class="product-info">
+                                            <h5><a href="product_detail.html">@item.Name</a></h5>
+                                            <p>@item.ShortContent</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 mt20">
-                                <div class="product-ct">
-                                    <div class="product-img">
-                                        <a href="product_detail.html"><img class="img-responsive" src="/Assets/client/images/product-03.png" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                                        <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 mt20">
-                                <div class="product-ct">
-                                    <div class="product-img">
-                                        <a href="product_detail.html"><img class="img-responsive" src="/Assets/client/images/product-03.png" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                                        <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 mt20">
-                                <div class="product-ct">
-                                    <div class="product-img">
-                                        <a href="product_detail.html"><img class="img-responsive" src="/Assets/client/images/product-03.png" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                                        <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 mt20">
-                                <div class="product-ct">
-                                    <div class="product-img">
-                                        <a href="product_detail.html"><img class="img-responsive" src="/Assets/client/images/product-03.png" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                                        <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 mt20">
-                                <div class="product-ct">
-                                    <div class="product-img">
-                                        <a href="product_detail.html"><img class="img-responsive" src="/Assets/client/images/product-03.png" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                                        <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 mt20">
-                                <div class="product-ct">
-                                    <div class="product-img">
-                                        <a href="product_detail.html"><img class="img-responsive" src="/Assets/client/images/product-03.png" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h5><a href="product_detail.html">Nhôm định hình IT40</a></h5>
-                                        <p>chất lượng nhôm định  hình luôn đạt tiêu chuẩn quốc tế</p>
-                                    </div>
-                                </div>
-                            </div>
+                            }
+                            
                         </div>
                     </div>
                 </div>

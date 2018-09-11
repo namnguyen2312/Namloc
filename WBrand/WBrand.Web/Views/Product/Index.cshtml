@@ -28,7 +28,7 @@
                                 <div class="col-md-4 col-sm-4">
                                     <div class="product-ct">
                                         <div class="product-img">
-                                            <a href="/product/detail/@(item.Alias).html"><img class="img-responsive" src="@Url.Action("Thumbnail", "Image", new {FileName=item.Image, w="861", h="643" })" alt="@item.Name"></a>
+                                            <a href="/product/@(item.Alias).html"><img class="img-responsive" src="@Url.Action("Thumbnail", "Image", new {FileName=item.Image, w="861", h="643" })" alt="@item.Name"></a>
                                         </div>
                                         <div class="product-info">
                                             <h5><a href="/product/@(item.Alias).html">@item.Name</a></h5>
@@ -68,10 +68,10 @@
                                     }
                                 }
                                 @*<li><a href=""><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
-                                <li class="active"><a href="">1</a></li>
-                                <li><a href="">2</a></li>
-                                <li><a href="">3</a></li>
-                                <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>*@
+                                    <li class="active"><a href="">1</a></li>
+                                    <li><a href="">2</a></li>
+                                    <li><a href="">3</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>*@
                             </ul>
                         </nav>
                     </div>
