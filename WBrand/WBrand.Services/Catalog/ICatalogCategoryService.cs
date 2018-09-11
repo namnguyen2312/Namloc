@@ -14,6 +14,8 @@ namespace WBrand.Services.Catalog
         Task<CatalogCategoryModel> GetByIdAsync(int id);
         Task<IEnumerable<CatalogCategoryModel>> GetAll();
         Task<IEnumerable<CatalogCategoryModel>> GetAll(bool? isPublish);
+
+        IEnumerable<CatalogCategory> GetAllNoAsync(bool? isPublish);
         Task<CreateCatalogCategoryModel> InsertAsync(CreateCatalogCategoryModel model);
         Task<CatalogCategoryModel> UpdateAsync(CatalogCategoryModel model);
 

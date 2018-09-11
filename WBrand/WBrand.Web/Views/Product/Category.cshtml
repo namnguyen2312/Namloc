@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WBrand.Core.Domain.Models.Catalog.CatalogCategoryModel>
+﻿@model IEnumerable<WBrand.Core.Domain.Entities.Catalog.CatalogCategory>
 <div class="col-md-3 col-sm-3">
     <div class="tour-category-wrapper mb">
         <div class="tour-category-content">
@@ -9,8 +9,8 @@
                     var parent = item.Parent;
 
                     <li class="has-children">
-                        <input type="checkbox" name="group-2" id="group-2">
-                        <a href="/product/cat/@item.Alias"><label for="group-2">Nhom hinh chu V</label></a>
+                        <input type="checkbox" name="group-@item.Id" id="group-@item.Id">
+                        <a href="/product/cat/@item.Alias"><label for="group-2">@item.Name</label></a>
                         @if (parent != null)
                         {
                             while (parent != null)
@@ -18,7 +18,7 @@
                                 <ul>
                                     <li><a href="/product/cat/@parent.Alias">@parent.Name</a></li>
                                 </ul>
-                                @parent = parent.Parent;
+                                parent = parent.Parent;
                             }
 
                         }

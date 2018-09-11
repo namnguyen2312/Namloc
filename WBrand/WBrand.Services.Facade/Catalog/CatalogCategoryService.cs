@@ -118,5 +118,13 @@ namespace WBrand.Services.Facade.Catalog
                 throw;
             }
         }
+
+        public IEnumerable<CatalogCategory> GetAllNoAsync(bool? isPublish)
+        {
+            var query = _catalogCategoryRepo.TableNoTracking.Where(x => !x.IsDel);
+            if (isPublish != null)
+                query = query.Where(x => x.IsPublish == isPublish.Value);
+            return query.OrderBy(x=>x.ParentId).ToList();
+        }
     }
 }
