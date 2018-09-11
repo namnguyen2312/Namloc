@@ -33,7 +33,6 @@ namespace WBrand.Web.Controllers
         public ActionResult Index()
         {
             var homeVm = new HomeVm();
-            homeVm.Banners = _bannerService.GetAll(true);
             homeVm.BlogPosts = _blogPostService.GetTop4();
             homeVm.SlideShows = _slideShowService.GetAll(Core.Domain.Enum.SlideShowPosition.HeaderHome, true);
             homeVm.Videos = _videoService.GetAll(true);

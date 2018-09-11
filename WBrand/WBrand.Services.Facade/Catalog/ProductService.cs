@@ -13,18 +13,22 @@ using WBrand.Data.Catalog;
 using WBrand.Services.Catalog;
 using AutoMapper.QueryableExtensions;
 using WBrand.Common.Helper;
+using WBrand.Common.AutoMapper;
 
 namespace WBrand.Services.Facade.Catalog
 {
     public class ProductService : BaseServices<Product>, IProductService
     {
         IProductRepository _productRepo;
+        ICatalogCategoryRepository _catalogCategoryRepository;
         IProductCategoryRepository _productCategoryRepo;
         public ProductService(IProductRepository productRepo,
-            IProductCategoryRepository productCategoryRepo) : base(productRepo)
+            IProductCategoryRepository productCategoryRepo,
+            ICatalogCategoryRepository catalogCategoryRepository) : base(productRepo)
         {
             _productRepo = productRepo;
             _productCategoryRepo = productCategoryRepo;
+            _catalogCategoryRepository = catalogCategoryRepository;
         }
 
         public void DeleteById(long id)
@@ -34,7 +38,7 @@ namespace WBrand.Services.Facade.Catalog
             _productRepo.Update(entity);
         }
 
-        public PaginationSet<ProductModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0)
+        public PaginationSet<ProductModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0,string category="")
         {
             var query = _productRepo.TableNoTracking.Where(x => !x.IsDel);
 
@@ -44,6 +48,13 @@ namespace WBrand.Services.Facade.Catalog
                 query = from q in query
                         join c in _productCategoryRepo.TableNoTracking.Where(x => x.CategoryId == categoryId)
                         on q.Id equals c.ProductId
+                        select q;
+            if(!string.IsNullOrWhiteSpace(category))
+                query = from q in query
+                        join c in _productCategoryRepo.TableNoTracking
+                        on q.Id equals c.ProductId
+                        join cat in _catalogCategoryRepository.TableNoTracking.Where(x=>x.Alias == category)
+                        on c.CategoryId equals cat.Id 
                         select q;
 
             var result = query.OrderBy(x => x.Name).ToPagedList(pageIndex, pageSize);
@@ -57,6 +68,11 @@ namespace WBrand.Services.Facade.Catalog
                 TotalPages = result.PageCount
             };
 
+        }
+
+        public ProductModel GetByAlias(string alias)
+        {
+            return _productRepo.TableNoTracking.Where(x => x.IsDel == false && x.Alias == alias).QueryTo<ProductModel>().FirstOrDefault();
         }
 
         public ProductModel GetById(long id)

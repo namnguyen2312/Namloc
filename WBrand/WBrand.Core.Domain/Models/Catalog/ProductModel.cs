@@ -23,7 +23,9 @@ namespace WBrand.Core.Domain.Models.Catalog
         [MaxLength(512)]
         public string Image { set; get; }
         public string Images { set; get; }
+        public IEnumerable<string> Imgs { set; get; }
         public string ImagesTechnical { set; get; }
+        public IEnumerable<string> ImgTechs { set; get; }
         public bool IsDel { set; get; }
         public bool IsNew { set; get; }
         public bool IsPublish { set; get; }

@@ -16,16 +16,16 @@ namespace WBrand.Web
 
             routes.MapRoute(
                 name: "productDetail",
-                url: "product/{slug}.html",
-                defaults: new { controller = "Product", action = "Detail", alias = UrlParameter.Optional },
+                url: "product/detail/{slug}",
+                defaults: new { controller = "Product", action = "Detail", slug = UrlParameter.Optional },
                 namespaces: new string[] { "NBT.Web.Controllers" }
             );
-            routes.MapRoute(
-                name: "product",
-                url: "product/{p}/{cat}/{filter}",
-                defaults: new { controller = "Product", action = "index", p = UrlParameter.Optional, c = UrlParameter.Optional, filter = UrlParameter.Optional },
-                namespaces: new string[] { "NBT.Web.Controllers" }
-            );
+            //routes.MapRoute(
+            //    name: "product",
+            //    url: "product/{p}/{cat}/{filter}",
+            //    defaults: new { controller = "Product", action = "index", p = UrlParameter.Optional, c = UrlParameter.Optional, filter = UrlParameter.Optional },
+            //    namespaces: new string[] { "NBT.Web.Controllers" }
+            //);
             routes.MapRoute(
                 name: "cms-systems",
                 url: "cms-system",

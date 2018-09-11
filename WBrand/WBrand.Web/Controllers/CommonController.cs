@@ -22,7 +22,7 @@ namespace WBrand.Web.Controllers
         [ChildActionOnly]
         public PartialViewResult Partner()
         {
-            var model = _bannerService.GetAll();
+            var model = _bannerService.GetAll(true);
             return PartialView("_Partner", model);
         }
     }

@@ -1784,23 +1784,37 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
 
-.jssorb051 .i {
+.jssorb052 {
+  position: absolute; }
+
+.jssorb052 .i {
   position: absolute;
   cursor: pointer; }
 
-.jssorb051 .i .b {
+.jssorb052 .i .b {
   fill: #fff;
-  fill-opacity: 0.5; }
+  fill-opacity: 0.7;
+  stroke: #000;
+  stroke-width: 1200;
+  stroke-miterlimit: 10;
+  stroke-opacity: 0.25; }
 
-.jssorb051 .i:hover .b {
-  fill-opacity: .7; }
+.jssorb052 .i:hover .b {
+  fill: #000;
+  fill-opacity: .6;
+  stroke: #fff;
+  stroke-opacity: .35; }
 
-.jssorb051 .iav .b {
-  fill-opacity: 1; }
+.jssorb052 .iav .b {
+  fill: #000;
+  fill-opacity: 1;
+  stroke: #fff;
+  stroke-opacity: .35; }
 
-.jssorb051 .i.idn {
+.jssorb052 .i.idn {
   opacity: .3; }
 
+/*jssor slider arrow skin 051 css*/
 .jssora051 {
   display: block;
   position: absolute;
@@ -1860,7 +1874,6 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
   left: 0px;
   width: 960px;
   height: 640px;
-  overflow: hidden;
   visibility: hidden; }
   .product-imgs .js-spin {
     position: absolute;

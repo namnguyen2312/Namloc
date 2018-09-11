@@ -13,11 +13,13 @@ namespace WBrand.Services.Catalog
     {
         ProductModel GetById(long id);
 
+        ProductModel GetByAlias(string alias);
+
         CreateProductModel Insert(CreateProductModel model);
 
         UpdateProductModel Update(UpdateProductModel model);
 
-        PaginationSet<ProductModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0);
+        PaginationSet<ProductModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0,string category="");
 
         IEnumerable<Product> GetTop6();
 

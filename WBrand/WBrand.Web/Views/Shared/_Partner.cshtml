@@ -6,7 +6,7 @@
                 @foreach (var item in Model)
                 {
                     <div class="swiper-slide">
-                        <img src="@item.Image" alt="@item.Id">
+                        <img src="@Url.Action("Thumbnail", "Image", new {FileName=item.Image, w="215", h="119" })" alt="@item.Id">
                     </div>
                 }
 

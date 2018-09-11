@@ -28,10 +28,10 @@
                                 <div class="col-md-4 col-sm-4">
                                     <div class="product-ct">
                                         <div class="product-img">
-                                            <a href="/product/@(item.Alias).html"><img class="img-responsive" src="@item.Image" alt="@item.Name"></a>
+                                            <a href="/product/detail/@(item.Alias).html"><img class="img-responsive" src="@Url.Action("Thumbnail", "Image", new {FileName=item.Image, w="861", h="643" })" alt="@item.Name"></a>
                                         </div>
                                         <div class="product-info">
-                                            <h5><a href="/product/@item.Alias">@item.Name</a></h5>
+                                            <h5><a href="/product/@(item.Alias).html">@item.Name</a></h5>
                                             <p>@item.ShortContent</p>
                                         </div>
                                     </div>
