@@ -47,7 +47,12 @@
               },
               $BulletNavigatorOptions: {
                 $Class: $JssorBulletNavigator$
-              }
+              },
+                $ThumbnailNavigatorOptions: {
+                  $Class: $JssorThumbnailNavigator$,
+                  $SpacingX: 5,
+                  $SpacingY: 5
+                }
             };
 
             var jssor_1_slider = new $JssorSlider$(contaiderId, jssor_1_options);
@@ -90,7 +95,7 @@
             @RenderBody()
 
 
-            @{Html.RenderAction("Partner","Common"); }
+            @{Html.RenderAction("Partner", "Common"); }
             @Html.Partial("_Footer")
 
         </div>

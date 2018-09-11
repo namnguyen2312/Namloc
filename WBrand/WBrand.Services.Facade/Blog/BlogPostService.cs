@@ -18,9 +18,12 @@ namespace WBrand.Services.Facade.Blog
     public class BlogPostService : IBlogPostService
     {
         IBlogPostRepository _blogPostRepository;
-        public BlogPostService(IBlogPostRepository blogPostRepository)
+        IBlogPostCategoryRepository _blogPostCategoryRepository;
+        public BlogPostService(IBlogPostRepository blogPostRepository,
+            IBlogPostCategoryRepository blogPostCategoryRepository)
         {
             _blogPostRepository = blogPostRepository;
+            _blogPostCategoryRepository = blogPostCategoryRepository;
         }
 
         public void DeleteById(long id)
@@ -36,24 +39,36 @@ namespace WBrand.Services.Facade.Blog
             }
         }
 
-        public PaginationSet<BlogPostModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0)
+        public PaginationSet<BlogPostModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0, string cat = "", bool? isPublish = null)
         {
             var query = _blogPostRepository.TableNoTracking.Where(x => x.IsDel == false);
             if (!string.IsNullOrWhiteSpace(filter))
                 query = query.Where(x => x.Name.Contains(filter));
             if (categoryId != 0)
                 query = query.Where(x => x.CategoryId == categoryId);
+            if (!string.IsNullOrWhiteSpace(cat))
+                query = from q in query
+                        join c in _blogPostCategoryRepository.TableNoTracking.Where(x => x.Alias == cat)
+                        on q.CategoryId equals c.Id
+                        select q;
+            if (isPublish != null)
+                query = query.Where(x => x.IsPublish == isPublish.Value);
 
             var result = query.OrderBy(x => x.Name).ToPagedList(pageIndex, pageSize);
 
             return new PaginationSet<BlogPostModel>
             {
                 Items = Mapper.Map<IEnumerable<BlogPostModel>>(result.ToList()),
-                Page = pageIndex -1,
+                Page = pageIndex - 1,
                 PageSize = pageSize,
                 TotalCount = result.TotalItemCount,
                 TotalPages = result.PageCount
             };
+        }
+
+        public BlogPostModel GetByAlias(string alias)
+        {
+            return _blogPostRepository.TableNoTracking.Where(x => x.IsDel == false && x.IsPublish == true && x.PublishDate <= DateTimeOffset.UtcNow).QueryTo<BlogPostModel>().FirstOrDefault();
         }
 
         public BlogPostModel GetById(long id)

@@ -12,7 +12,9 @@ namespace WBrand.Services.Blog
     public interface IBlogPostService
     {
         BlogPostModel GetById(long id);
-        PaginationSet<BlogPostModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0);
+
+        BlogPostModel GetByAlias(string alias);
+        PaginationSet<BlogPostModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0,string cat="", bool? isPushlish=null);
         IEnumerable<BlogPost> GetTop4();
         BlogPostModel Insert(BlogPostModel model);
         BlogPostModel Update(BlogPostModel model);

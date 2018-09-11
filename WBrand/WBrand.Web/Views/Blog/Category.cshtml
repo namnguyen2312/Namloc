@@ -1,0 +1,29 @@
+﻿@model IEnumerable<WBrand.Core.Domain.Models.Blog.BlogPostCategoryModel>
+<div class="col-md-3 col-sm-3">
+    <div class="tour-category-wrapper mb">
+        <div class="tour-category-content">
+            <div class="cate-title"><span class="country">Nhom dinh hinh</span></div>
+            <ul class="cd-accordion-menu animated">
+                @foreach (var item in Model)
+                {
+                    <li class="has-children">
+                        <a href="/blog/1/{@item.Alias}"></a>
+                    </li>
+                }
+
+            </ul> <!-- cd-accordion-menu -->
+        </div>
+        <div class="tour-category-content mt">
+            <div class="cate-title"><span class="country">Ban nen doc</span></div>
+            <div class="spe-news clearfix">
+                <img src="/Assets/client/images/sp-news1.png" alt="">
+                <h4><a href="">sự khác biệt giữa nhôm T40 và nhôm T50</a></h4>
+            </div>
+            <div class="spe-news clearfix">
+                <img src="/Assets/client/images/sp-news2.png" alt="">
+                <h4><a href="">sự khác biệt giữa nhôm T40 và nhôm T50</a></h4>
+            </div>
+        </div>
+    </div>
+</div>
+
