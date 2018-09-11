@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using WBrand.Services.Catalog;
@@ -30,8 +31,8 @@ namespace WBrand.Web.Controllers
 
         public PartialViewResult Category()
         {
-            var model = _catalogCategoryService.GetAll(true);
-            return PartialView();
+            var model =  _catalogCategoryService.GetAllNoAsync(true);
+            return PartialView("Category",model);
         }
     }
 }
