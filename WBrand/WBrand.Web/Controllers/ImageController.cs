@@ -20,7 +20,7 @@ namespace WBrand.Web.Controllers
             var partialName = $"~{new Uri(originUrl + filename).PathAndQuery}";
             using (Image image = Image.FromFile(Server.MapPath(partialName)))
             {
-                return new ImageResult(image.BestFit(h, w));
+                return new ImageResult(image.ScaleFix(h, w));
             }
         }
     }
