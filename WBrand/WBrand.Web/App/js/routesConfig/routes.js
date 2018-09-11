@@ -129,7 +129,7 @@
                     }]
                 }
             })
-            .state('app.addCategory', {
+            .state('app.catalog.addCategory', {
                 url: '/addCategory',
                 templateUrl: '/app/views/catalog/category/category.html',
                 controller: 'addCategoryCtrl',
@@ -245,6 +245,104 @@
                     loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                         return $ocLazyLoad.load({
                             files: ['/app/js/controllers/catalog/product/editProduct.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.blog', {
+                url: "/blog",
+                abstract: true,
+                template: '<ui-view></ui-view>',
+                ncyBreadcrumb: {
+                    label: 'Bài viết'
+                }
+            })
+            .state('app.blog.category', {
+                url: '/blogCategory',
+                templateUrl: '/app/views/blogs/category/categoryList.html',
+                controller: 'blogCategoryCtrl',
+                ncyBreadcrumb: {
+                    label: 'Danh mục bài viết'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/blogs/category/categoryList.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.addBlogCategory', {
+                url: '/addBlogCategory',
+                templateUrl: '/app/views/blogs/category/category.html',
+                controller: 'addBlogCategoryCtrl',
+                ncyBreadcrumb: {
+                    label: 'Thêm danh mục bài viết'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/blogs/category/addCategory.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.editBlogCategory', {
+                url: '/editBlogCategory/:id',
+                templateUrl: '/app/views/blogs/category/category.html',
+                controller: 'editBlogCategoryCtrl',
+                ncyBreadcrumb: {
+                    label: 'Sửa danh mục bài viết'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/blogs/category/editCategory.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.blog.post', {
+                url: '/blogPost',
+                templateUrl: '/app/views/blogs/blogPost/blogPostList.html',
+                controller: 'blogPostCtrl',
+                ncyBreadcrumb: {
+                    label: 'Danh sách bài viết'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/blogs/blogPost/blogPostList.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.addBlogPost', {
+                url: '/addBlogPost',
+                templateUrl: '/app/views/blogs/blogPost/blogPost.html',
+                controller: 'addBlogPostCtrl',
+                ncyBreadcrumb: {
+                    label: 'Tạo bài viết'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/blogs/blogPost/addBlogPost.js']
+                        });
+                    }]
+                }
+            })
+            .state('app.editBlogPost', {
+                url: '/editBlogPost/:id',
+                templateUrl: '/app/views/blogs/blogPost/blogPost.html',
+                controller: 'editBlogPostCtrl',
+                ncyBreadcrumb: {
+                    label: 'Sửa bài viết'
+                },
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            files: ['/app/js/controllers/blogs/blogPost/editBlogPost.js']
                         });
                     }]
                 }

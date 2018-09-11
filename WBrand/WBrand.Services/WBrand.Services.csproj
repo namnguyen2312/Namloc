@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Blog\IBlogPostCategoryService.cs" />
     <Compile Include="Blog\IBlogPostService.cs" />
     <Compile Include="Catalog\ICatalogAttributeService.cs" />
     <Compile Include="Catalog\ICatalogCategoryService.cs" />
@@ -68,6 +69,10 @@
     <Compile Include="User\IAppRoleService.cs" />
     <Compile Include="User\IAppUserService.cs" />
     <Compile Include="User\IPermissionService.cs" />
+    <Compile Include="WebSystem\IBannerService.cs" />
+    <Compile Include="WebSystem\ISlideShowService.cs" />
+    <Compile Include="WebSystem\ISystemInfoService.cs" />
+    <Compile Include="WebSystem\IVideoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WBrand.Common\WBrand.Common.csproj">

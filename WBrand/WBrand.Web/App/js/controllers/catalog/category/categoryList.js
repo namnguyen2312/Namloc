@@ -3,7 +3,7 @@ angular
     .module('app')
     .controller('categoryCtrl', categoryCtrl)
 
-categoryCtrl.$inject = ['$scope', 'apiService', 'notificationService','$ngBootbox'];
+categoryCtrl.$inject = ['$scope', 'apiService', 'notificationService', '$ngBootbox'];
 function categoryCtrl($scope, apiService, notificationService, $ngBootbox) {
 
     $scope.data = [];
@@ -12,17 +12,12 @@ function categoryCtrl($scope, apiService, notificationService, $ngBootbox) {
 
     function del(item) {
         $ngBootbox.confirm('Bạn có chắc muốn xóa?').then(function () {
-            var config = {
-                params: {
-                    id: item.Id
-                }
-            }
-            apiService.del('api/catalogCategory/delete', config, function () {
+            apiService.del('api/catalogCategory/' + item.Id, null, function () {
                 notificationService.displaySuccess('Xóa thành công');
                 search();
             }, function () {
                 notificationService.displayError('Xóa không thành công');
-            })
+            });
         });
     }
 

@@ -8,6 +8,7 @@
         'ngBootbox',
         'ngPassword',
         'ngCkeditor',
+        'ngSanitize',
         'ui.select2'
     ])
 })();

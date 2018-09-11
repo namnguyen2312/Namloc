@@ -80,10 +80,12 @@ function addProductCtrl($scope, apiService, notificationService, $state) {
                 if ($scope.moreImages.length != 0) {
                     $scope.moreImages.splice($scope.moreImages.length - 1, 1);
                 }
+                break;
             default:
                 if ($scope.moreImagesTechnical.length != 0) {
                     $scope.moreImagesTechnical.splice($scope.moreImagesTechnical.length - 1, 1);
                 }
+                break;
         }
         
     }

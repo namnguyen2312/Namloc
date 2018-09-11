@@ -10,6 +10,7 @@ namespace WBrand.Data.EF.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(WBrand.Data.EF.WBrandDbContext context)

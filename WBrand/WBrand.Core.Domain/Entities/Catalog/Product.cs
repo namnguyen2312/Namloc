@@ -27,6 +27,7 @@ namespace WBrand.Core.Domain.Entities.Catalog
         public bool IsDel { set; get; }
         public bool IsNew { set; get; }
         public bool IsPublish { set; get; }
+        public bool IsHome { set; get; }
         public DateTimeOffset PublishDate { set; get; }
     }
 }

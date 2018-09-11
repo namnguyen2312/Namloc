@@ -11,7 +11,7 @@ angular
     .directive('toggle', bootstrapTooltipsPopoversDirective)
     .directive('tab', bootstrapTabsDirective)
     .directive('button', cardCollapseDirective)
-    .directive('pagerDirective', pagerDirective)
+    .directive('pagerDirective', pagerDirective);
 
 function includeReplace() {
     var directive = {

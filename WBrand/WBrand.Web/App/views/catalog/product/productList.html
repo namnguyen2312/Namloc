@@ -20,7 +20,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="input-group">
-                                <select ui-select2 ng-model="item.categoryId" class="form-control">
+                                <select ui-select2 ng-model="categoryId" class="form-control">
                                     <option ng-repeat="option in categories" value="{{option.Id}}">{{option.Name}}</option>
                                 </select>
                             </div>
@@ -56,11 +56,11 @@
 
                                 <td>{{item.CreatedDate | date:'dd/MM/yyyy hh:mm:ss'}}</td>
                                 <td style="text-align:center">
-                                    <input class="form-check-input" type="checkbox" readonly="readonly" disabled checked="{{item.IsPublish}}">
+                                    <span ng-class="item.IsPublish | filterBoolClass">{{item.IsPublish | filterBoolText}}</span>
                                 </td>
                                 <td style="text-align:center">
                                     <a ui-sref="app.editProduct({id:item.Id})" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>
-                                    <button class="btn btn-sm btn-danger" ng-click="deleteItem(item.Id)"><i class="fa fa-trash-o"></i></button>
+                                    <button class="btn btn-sm btn-danger" ng-click="del(item)"><i class="fa fa-trash-o"></i></button>
                                 </td>
                             </tr>
                         </tbody>

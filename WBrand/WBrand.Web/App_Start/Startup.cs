@@ -57,15 +57,15 @@ namespace WBrand.Web.App_Start
             {
                 var profiles = c.Resolve<IEnumerable<Profile>>();
 
-                configMapper  = new MapperConfiguration(x =>
-                {
+                configMapper = new MapperConfiguration(x =>
+               {
                     // Load in all our AutoMapper profiles that have been registered
                     foreach (var profile in profiles)
-                    {
-                        x.AddProfile(profile);
-                    }
-                });
-                
+                   {
+                       x.AddProfile(profile);
+                   }
+               });
+
                 return configMapper;
             })
             .As<IConfigurationProvider>()
@@ -119,6 +119,7 @@ namespace WBrand.Web.App_Start
                 mapperConfigurationExpression.AddProfile(new DomainToViewModelMappingProfile());
                 mapperConfigurationExpression.AddProfile(new ViewModelToDomainMappingProfile());
                 mapperConfigurationExpression.AddProfile(new CatalogMappingProfile());
+                mapperConfigurationExpression.AddProfile(new BlogMappingProfile());
             });
         }
     }

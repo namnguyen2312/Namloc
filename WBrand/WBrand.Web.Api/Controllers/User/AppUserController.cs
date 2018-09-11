@@ -48,7 +48,7 @@ namespace WBrand.Web.Api.Controllers.User
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                var model = _userManager.Users;
+                var model = _userManager.Users.Where(x=>x.State == Status.Active);
                 if (!string.IsNullOrEmpty(filter))
                     model = model.Where(x => x.UserName.Contains(filter) ||
                     x.FullName.Contains(filter));

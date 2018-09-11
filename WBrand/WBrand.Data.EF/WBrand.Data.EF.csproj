@@ -64,6 +64,7 @@
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="DbSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Blog\BlogPostCategoryRepository.cs" />
     <Compile Include="Repositories\Blog\BlogPostRepository.cs" />
     <Compile Include="Repositories\Catalog\CatalogAttributeRepository.cs" />
     <Compile Include="Repositories\Catalog\CatalogCategoryRepository.cs" />
@@ -71,11 +72,15 @@
     <Compile Include="Repositories\Catalog\ProductCategoryRepository.cs" />
     <Compile Include="Repositories\Catalog\ProductRepository.cs" />
     <Compile Include="Repositories\Logging\LogDbContextRepository.cs" />
+    <Compile Include="Repositories\WebSystem\BannerRepository.cs" />
+    <Compile Include="Repositories\WebSystem\SlideShowRepository.cs" />
     <Compile Include="Repositories\User\AppGroupRepository.cs" />
     <Compile Include="Repositories\User\AppRoleGroupRepository.cs" />
     <Compile Include="Repositories\User\AppRoleRepository.cs" />
     <Compile Include="Repositories\User\AppUserGroupRepository.cs" />
     <Compile Include="Repositories\User\AppUserRepository.cs" />
+    <Compile Include="Repositories\WebSystem\SystemInfoRepository.cs" />
+    <Compile Include="Repositories\WebSystem\VideoRepository.cs" />
     <Compile Include="WBrandDbContext.cs" />
   </ItemGroup>
   <ItemGroup>

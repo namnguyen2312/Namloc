@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using WBrand.Core.Domain.Entities.Blog;
 using WBrand.Core.Domain.Entities.Catalog;
 using WBrand.Core.Domain.Entities.Identity;
+using WBrand.Core.Domain.Entities.SlideShow;
 using WBrand.Core.Domain.Entities.System;
 
 namespace WBrand.Data.EF
@@ -31,11 +32,17 @@ namespace WBrand.Data.EF
         /// </summary>
         public DbSet<BlogPost> BlogPosts { set; get; }
 
-
+        public DbSet<BlogPostCategory> BlogPostCategories { set; get; }
 
         public DbSet<LogDbContext> LogDbContexts { set; get; }
         
+        public DbSet<SlideShow> SlideShows { set; get; }
 
+        public DbSet<SystemInfo> SystemInfos { set; get; }
+
+        public DbSet<Banner> Banners { set; get; }
+
+        public DbSet<Video> Videos { set; get; }
         /// <summary>
         /// Identity table
         /// </summary>

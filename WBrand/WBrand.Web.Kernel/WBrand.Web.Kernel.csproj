@@ -88,10 +88,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mappers\BlogMappingProfile.cs" />
     <Compile Include="Mappers\DomainToViewModelMappingProfile.cs" />
     <Compile Include="Mappers\CatalogMappingProfile.cs" />
     <Compile Include="Mappers\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\HomeVm.cs" />
     <Compile Include="ViewModel\TokenVm.cs" />
     <Compile Include="ViewModel\User\AppGroupVm.cs" />
     <Compile Include="ViewModel\User\AppRoleVm.cs" />

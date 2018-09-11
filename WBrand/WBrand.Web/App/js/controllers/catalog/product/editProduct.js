@@ -78,9 +78,10 @@ function editProductCtrl($scope, apiService, notificationService, $state, $state
                         for (var i = 0; i < files.length; i++) {
                             $scope.moreImagesTechnical.push(files[i].url);
                         }
+                        break;
                 }
 
-            })
+            });
         };
 
 
@@ -95,10 +96,12 @@ function editProductCtrl($scope, apiService, notificationService, $state, $state
                 if ($scope.moreImages.length != 0) {
                     $scope.moreImages.splice($scope.moreImages.length - 1, 1);
                 }
+                break;
             default:
                 if ($scope.moreImagesTechnical.length != 0) {
                     $scope.moreImagesTechnical.splice($scope.moreImagesTechnical.length - 1, 1);
                 }
+                break;
         }
 
     }

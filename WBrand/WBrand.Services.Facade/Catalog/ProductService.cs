@@ -51,7 +51,7 @@ namespace WBrand.Services.Facade.Catalog
             return new PaginationSet<ProductModel>
             {
                 Items = Mapper.Map<IEnumerable<ProductModel>>(result.ToList()),
-                Page = pageIndex,
+                Page = pageIndex -1,
                 PageSize = pageSize,
                 TotalCount = result.TotalItemCount,
                 TotalPages = result.PageCount
@@ -68,12 +68,19 @@ namespace WBrand.Services.Facade.Catalog
             return model;
         }
 
+        public IEnumerable<Product> GetTop6()
+        {
+            return _productRepo.TableNoTracking.Where(x => x.IsDel == false && x.IsPublish == true && x.IsHome == true).OrderBy(x => x.Name).Take(6).ToList();
+        }
+
         public CreateProductModel Insert(CreateProductModel model)
         {
             try
             {
                 var newProduct = Mapper.Map<Product>(model.Product);
+                newProduct.Name = newProduct.Name.Trim();
                 newProduct.CreatedDate = CoreHelper.SystemTimeNow;
+                newProduct.Alias = StringHelper.ToUrlFriendlyWithDate(newProduct.Name,newProduct.CreatedDate.Value.DateTime);
                 _productRepo.BeginTran();
                 _productRepo.Insert(newProduct);
                 if (model.CategoryIds.Count > 0)
@@ -100,6 +107,8 @@ namespace WBrand.Services.Facade.Catalog
             {
                 var updateProduct = Mapper.Map<Product>(model.Product);
                 updateProduct.UpdatedDate = CoreHelper.SystemTimeNow;
+                updateProduct.Name = updateProduct.Name.Trim();
+                updateProduct.Alias = StringHelper.ToUrlFriendlyWithDate(updateProduct.Name,updateProduct.CreatedDate.Value.DateTime);
                 _productRepo.BeginTran();
                 _productRepo.Update(updateProduct);
 
@@ -118,7 +127,7 @@ namespace WBrand.Services.Facade.Catalog
             }
             catch
             {
-                //_productRepo.RollbackTran();
+                _productRepo.RollbackTran();
                 throw;
             }
         }

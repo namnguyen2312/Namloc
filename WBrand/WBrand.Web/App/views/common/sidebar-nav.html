@@ -9,8 +9,8 @@
             <li class="nav-title">
                 Hệ thống
             </li>
-            <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.system')}">
-                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.system')}" href="#"><i class="icon-star"></i> Hệ thống</a>
+            <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.identity')}">
+                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.identity')}" href="#"><i class="icon-star"></i> Người dùng</a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.users"><i class="icon-puzzle"></i> Danh sách user</a>
@@ -29,15 +29,37 @@
                     <li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.catalog.category"><i class="icon-puzzle"></i> Danh mục</a>
                     </li>
-                    <!--<li class="nav-item">
-                        <a class="nav-link" ui-sref-active="active" ui-sref="app.catalog.attribute"><i class="icon-puzzle"></i> Thuộc tính</a>
-                    </li>-->
                     <li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.catalog.product"><i class="icon-puzzle"></i> Danh sách sản phẩm</a>
                     </li>
-                    <!--<li class="nav-item">
-                        <a class="nav-link" ui-sref-active="active" ui-sref="app.roles"><i class="icon-puzzle"></i> Danh sách quyền</a>
-                    </li>-->
+                </ul>
+            </li>
+            <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.blog')}">
+                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.blog')}" href="#"><i class="icon-star"></i> Bài viết</a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.blog.category"><i class="icon-puzzle"></i> Danh mục</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.blog.post"><i class="icon-puzzle"></i> Danh sách bài viết</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.system')}">
+                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.system')}" href="#"><i class="icon-star"></i> Hệ thống</a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.system.info"><i class="icon-puzzle"></i> Thông tin hệ thống</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.system.slideShow"><i class="icon-puzzle"></i> Slide hình ảnh</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.system.banner"><i class="icon-puzzle"></i> Banner đối tác</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.system.video"><i class="icon-puzzle"></i> Video</a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.components')}">

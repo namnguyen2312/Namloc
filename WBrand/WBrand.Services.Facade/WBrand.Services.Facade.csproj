@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseServices.cs" />
+    <Compile Include="Blog\BlogPostCategoryService.cs" />
     <Compile Include="Blog\BlogPostService.cs" />
     <Compile Include="Catalog\CatalogAttributeService.cs" />
     <Compile Include="Catalog\CatalogCategoryService.cs" />
@@ -100,6 +101,10 @@
     <Compile Include="User\AppRoleService.cs" />
     <Compile Include="User\AppUserService.cs" />
     <Compile Include="User\PermissionService.cs" />
+    <Compile Include="WebSystem\BannerService.cs" />
+    <Compile Include="WebSystem\SlideShowService.cs" />
+    <Compile Include="WebSystem\SystemInfoService.cs" />
+    <Compile Include="WebSystem\VideoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WBrand.Common\WBrand.Common.csproj">

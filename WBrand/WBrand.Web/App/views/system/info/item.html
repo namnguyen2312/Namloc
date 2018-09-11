@@ -1,0 +1,83 @@
+﻿<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <form novalidate role="form" name="frm" class="form-horizontal">
+                    <div class="card-header">
+                        <strong>Thông tin hệ thống</strong>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.CompanyName.$invalid && !frm.CompanyName.$pristine }">
+                            <label class="col-md-3 col-form-label" for="text-input">Tên công ty</label>
+                            <div class="col-md-9">
+                                <input reqired-message="Nhập tên bài viết" type="text" id="text-CompanyName" name="CompanyName" ng-model="data.CompanyName" maxlength="128" class="form-control" placeholder="Tên bài viết">
+                            </div>
+                        </div>
+                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.Address.$invalid && !frm.Address.$pristine }">
+                            <label class="col-md-3 col-form-label" for="text-input">Địa chỉ CTY</label>
+                            <div class="col-md-9">
+                                <input type="text" id="text-Address" name="Address" ng-model="data.Address" maxlength="512" class="form-control" placeholder="Địa chỉ">
+                            </div>
+                        </div>
+
+                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.Phone.$invalid && !frm.Phone.$pristine }">
+                            <label class="col-md-3 col-form-label" for="text-input">Địện thoại</label>
+                            <div class="col-md-9">
+                                <input type="text" id="text-Phone" name="Phone" ng-model="data.Phone" maxlength="128" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.TaxCode.$invalid && !frm.TaxCode.$pristine }">
+                            <label class="col-md-3 col-form-label" for="text-input">Mã số thuế</label>
+                            <div class="col-md-9">
+                                <input type="text" id="text-TaxCode" name="TaxCode" ng-model="data.TaxCode" maxlength="128" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.CompanyEmail.$invalid && !frm.CompanyEmail.$pristine }">
+                            <label class="col-md-3 col-form-label" for="text-input">Email CTY</label>
+                            <div class="col-md-9">
+                                <input type="email" id="text-CompanyEmail" name="CompanyEmail" ng-model="data.CompanyEmail" maxlength="128" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.SystemEmail.$invalid && !frm.SystemEmail.$pristine }">
+                            <label class="col-md-3 col-form-label" for="text-input">Email hệ thống</label>
+                            <div class="col-md-9">
+                                <input type="text" id="text-SystemEmail" name="SystemEmail" ng-model="data.SystemEmail" maxlength="128" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.PasswordEmail.$invalid && !frm.PasswordEmail.$pristine }">
+                            <label class="col-md-3 col-form-label" for="text-input">Mật khẩu email hệ thống</label>
+                            <div class="col-md-9">
+                                <input type="password" id="text-PasswordEmail" name="PasswordEmail" ng-model="data.PasswordEmail" maxlength="128" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.MetaTitle.$invalid && !frm.MetaTitle.$pristine }">
+                            <label class="col-md-3 col-form-label" for="text-input">Meta title</label>
+                            <div class="col-md-9">
+                                <input type="text" id="text-MetaTitle" name="MetaTitle" ng-model="data.MetaTitle" maxlength="128" class="form-control" placeholder="Nhập title">
+                            </div>
+                        </div>
+                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.MetaDescription.$invalid && !frm.MetaDescription.$pristine }">
+                            <label class="col-md-3 col-form-label" for="text-input">Meta Description</label>
+                            <div class="col-md-9">
+                                <input type="text" id="text-MetaDescription" name="MetaDescription" ng-model="data.MetaDescription" maxlength="128" class="form-control" placeholder="Nhập description">
+                            </div>
+                        </div>
+                        <div class="form-group row" ng-class="{ 'is-invalid' : frm.MetaKeyword.$invalid && !frm.MetaKeyword.$pristine }">
+                            <label class="col-md-3 col-form-label" for="text-input">Meta Keyword</label>
+                            <div class="col-md-9">
+                                <input type="text" id="text-MetaKeyword" name="MetaKeyword" ng-model="data.MetaKeyword" maxlength="128" class="form-control" placeholder="Nhập keyword">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" ng-click="save()" class="btn btn-sm btn-primary" ng-disabled="frm.$invalid"><i class="fa fa-dot-circle-o"></i> Lưu</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

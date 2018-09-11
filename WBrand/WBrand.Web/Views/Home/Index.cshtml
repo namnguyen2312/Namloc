@@ -1,50 +1,154 @@
-﻿@{
-    Layout = null;
+﻿@model WBrand.Web.Kernel.ViewModel.HomeVm
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<div class="div-box">
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="../libs/jssor.slider/svg/loading/static-svg/spin.svg" />
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;">
+            @foreach (var slide in Model.SlideShows)
+            {
+                <div>
+                    <img data-u="image" src="@slide.URL" />
+                </div>
+            }
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
-    <meta name="author" content="NamLoc">
-    <link rel="shortcut icon" href="/assets/img/favicon.png">
+            <div>
+                <img data-u="image" src="/Assets/client/images/test/002.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="/Assets/client/images/test/003.jpg" />
+            </div>
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+            <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                </svg>
+            </div>
+        </div>
+        <!-- Arrow Navigator -->
+        <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+            <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+            </svg>
+        </div>
+        <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+            <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+            </svg>
+        </div>
+    </div>
+</div>
 
-    <title>Admin-CMS</title>
+<div class="div-box mb20">
+    <div class="product-list">
+        <div class="container">
+            <div class="row">
+                @foreach (var product in Model.Products)
+                {
+                    <div class="col-md-4 mb20">
+                        <div class="product-content">
+                            <h5><a href="">@product.Name</a></h5>
+                            <img class="img-responsive" src="@Url.Action("Thumbnail", "Image", new {FileName=product.Image, w="859", h="506" })" alt="@product.Name">
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
 
-    <!-- Main styles for this application -->
-    <link href="~/Assets/css/app/style.css" rel="stylesheet" />
-</head>
+<div class="div-box mb">
+    <div class="services">
+        <div class="container">
+            <div class="h-title">
+                <h2 class="title-style1 mb45">Dịch vụ Namloc</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="services-content mt20">
+                        <img src="/Assets/client/images/oval-3.png" alt="">
+                        <h3>Thiết kế</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="services-content mt20">
+                        <img src="/Assets/client/images/group-7.png" alt="">
+                        <h3>Sản Xuất Tổng Thể</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="services-content mt20">
+                        <img src="/Assets/client/images/group-8.png" alt="">
+                        <h3>Sơn tỉnh điện</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<!-- BODY options, add following classes to body to change options
+<div class="div-box mb">
+    <div class="hot-news">
+        <div class="container">
+            <div class="h-title">
+                <h2 class="title-style1 mb45">Tin Tức</h2>
+            </div>
+            <div class="row">
+                @foreach (var post in Model.BlogPosts)
+                {
+                    <div class="col-md-6">
+                        <div class="border-sd clearfix mt20">
+                            <div class="news-img"><img class="img-responsive" src="@Url.Action("Thumbnail", "Image", new {FileName=post.Image, w="292", h="348" })" alt="@post.Name"></div>
+                            <div class="news-content">
+                                <h4>@post.Name</h4>
+                                <p>@post.ShortContent</p>
+                                <a class="readmore" href="/blog/@post.Alias">đọc thêm</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
 
-  // Header options
-  1. '.header-fixed'					- Fixed Header
+<div class="div-box mb">
+    <div class="videos">
+        <div class="container">
+            <div class="h-title">
+                <h2 class="title-style1 mb45">Video Namloc</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        @if (Model.Videos.Count() > 0)
+                        {
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LnDUYZHDQAg" name="iframe_video"></iframe>
+                        }
 
-  // Sidebar options
-  1. '.sidebar-fixed'					- Fixed Sidebar
-  2. '.sidebar-hidden'				- Hidden Sidebar
-  3. '.sidebar-off-canvas'		- Off Canvas Sidebar
-  4. '.sidebar-minimized'			- Minimized Sidebar (Only icons)
-  5. '.sidebar-compact'			  - Compact Sidebar
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="video-list">
+                        <ul>
+                            @foreach (var video in Model.Videos)
+                            {
+                                <li><a href="@video.URL" target="iframe_video"><i class="fa fa-play" aria-hidden="true"></i>@video.Name</a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-  // Aside options
-  1. '.aside-menu-fixed'			- Fixed Aside Menu
-  2. '.aside-menu-hidden'			- Hidden Aside Menu
-  3. '.aside-menu-off-canvas'	- Off Canvas Aside Menu
-
-  // Breadcrumb options
-  1. '.breadcrumb-fixed'			- Fixed Breadcrumb
-
-  // Footer options
-  1. 'footer-fixed'						- Fixed footer
-
--->
-
-<body class="header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
-
-
-</body>
-</html>

@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <div class="form-group row">
                         <div class="col-md-3">
-                            <button type="button" ui-sref="app.addProduct" class="btn btn-primary">Tạo bài viết</button>
+                            <button type="button" ui-sref="app.addBlogPost" class="btn btn-primary">Tạo bài viết</button>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -19,7 +19,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="input-group">
-                                <select ui-select2 ng-model="item.categoryId" class="form-control">
+                                <select ui-select2 ng-model="categoryId" class="form-control">
                                     <option ng-repeat="option in categories" value="{{option.Id}}">{{option.Name}}</option>
                                 </select>
                             </div>
@@ -50,16 +50,16 @@
                         <tbody>
                             <tr ng-repeat="item in data">
                                 <td style="width: 10%"><img ng-src="{{item.Image}}" style="width: 100px;height: 100px" /></td>
-                                <td><a ui-sref="app.editProduct({id:item.Id})">{{item.Name}}</a></td>
+                                <td><a ui-sref="app.editBlogPost({id:item.Id})">{{item.Name}}</a></td>
 
-                                <td>{{item.CreatedDate | date:'dd/MM/yyyy hh:mm:ss'}}</td>
+                                <td>{{item.CreatedDate | date:'dd/MM/yyyy HH:mm:ss'}}</td>
                                 <td style="text-align:center">
                                     <input class="form-check-input" type="checkbox" readonly="readonly" disabled checked="{{item.IsPublish}}">
                                 </td>
-                                <td>{{item.PublishDate | date:'dd/MM/yyyy hh:mm:ss'}}</td>
+                                <td>{{item.PublishDate | date:'dd/MM/yyyy HH:mm:ss'}}</td>
                                 <td style="text-align:center">
-                                    <a ui-sref="app.editProduct({id:item.Id})" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>
-                                    <button class="btn btn-sm btn-danger" ng-click="deleteItem(item.Id)"><i class="fa fa-trash-o"></i></button>
+                                    <a ui-sref="app.editBlogPost({id:item.Id})" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>
+                                    <button class="btn btn-sm btn-danger" ng-click="deleteItem(item)"><i class="fa fa-trash-o"></i></button>
                                 </td>
                             </tr>
                         </tbody>

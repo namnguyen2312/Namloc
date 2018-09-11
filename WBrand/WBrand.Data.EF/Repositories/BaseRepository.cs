@@ -166,8 +166,12 @@ namespace WBrand.Data.EF
 
         public void RollbackTran()
         {
-            _tranContext.Rollback();
-            _tranContext.Dispose();
+            if(_tranContext != null)
+            {
+                _tranContext.Rollback();
+                _tranContext.Dispose();
+            }
+            
         }
         public T UpdateProperties(T entity, params Expression<Func<T, object>>[] changedProperties)
         {

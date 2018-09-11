@@ -6,7 +6,7 @@ angular
 productCtrl.$inject = ['$scope', 'apiService', 'notificationService', '$ngBootbox'];
 function productCtrl($scope, apiService, notificationService, $ngBootbox) {
 
-    $scope.pageSize = 20;
+    $scope.pageSize = 5;
     $scope.pageIndex = 0;
     $scope.pagesCount = 0;
     $scope.totalCount = 0;
@@ -16,12 +16,7 @@ function productCtrl($scope, apiService, notificationService, $ngBootbox) {
 
     function del(item) {
         $ngBootbox.confirm('Bạn có chắc muốn xóa?').then(function () {
-            var config = {
-                params: {
-                    id: item.Id
-                }
-            };
-            apiService.del('api/product/delete', config, function () {
+            apiService.del('api/product/' + item.Id, null, function () {
                 notificationService.displaySuccess('Xóa thành công');
                 search();
             }, function () {
