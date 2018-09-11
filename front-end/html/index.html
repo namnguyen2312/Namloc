@@ -35,6 +35,49 @@
     -->
     <script type="text/javascript" src="../libs/Swiper-4.0.6/dist/js/swiper.min.js"></script>
     <script type="text/javascript" src="../libs/jssor.slider/js/jssor.slider.min.js" ></script>
+    <script>
+      function  jssor_slider_init(containerId) {
+      var jssor_1_options = {
+        // $AutoPlay: 1,
+        $ArrowNavigatorOptions: {
+          $Class: $JssorArrowNavigator$
+        },
+        $ThumbnailNavigatorOptions: {
+          $Class: $JssorThumbnailNavigator$,
+          $SpacingX: 5,
+          $SpacingY: 5
+        }
+      };
+
+      var jssor_1_slider = new $JssorSlider$(containerId, jssor_1_options);
+
+      /*#region responsive code begin*/
+
+      var MAX_WIDTH = 2900;
+
+      function ScaleSlider() {
+          var containerElement = jssor_1_slider.$Elmt.parentNode;
+          var containerWidth = containerElement.clientWidth;
+
+          if (containerWidth) {
+
+              var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+              jssor_1_slider.$ScaleWidth(expectedWidth);
+          }
+          else {
+              window.setTimeout(ScaleSlider, 30);
+          }
+      }
+
+      ScaleSlider();
+
+      $Jssor$.$AddEvent(window, "load", ScaleSlider);
+      $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+      $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+      /*#endregion responsive code end*/
+  };
+</script>
   </head>
   <body class="home main-home">
     <!-- <div id="timing">asdasd</div> -->
@@ -84,44 +127,11 @@
               <div class="col-md-3 col-xs-2">
                 <img src="../images/iso.png" alt="">
               </div>
-              <!-- <div class="col-md-6">
-                <div class="main-nav-wrapper">
-                    <nav id="primary-menu" class="main-nav pull-left">
-                      <ul class="nav">
-                        <li class="menu-item"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
-                        </li>
-                        <li class="active menu-item"><a href="tour.html">Tour</a>
-                        </li>
-                        <li class="menu-item"><a href="blog.html">Blog</a>
-                        </li>
-                        <li class="menu-item"><a href="visa.html">Dịch Vụ Visa</a>
-                        </li>
-                        <li class="menu-item"><a href="contact.html">Liên Hệ</a>
-                        </li>
-                      </ul>
-                    </nav>
-                    <div class="pull-right">
-                    <div class="icon-search-menu">
-                      <i class="wicon fa fa-search"></i>
-                      <div id="searchBox" class="hide-search">
-                        <input id="search-ajax" placeholder="Search" type="search"/>
-                        <button><i class="fa fa-search"></i></button>
-                      </div>
-                    </div>
-                    <div class="shopping-cart-icon">
-                      <div class="widget_shopping_cart_content">
-                        <div class="widget_shopping_cart_icon"><i class="wicon fa fa-shopping-bag"></i><span class="total">0</span></div>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
-                </div> -->
             </div>
           </div>
         </div>
         <div class="header-bottom">
           <div class="container">
-
             <div class="main-nav-wrapper">
               <div class="header-left">
                 <nav id="primary-menu" class="main-nav">
@@ -195,7 +205,7 @@
       </header>
       <div id="example-wrapper">
         <div class="div-box">
-    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
+    <div id="jssor1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
             <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="../libs/jssor.slider/svg/loading/static-svg/spin.svg" />
@@ -230,6 +240,7 @@
                 <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
             </svg>
         </div>
+        <script>jssor_slider_init(jssor1);</script>
     </div>
         </div>
 
