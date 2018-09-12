@@ -1,6 +1,6 @@
-﻿@model WBrand.Common.Page.PaginationSet<WBrand.Core.Domain.Models.Catalog.ProductModel>
+﻿@model WBrand.Common.Page.PaginationSet<WBrand.Core.Domain.Models.Blog.BlogPostModel>
 @{
-    ViewBag.Title = "Sản phẩm";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -19,20 +19,30 @@
     <div class="tour-wrapper">
         <div class="container">
             <div class="row">
-                @{Html.RenderAction("Category", "Product");}
+                @{Html.RenderAction("Category", "Blog");}
                 <div class="col-md-9 col-sm-9">
-                    <div class="product-wrap">
-                        <div class="product-content">
+                    <div class="news-wrap">
+                        <div class="news-content">
                             @foreach (var item in Model.Items)
                             {
-                                <div class="col-md-4 col-sm-4">
-                                    <div class="product-ct">
-                                        <div class="product-img">
-                                            <a href="/product/@(item.Alias).html"><img class="img-responsive" src="@Url.Action("Thumbnail", "Image", new {FileName=item.Image, w="861", h="643" })" alt="@item.Name"></a>
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="news-ct clearfix">
+                                        <div class="news-img">
+                                            <a href="/blog/@(item.Alias).html"><img class="img-responsive" src="@Url.Action("Thumbnail", "Image", new {FileName=item.Image, w="262", h="195" })" alt=""></a>
                                         </div>
-                                        <div class="product-info">
-                                            <h5><a href="/product/@(item.Alias).html">@item.Name</a></h5>
+                                        <div class="news-info">
+                                            <h3><a href="/blog/@(item.Alias).html">@item.Name</a></h3>
+                                            <span><i class="fa fa-calendar" aria-hidden="true"></i> @item.PublishDate.ToString("dd-MM-yyyy")</span>
                                             <p>@item.ShortContent</p>
+                                            <div class="link float-right">
+                                                <a href="/blog/@(item.Alias).html">Đọc thêm</a>
+                                                <ul class="share_social">
+                                                    chia sẽ:
+                                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -48,30 +58,25 @@
                                     var endPageIndex = Math.Min(Model.TotalPages, Model.Page + 5 / 2);
                                     if (Model.Page > 1)
                                     {
-                                        <li><a href="/product/@(Model.Page-1)/"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+                                        <li><a href="/blog/@(Model.Page-1)/"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
                                     }
                                     for (int i = startPageIndex; i <= endPageIndex; i++)
                                     {
                                         if (Model.Page == i)
                                         {
-                                            <li class="active"><a href="/product/@i/">@i</a></li>
+                                            <li class="active"><a href="/blog/@i/">@i</a></li>
 
                                         }
                                         else
                                         {
-                                            <li><a href="/product/@i/">@i</a></li>
+                                            <li><a href="/blog/@i/">@i</a></li>
                                         }
                                     }
                                     if (Model.Page < Model.TotalPages)
                                     {
-                                        <li><a href="/product/@(Model.Page+1)/"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                        <li><a href="/blog/@(Model.Page+1)/"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                                     }
                                 }
-                                @*<li><a href=""><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
-                                    <li class="active"><a href="">1</a></li>
-                                    <li><a href="">2</a></li>
-                                    <li><a href="">3</a></li>
-                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>*@
                             </ul>
                         </nav>
                     </div>

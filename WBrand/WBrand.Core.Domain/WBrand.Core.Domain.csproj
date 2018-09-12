@@ -91,6 +91,7 @@
     <Compile Include="Models\Catalog\ProductModel.cs" />
     <Compile Include="Models\Catalog\UpdateProductModel.cs" />
     <Compile Include="Models\SeoModel.cs" />
+    <Compile Include="Models\System\Contact.cs" />
     <Compile Include="Models\User\AppGroupModel.cs" />
     <Compile Include="Models\User\AppRoleModel.cs" />
     <Compile Include="Models\User\AppUserModel.cs" />

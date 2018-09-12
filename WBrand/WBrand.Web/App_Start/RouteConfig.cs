@@ -15,18 +15,37 @@ namespace WBrand.Web
 
 
             routes.MapRoute(
+                name: "blog",
+                url: "blog/{p}/{cat}/{filter}",
+                defaults: new { controller = "Blog", action = "Index", p = UrlParameter.Optional, cat = UrlParameter.Optional, filter = UrlParameter.Optional },
+                namespaces: new string[] { "NBT.Web.Controllers" }
+            );
+            routes.MapRoute(
+                name: "blogDetail",
+                url: "blog/{slug}.html",
+                constraints: new { slug = @"^([a-z0-9]+\-)*[a-z0-9]+$" },
+                defaults: new { controller = "Blog", action = "Detail", slug = UrlParameter.Optional },
+                namespaces: new string[] { "NBT.Web.Controllers" }
+            );
+            routes.MapRoute(
+                name: "product",
+                url: "product/{p}/{cat}/{filter}",
+                defaults: new { controller = "Product", action = "Index", p = UrlParameter.Optional, cat = UrlParameter.Optional, filter = UrlParameter.Optional },
+                namespaces: new string[] { "NBT.Web.Controllers" }
+            );
+            routes.MapRoute(
                 name: "productDetail",
                 url: "product/{slug}.html",
-                constraints: new { slug = @"^([a-z0-9]+\-)*[a-z0-9]+$"},
+                constraints: new { slug = @"^([a-z0-9]+\-)*[a-z0-9]+$" },
                 defaults: new { controller = "Product", action = "Detail", slug = UrlParameter.Optional },
                 namespaces: new string[] { "NBT.Web.Controllers" }
             );
-            //routes.MapRoute(
-            //    name: "product",
-            //    url: "product/{p}/{cat}/{filter}",
-            //    defaults: new { controller = "Product", action = "index", p = UrlParameter.Optional, c = UrlParameter.Optional, filter = UrlParameter.Optional },
-            //    namespaces: new string[] { "NBT.Web.Controllers" }
-            //);
+            routes.MapRoute(
+                name: "contact",
+                url: "contact",
+                defaults: new { controller = "Home", action = "Contact", slug = UrlParameter.Optional },
+                namespaces: new string[] { "NBT.Web.Controllers" }
+            );
             routes.MapRoute(
                 name: "cms-systems",
                 url: "cms-system",

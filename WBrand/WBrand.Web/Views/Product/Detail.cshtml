@@ -25,21 +25,16 @@
                                 <div id="jssor3" class="product-imgs">
                                     <!-- Loading Screen -->
                                     <div data-u="loading" class="js-spin jssorl-009-spin">
-                                        <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="../svg/loading/static-svg/spin.svg" />
+                                        <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="/Assets/client/libs/jssor.slider/svg/loading/static-svg/spin.svg" />
                                     </div>
                                     <div data-u="slides" class="imgs-detail">
-                                        <div>
-                                            <img data-u="image" src="/Assets/client/images/002.jpg" />
-                                            <img data-u="thumb" src="/Assets/client/images/thumb-002.jpg" />
-                                        </div>
-                                        <div>
-                                            <img data-u="image" src="/Assets/client/images/003.jpg" />
-                                            <img data-u="thumb" src="/Assets/client/images/thumb-003.jpg" />
-                                        </div>
-                                        <div>
-                                            <img data-u="image" src="/Assets/client/images/004.jpg" />
-                                            <img data-u="thumb" src="/Assets/client/images/thumb-004.jpg" />
-                                        </div>
+                                        @foreach (var item in Model.Imgs)
+                                        {
+                                            <div>
+                                                <img data-u="image" src="@Url.Action("Thumbnail", "Image", new {FileName=item, w="1300", h="500" })" />
+                                                <img data-u="thumb" src="@Url.Action("Thumbnail", "Image", new {FileName=item, w="192", h="128" })" />
+                                            </div>
+                                        }
                                     </div>
                                     <!-- Thumbnail Navigator -->
                                     <div data-u="thumbnavigator" class="thumbnails jssort101" data-autocenter="1" data-scale-bottom="0.75" style="top:650px;">
@@ -64,14 +59,14 @@
                                             <line class="a" x1="5426.1" y1="8000" x2="10573.9" y2="8000"></line>
                                         </svg>
                                     </div>
-                                    <script>jssor_slider_init(jssor3);</script>
+                                    <script>jssor_slider_init(jssor3,"960");</script>
                                 </div>
                             </div>
                             <div class="col-md-7">
                                 <div class="single-product">
                                     <div class="prt-header">
                                         <h2>@Model.Name</h2>
-                                        <div>Thương hiệu: <span class="brand">nhat ban</span>SKU: <span class="sku">0334434534</span></div>
+                                        <div>SKU: <span class="sku">@Model.SKU</span></div>
                                         <ul class="product-social">
                                             <li><a href="#"><img class="img-responsive" src="/Assets/client/images/icon/facebook.png" alt=""></a></li>
                                             <li><a href="#"><img class="img-responsive" src="/Assets/client/images/icon/twitter.png" alt=""></a></li>
@@ -106,27 +101,24 @@
     <div class="tour-wrapper">
         <div class="container">
             <div class="h-title">
-                <h2 class="title-style1 mb45">Chi tiet ky thuat</h2>
+                <h2 class="title-style1 mb45">Chi tiết kỹ thuật</h2>
             </div>
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <div class="specific-wrap">
                         <div class="specific-content">
-                            <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
+                            <div id="jssor_2" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
                                 <!-- Loading Screen -->
                                 <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
                                     <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="/Assets/client/libs/jssor.slider/svg/loading/static-svg/spin.svg" />
                                 </div>
                                 <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;">
-                                    <div>
-                                        <img data-u="image" src="/Assets/client/images/test/001.jpg" />
-                                    </div>
-                                    <div>
-                                        <img data-u="image" src="/Assets/client/images/test/002.jpg" />
-                                    </div>
-                                    <div>
-                                        <img data-u="image" src="/Assets/client/images/test/003.jpg" />
-                                    </div>
+                                    @foreach (var tech in Model.ImgTechs)
+                                    {
+                                        <div>
+                                            <img data-u="image" src="@Url.Action("Thumbnail", "Image", new {FileName=tech, w="1300", h="500" })" />
+                                        </div>
+                                    }
                                 </div>
                                 <!-- Arrow Navigator -->
                                 <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
@@ -139,7 +131,7 @@
                                         <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
                                     </svg>
                                 </div>
-                                <script>jssor_slider_init("jssor_1");</script>
+                                <script>jssor_slider_init(jssor_2,"1300");</script>
                             </div>
                         </div>
                     </div>
@@ -153,7 +145,7 @@
     <div class="tour-wrapper">
         <div class="container">
             <div class="h-title">
-                <h2 class="title-style1 mb45">San pham lien quan</h2>
+                <h2 class="title-style1 mb45">Sản phẩm liên quan</h2>
             </div>
             <div class="row">
                 <div class="col-md-12 col-sm-12">
@@ -164,16 +156,16 @@
                                 <div class="col-md-3 col-sm-6 mt20">
                                     <div class="product-ct">
                                         <div class="product-img">
-                                            <a href="/product/@(item.Alias).html"><img class="img-responsive" src="@Url.Action("Thumbnail", "Image", new {FileName=item.Image, w="861", h="643" })" alt="@item.Name" alt="@item.Name"></a>
+                                            <a href="/product/@(item.Alias).html"><img class="img-responsive" src="@Url.Action("Thumbnail", "Image", new {FileName=item.Image, w="861", h="643" })" alt="@item.Name"></a>
                                         </div>
                                         <div class="product-info">
-                                            <h5><a href="product_detail.html">@item.Name</a></h5>
+                                            <h5><a href="/product/@(item.Alias).html">@item.Name</a></h5>
                                             <p>@item.ShortContent</p>
                                         </div>
                                     </div>
                                 </div>
                             }
-                            
+
                         </div>
                     </div>
                 </div>
