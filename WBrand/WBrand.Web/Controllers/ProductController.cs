@@ -21,7 +21,7 @@ namespace WBrand.Web.Controllers
         }
         public ActionResult Index(string filter = "", int p = 1, string cat = "")
         {
-            var model = _productService.GetAll(p, 9, filter, category: cat);
+            var model = _productService.GetAll(p, 9, filter, category: cat, isPublish: true);
             model.Page = p;
             return View(model);
         }

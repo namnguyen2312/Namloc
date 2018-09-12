@@ -21,10 +21,16 @@ namespace WBrand.Web.Controllers
         public ActionResult Index(string filter = "", int p = 1, string cat = "")
         {
             var model = _blogPostService.GetAll(p, 9, filter, cat: cat, isPushlish: true);
+            model.Page = p;
             return View(model);
         }
 
 
+        public ActionResult Detail(string slug)
+        {
+            var model = _blogPostService.GetByAlias(slug);
+            return View(model);
+        }
 
         public PartialViewResult Category()
         {

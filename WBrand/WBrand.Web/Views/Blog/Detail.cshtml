@@ -1,0 +1,51 @@
+﻿@model WBrand.Core.Domain.Models.Blog.BlogPostModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="desc-scrum">
+                <p>Trang chủ</p>
+                <p>Bài viết </p>
+                <p>@Model.Name </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="div-box mb">
+    <div class="tour-wrapper">
+        <div class="container">
+            <div class="row">
+                @{Html.RenderAction("Category", "Blog");}
+                <div class="col-md-9 col-sm-9">
+                    <div class="article-wrap">
+                        <article>
+                            <div class="article-head">
+                                <h3>@Model.Name</h3>
+                                <span><i class="fa fa-calendar" aria-hidden="true"></i> @Model.PublishDate.ToString("dd-MM-yyyy")</span>
+                            </div>
+                            <div class="article-content">
+                                @Html.Raw(Model.FullContent)
+                            </div>
+                            <div class="social-wrapper">
+                                <ul class="share_social">
+                                    <span>chia sẽ:</span>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </article>
+                        <div class="hleftright">
+                            <a href="" class="pull-left"><i class="fa fa-angle-double-left" aria-hidden="true"></i> bài viết mới</a>
+                            <a href=""  class="pull-right"><i class="fa fa-angle-double-right" aria-hidden="true"></i> bài viết củ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

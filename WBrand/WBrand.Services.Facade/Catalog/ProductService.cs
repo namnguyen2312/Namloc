@@ -38,7 +38,7 @@ namespace WBrand.Services.Facade.Catalog
             _productRepo.Update(entity);
         }
 
-        public PaginationSet<ProductModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0, string category = "")
+        public PaginationSet<ProductModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0, string category = "", bool? isPublish = null)
         {
             var query = _productRepo.TableNoTracking.Where(x => !x.IsDel);
 
@@ -57,6 +57,10 @@ namespace WBrand.Services.Facade.Catalog
                         on c.CategoryId equals cat.Id
                         select q;
 
+
+            if (isPublish != null)
+                query = query.Where(x => x.IsPublish == isPublish.Value);
+
             var result = query.OrderBy(x => x.Name).ToPagedList(pageIndex, pageSize);
 
             return new PaginationSet<ProductModel>
@@ -72,7 +76,7 @@ namespace WBrand.Services.Facade.Catalog
 
         public ProductModel GetByAlias(string alias)
         {
-            return _productRepo.TableNoTracking.Where(x => x.IsDel == false && x.Alias == alias).QueryTo<ProductModel>().FirstOrDefault();
+            return _productRepo.TableNoTracking.Where(x => x.IsDel == false && x.Alias == alias && x.IsPublish == true).QueryTo<ProductModel>().FirstOrDefault();
         }
 
         public ProductModel GetById(long id)

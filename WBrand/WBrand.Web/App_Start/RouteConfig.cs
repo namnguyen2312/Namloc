@@ -13,6 +13,13 @@ namespace WBrand.Web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute(
+                name: "blog",
+                url: "blog/{p}/{cat}/{filter}",
+                defaults: new { controller = "Blog", action = "Index", p = UrlParameter.Optional, cat = UrlParameter.Optional, filter = UrlParameter.Optional },
+                namespaces: new string[] { "NBT.Web.Controllers" }
+            );
             routes.MapRoute(
                 name: "blogDetail",
                 url: "blog/{slug}.html",
@@ -21,13 +28,18 @@ namespace WBrand.Web
                 namespaces: new string[] { "NBT.Web.Controllers" }
             );
             routes.MapRoute(
+                name: "product",
+                url: "product/{p}/{cat}/{filter}",
+                defaults: new { controller = "Product", action = "Index", p = UrlParameter.Optional, cat = UrlParameter.Optional, filter = UrlParameter.Optional },
+                namespaces: new string[] { "NBT.Web.Controllers" }
+            );
+            routes.MapRoute(
                 name: "productDetail",
                 url: "product/{slug}.html",
-                constraints: new { slug = @"^([a-z0-9]+\-)*[a-z0-9]+$"},
+                constraints: new { slug = @"^([a-z0-9]+\-)*[a-z0-9]+$" },
                 defaults: new { controller = "Product", action = "Detail", slug = UrlParameter.Optional },
                 namespaces: new string[] { "NBT.Web.Controllers" }
             );
-
             routes.MapRoute(
                 name: "contact",
                 url: "contact",

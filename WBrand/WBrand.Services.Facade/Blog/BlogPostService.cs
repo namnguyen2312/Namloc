@@ -52,7 +52,7 @@ namespace WBrand.Services.Facade.Blog
                         on q.CategoryId equals c.Id
                         select q;
             if (isPublish != null)
-                query = query.Where(x => x.IsPublish == isPublish.Value);
+                query = query.Where(x => x.IsPublish == isPublish.Value && x.PublishDate <= DateTimeOffset.UtcNow);
 
             var result = query.OrderBy(x => x.Name).ToPagedList(pageIndex, pageSize);
 
@@ -68,7 +68,7 @@ namespace WBrand.Services.Facade.Blog
 
         public BlogPostModel GetByAlias(string alias)
         {
-            return _blogPostRepository.TableNoTracking.Where(x => x.IsDel == false && x.IsPublish == true && x.PublishDate <= DateTimeOffset.UtcNow).QueryTo<BlogPostModel>().FirstOrDefault();
+            return _blogPostRepository.TableNoTracking.Where(x => x.IsDel == false && x.IsPublish == true && x.Alias == alias && x.PublishDate <= DateTimeOffset.UtcNow).QueryTo<BlogPostModel>().FirstOrDefault();
         }
 
         public BlogPostModel GetById(long id)

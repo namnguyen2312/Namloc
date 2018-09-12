@@ -19,7 +19,7 @@ namespace WBrand.Services.Catalog
 
         UpdateProductModel Update(UpdateProductModel model);
 
-        PaginationSet<ProductModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0,string category="");
+        PaginationSet<ProductModel> GetAll(int pageIndex, int pageSize, string filter = "", int categoryId = 0, string category = "", bool? isPublish = null);
 
         IEnumerable<Product> GetTop6();
 

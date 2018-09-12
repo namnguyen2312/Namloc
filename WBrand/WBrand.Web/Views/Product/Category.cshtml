@@ -6,66 +6,10 @@
             <ul class="cd-accordion-menu animated">
                 @foreach (var item in Model)
                 {
-                    var parent = item.Parent;
-
-                    <li class="has-children">
-                        <input type="checkbox" name="group-@item.Id" id="group-@item.Id">
-                        <a href="/product/cat/@item.Alias"><label for="group-2">@item.Name</label></a>
-                        @if (parent != null)
-                        {
-                            while (parent != null)
-                            {
-                                <ul>
-                                    <li><a href="/product/cat/@parent.Alias">@parent.Name</a></li>
-                                </ul>
-                                parent = parent.Parent;
-                            }
-
-                        }
-
-                    </li>
+                <li class="has-children">
+                    <a href="/product/1/@item.Alias">@item.Name</a>
+                </li>
                 }
-                <li class="has-children">
-                    <input type="checkbox" name="group-1" id="group-1" checked>
-                    <label for="group-1">Nhôm bửng thùng xe tải</label>
-                    <ul>
-                        <li class="has-children">
-                            <input type="checkbox" name="sub-group-1" id="sub-group-1">
-                            <label for="sub-group-1">Sub Group 1</label>
-                            <ul>
-                                <li><a href="#">Image</a></li>
-                                <li><a href="#">Image</a></li>
-                                <li><a href="#">Image</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-children">
-                            <input type="checkbox" name="sub-group-2" id="sub-group-2">
-                            <label for="sub-group-2">Sub Group 2</label>
-                            <ul>
-                                <li><a href="#">Image</a></li>
-                                <li><a href="#">Image</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Vịnh Hạ Long</a></li>
-                        <li><a href="#">Sapa</a></li>
-                    </ul>
-                </li>
-                <li class="has-children">
-                    <input type="checkbox" name="group-2" id="group-2">
-                    <label for="group-2">Nhom hinh chu V</label>
-                    <ul>
-                        <li><a href="#">Kontum</a></li>
-                        <li><a href="#">Huế</a></li>
-                    </ul>
-                </li>
-                <li class="has-children">
-                    <input type="checkbox" name="group-2" id="group-2">
-                    <label for="group-2">Nhom ong tron</label>
-                    <ul>
-                        <li><a href="#">Nhom hop</a></li>
-                        <li><a href="#">Nhom cua cuon</a></li>
-                    </ul>
-                </li>
             </ul> <!-- cd-accordion-menu -->
         </div>
         <div class="tour-category-content mt">
